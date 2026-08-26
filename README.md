@@ -20,54 +20,54 @@ Frontend-focused full-stack engineer. I build interfaces with real systems behin
 
 <img src="assets/divider.svg" alt="" width="100%">
 
-### CAPABILITY
+<img alt="CAPABILITY" height="30" src="https://img.shields.io/badge/◆-CAPABILITY-15181D?style=for-the-badge&labelColor=6EE7A8&color=15181D">
 
 <table>
 <tr>
   <td width="150" valign="top"><b>● CORE</b><br><sub>in every project</sub></td>
-  <td>
-    <img alt="TypeScript" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=typescript&logoColor=E8E6E3">
-    <img alt="React" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=react&logoColor=E8E6E3">
-    <img alt="Next.js · App Router" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=nextdotjs&logoColor=E8E6E3">
-    <img alt="Tailwind CSS" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=tailwindcss&logoColor=E8E6E3">
+  <td valign="middle">
+    <img alt="TypeScript" height="38" src="https://cdn.simpleicons.org/typescript">&nbsp;&nbsp;
+    <img alt="React" height="38" src="https://cdn.simpleicons.org/react">&nbsp;&nbsp;
+    <img alt="Next.js · App Router" height="38" src="https://cdn.simpleicons.org/nextdotjs/E8E6E3">&nbsp;&nbsp;
+    <img alt="Tailwind CSS" height="38" src="https://cdn.simpleicons.org/tailwindcss">
   </td>
 </tr>
 <tr>
   <td valign="top"><b>○ REGULAR</b><br><sub>across several</sub></td>
-  <td>
-    <img alt="PostgreSQL" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=postgresql&logoColor=E8E6E3">
-    <img alt="Prisma" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=prisma&logoColor=E8E6E3">
-    <img alt="SQL" src="https://img.shields.io/badge/SQL-15181D?style=flat-square&labelColor=15181D&color=15181D">
-    <img alt="Node.js" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=nodedotjs&logoColor=E8E6E3">
-    <img alt="Express" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=express&logoColor=E8E6E3">
-    <img alt="Socket.IO" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=socketdotio&logoColor=E8E6E3">
-    <img alt="Framer Motion" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=framer&logoColor=E8E6E3">
-    <img alt="Radix UI" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=radixui&logoColor=E8E6E3">
-    <img alt="Zustand" src="https://img.shields.io/badge/Zustand-15181D?style=flat-square&labelColor=15181D&color=15181D">
-    <img alt="Vercel" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=vercel&logoColor=E8E6E3">
-    <img alt="GitHub Actions" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=githubactions&logoColor=E8E6E3">
+  <td valign="middle">
+    <img alt="PostgreSQL" height="38" src="https://cdn.simpleicons.org/postgresql">&nbsp;&nbsp;
+    <img alt="Prisma" height="38" src="https://cdn.simpleicons.org/prisma/E8E6E3">&nbsp;&nbsp;
+    <img alt="SQL" height="30" src="https://img.shields.io/badge/SQL-15181D?style=for-the-badge&labelColor=15181D&color=15181D">&nbsp;
+    <img alt="Node.js" height="38" src="https://cdn.simpleicons.org/nodedotjs">&nbsp;&nbsp;
+    <img alt="Express" height="38" src="https://cdn.simpleicons.org/express/E8E6E3">&nbsp;&nbsp;
+    <img alt="Socket.IO" height="38" src="https://cdn.simpleicons.org/socketdotio/E8E6E3">&nbsp;&nbsp;
+    <img alt="Framer Motion" height="38" src="https://cdn.simpleicons.org/framer">&nbsp;&nbsp;
+    <img alt="Radix UI" height="38" src="https://cdn.simpleicons.org/radixui/E8E6E3">&nbsp;&nbsp;
+    <img alt="Zustand" height="30" src="https://img.shields.io/badge/Zustand-15181D?style=for-the-badge&labelColor=15181D&color=15181D">&nbsp;
+    <img alt="Vercel" height="38" src="https://cdn.simpleicons.org/vercel/E8E6E3">&nbsp;&nbsp;
+    <img alt="GitHub Actions" height="38" src="https://cdn.simpleicons.org/githubactions">
   </td>
 </tr>
 <tr>
   <td valign="top"><b>· EXPLORED</b><br><sub>one project each</sub></td>
-  <td>
-    <img alt="Three.js" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=threedotjs&logoColor=E8E6E3">
-    <img alt="Flutter" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=flutter&logoColor=E8E6E3">
-    <img alt="Dart" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=dart&logoColor=E8E6E3">
-    <img alt="Supabase" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=supabase&logoColor=E8E6E3">
-    <img alt="Expo" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=expo&logoColor=E8E6E3">
-    <img alt="Docker" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=docker&logoColor=E8E6E3">
-    <img alt="Vitest" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=vitest&logoColor=E8E6E3">
-    <img alt="TanStack Query" src="https://img.shields.io/badge/%20-15181D?style=flat-square&logo=reactquery&logoColor=E8E6E3">
-    <img alt="Recharts" src="https://img.shields.io/badge/Recharts-15181D?style=flat-square&labelColor=15181D&color=15181D">
-    <img alt="Lenis" src="https://img.shields.io/badge/Lenis-15181D?style=flat-square&labelColor=15181D&color=15181D">
+  <td valign="middle">
+    <img alt="Three.js" height="38" src="https://cdn.simpleicons.org/threedotjs/E8E6E3">&nbsp;&nbsp;
+    <img alt="Flutter" height="38" src="https://cdn.simpleicons.org/flutter">&nbsp;&nbsp;
+    <img alt="Dart" height="38" src="https://cdn.simpleicons.org/dart">&nbsp;&nbsp;
+    <img alt="Supabase" height="38" src="https://cdn.simpleicons.org/supabase">&nbsp;&nbsp;
+    <img alt="Expo" height="38" src="https://cdn.simpleicons.org/expo/E8E6E3">&nbsp;&nbsp;
+    <img alt="Docker" height="38" src="https://cdn.simpleicons.org/docker">&nbsp;&nbsp;
+    <img alt="Vitest" height="38" src="https://cdn.simpleicons.org/vitest">&nbsp;&nbsp;
+    <img alt="TanStack Query" height="38" src="https://cdn.simpleicons.org/reactquery">&nbsp;&nbsp;
+    <img alt="Recharts" height="30" src="https://img.shields.io/badge/Recharts-15181D?style=for-the-badge&labelColor=15181D&color=15181D">&nbsp;
+    <img alt="Lenis" height="30" src="https://img.shields.io/badge/Lenis-15181D?style=for-the-badge&labelColor=15181D&color=15181D">
   </td>
 </tr>
 </table>
 
 <img src="assets/divider.svg" alt="" width="100%">
 
-### BUILT, NOT IMPORTED
+<img alt="BUILT, NOT IMPORTED" height="30" src="https://img.shields.io/badge/◆-BUILT%2C%20NOT%20IMPORTED-15181D?style=for-the-badge&labelColor=6EE7A8&color=15181D">
 
 The parts I wrote by hand instead of reaching for a dependency.
 
@@ -82,7 +82,7 @@ The parts I wrote by hand instead of reaching for a dependency.
 
 <img src="assets/divider.svg" alt="" width="100%">
 
-### SIGNALS
+<img alt="SIGNALS" height="30" src="https://img.shields.io/badge/◆-SIGNALS-15181D?style=for-the-badge&labelColor=6EE7A8&color=15181D">
 
 <table>
 <tr>
@@ -107,7 +107,7 @@ The parts I wrote by hand instead of reaching for a dependency.
 
 <img src="assets/divider.svg" alt="" width="100%">
 
-### ACTIVITY
+<img alt="ACTIVITY" height="30" src="https://img.shields.io/badge/◆-ACTIVITY-15181D?style=for-the-badge&labelColor=6EE7A8&color=15181D">
 
 <div align="center">
   <img src="assets/contributions.svg" alt="GitHub contribution heatmap for the last 12 months" width="100%">
@@ -118,22 +118,23 @@ The parts I wrote by hand instead of reaching for a dependency.
   Rendered from GitHub's public contributions endpoint by <a href="scripts/contributions.mjs">a script in this repo</a> and refreshed daily by <a href=".github/workflows/contributions.yml">an action</a> — no third-party widget to break when someone else's free tier runs out.</sub>
 </div>
 
-### CURRENTLY
+<img alt="CURRENTLY" height="30" src="https://img.shields.io/badge/◆-CURRENTLY-15181D?style=for-the-badge&labelColor=6EE7A8&color=15181D">
 
-```
-→  STUDENT ADMIN PLATFORM        in production
-   attendance, fees and tests for a coaching institute
-
-→  CLINIC OPD                    multi-tenant
-   five role-specific interfaces around one live queue
-
-→  OPEN SOURCE                   looking
-   React · Next.js · accessibility · design systems
-```
+<table>
+<tr>
+  <td width="230" valign="top"><b>STUDENT ADMIN PLATFORM</b><br><sub>attendance, fees and tests for a coaching institute</sub></td>
+  <td valign="top"><img alt="in production" src="https://img.shields.io/badge/in%20production-15181D?style=flat-square&labelColor=15181D&color=15181D&logo=vercel&logoColor=6EE7A8"></td>
+</tr>
+<tr>
+  <td valign="top"><b>CLINIC OPD</b><br><sub>five role-specific interfaces around one live queue</sub></td>
+  <td valign="top"><img alt="multi-tenant" src="https://img.shields.io/badge/multi--tenant-15181D?style=flat-square&labelColor=15181D&color=15181D"></td>
+</tr>
+<tr>
+  <td valign="top"><b>OPEN SOURCE</b><br><sub>React · Next.js · accessibility · design systems</sub></td>
+  <td valign="top"><img alt="looking" src="https://img.shields.io/badge/looking-15181D?style=flat-square&labelColor=15181D&color=15181D&logo=github&logoColor=E8E6E3"></td>
+</tr>
+</table>
 
 <div align="center">
   <img src="assets/footer.svg" alt="Open to open-source collaboration — dhananjaypvt.me · github.com/dhananjay-123" width="100%">
 </div>
-#   d h a n a n j a y - 1 2 3 
- 
- 
