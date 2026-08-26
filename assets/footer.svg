@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="124" viewBox="0 0 880 124" fill="none" role="img" aria-labelledby="footTitle footDesc">
+  <title id="footTitle">Open to open-source collaboration</title>
+  <desc id="footDesc">A dark status panel reading OPEN TO OPEN-SOURCE COLLABORATION, above the links dhananjaypvt.me and github.com/dhananjay-123.</desc>
+
+  <defs>
+    <pattern id="fgrid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#14171C"/>
+    </pattern>
+  </defs>
+
+  <rect width="880" height="124" rx="10" fill="#0B0C0E"/>
+  <rect width="880" height="124" rx="10" fill="url(#fgrid)"/>
+  <rect x="0.5" y="0.5" width="879" height="123" rx="10" stroke="#1C1F26"/>
+
+  <g stroke="#F0A63C" stroke-width="1.25" opacity="0.55">
+    <path d="M18 34 L18 18 L34 18"/>
+    <path d="M862 34 L862 18 L846 18"/>
+    <path d="M18 90 L18 106 L34 106"/>
+    <path d="M862 90 L862 106 L846 106"/>
+  </g>
+
+  <circle cx="256" cy="47" r="12" fill="none" stroke="#F0A63C" stroke-width="1">
+    <animate attributeName="r" values="4;13" dur="2.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.55;0" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="256" cy="47" r="4" fill="#F0A63C">
+    <animate attributeName="opacity" values="1;0.35;1" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <text x="274" y="52" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="2.4" fill="#E8E6E3">OPEN TO OPEN-SOURCE COLLABORATION</text>
+
+  <line x1="48" y1="76" x2="832" y2="76" stroke="#1C1F26"/>
+  <line x1="48" y1="76" x2="832" y2="76" stroke="#F0A63C" stroke-dasharray="56 728">
+    <animate attributeName="stroke-dashoffset" values="0;-784" dur="8s" repeatCount="indefinite"/>
+  </line>
+
+  <text x="440" y="101" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="1.2" fill="#767D89">dhananjaypvt.me · github.com/dhananjay-123</text>
+</svg>

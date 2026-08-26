@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="18" viewBox="0 0 880 18" fill="none" role="img" aria-label="Section divider">
+  <line x1="0" y1="9" x2="880" y2="9" stroke="#2A2E36"/>
+  <line x1="0" y1="9" x2="880" y2="9" stroke="#F0A63C" stroke-dasharray="70 810">
+    <animate attributeName="stroke-dashoffset" values="0;-880" dur="7s" repeatCount="indefinite"/>
+  </line>
+  <line x1="0.5" y1="4" x2="0.5" y2="14" stroke="#262A31"/>
+  <line x1="879.5" y1="4" x2="879.5" y2="14" stroke="#262A31"/>
+</svg>
