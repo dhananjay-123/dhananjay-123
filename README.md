@@ -70,21 +70,6 @@ Frontend-focused full-stack engineer. I build interfaces with real systems behin
 
 <img src="assets/divider.svg?v=2" alt="" width="100%">
 
-<img alt="BUILT, NOT IMPORTED" height="30" src="https://img.shields.io/badge/%24-BUILT%2C%20NOT%20IMPORTED-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
-
-Things I wrote myself because the library version didn't fit.
-
-<table width="100%">
-<tr><td width="180"><code>tidy-tree layout</code></td><td width="810">Worked out the node positions for a branching story graph myself. No charting library involved.</td></tr>
-<tr><td><code>render loop</code></td><td>Three.js driven directly, instead of going through a React wrapper.</td></tr>
-<tr><td><code>offline shell</code></td><td>A service worker I wrote by hand, so the app still opens and reads with no connection.</td></tr>
-<tr><td><code>design tokens</code></td><td>One set of colour, spacing and type values, so screens built months apart still match.</td></tr>
-<tr><td><code>edit locking</code></td><td>If two people open the same passage, the second one waits instead of overwriting the first.</td></tr>
-<tr><td><code>slot allocation</code></td><td>Booking that can't sell the same seat twice, even when requests arrive at once.</td></tr>
-</table>
-
-<img src="assets/divider.svg?v=2" alt="" width="100%">
-
 <img alt="IN PRACTICE" height="30" src="https://img.shields.io/badge/%24-IN%20PRACTICE-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
 
 <table width="100%">
