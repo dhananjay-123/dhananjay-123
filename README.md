@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/hero.svg?v=2" alt="Dhananjay Agrawal — interface engineer. TypeScript, React, Next.js, Postgres." width="100%">
+  <img src="assets/hero.svg?v=3" alt="Dhananjay Agrawal — full-stack developer. TypeScript, React, Next.js, Postgres." width="100%">
 </div>
 
 <div align="center">
@@ -14,7 +14,7 @@
 
 <br>
 
-Frontend-focused full-stack engineer. I build interfaces with real systems behind them — design systems, dashboards that stay readable as data grows, real-time and offline state — and treat accessibility and the loading, empty and error states as part of the work rather than a follow-up ticket.
+Full-stack developer — web and mobile. I build the interface, the API and the database behind it: design systems, dashboards that stay readable as data grows, real-time and offline state. Accessibility and the loading, empty and error states are part of the work for me, not a follow-up ticket.
 
 <sub>🎓 Integrated B.Tech + M.Tech, Information Technology &nbsp;·&nbsp; ABV-IIITM Gwalior &nbsp;·&nbsp; Gwalior, India</sub>
 

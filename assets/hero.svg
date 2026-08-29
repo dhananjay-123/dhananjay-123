@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="220" viewBox="0 0 880 220" fill="none" role="img" aria-labelledby="heroTitle heroDesc">
-  <title id="heroTitle">Dhananjay Agrawal — interface engineer</title>
+  <title id="heroTitle">Dhananjay Agrawal — full-stack developer</title>
   <desc id="heroDesc">A dark panel. On the left, the name Dhananjay Agrawal above the line TypeScript, React, Next.js, Postgres. On the right, a terminal window running whoami, ls of the work directory, and a check of every interface state.</desc>
 
   <style>
@@ -8,9 +8,9 @@
        hidden state never touches an element's own styling — switch the
        animation off and the finished terminal is what remains. */
     .l1 { animation: l1 14s steps(8) infinite }
-    .l2 { animation: l2 14s steps(18) infinite }
+    .l2 { animation: l2 14s steps(20) infinite }
     .l3 { animation: l3 14s steps(11) infinite }
-    .l4 { animation: l4 14s steps(36) infinite }
+    .l4 { animation: l4 14s steps(29) infinite }
     .l5 { animation: l5 14s steps(15) infinite }
     .l6 { animation: l6 14s steps(32) infinite }
     .l7 { animation: l7 14s steps(1) infinite }
@@ -55,7 +55,7 @@
   </g>
 
   <rect class="mark" x="48" y="60" width="7" height="7" fill="#A78BFA"/>
-  <text x="68" y="67" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.6" fill="#A78BFA">INTERFACE ENGINEER</text>
+  <text x="68" y="67" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.6" fill="#A78BFA">FULL-STACK DEVELOPER</text>
 
   <text x="48" y="126" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="37" font-weight="600" letter-spacing="1.5" fill="#E6E8F2">DHANANJAY AGRAWAL</text>
 
@@ -76,10 +76,10 @@
 
     <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9.5" letter-spacing="0.3">
       <text class="l1" x="576" y="76" fill="#E6E8F2"><tspan fill="#A78BFA">$</tspan> whoami</text>
-      <text class="l2" x="576" y="91" fill="#7C86A8">interface engineer</text>
+      <text class="l2" x="576" y="91" fill="#7C86A8">full-stack developer</text>
 
       <text class="l3" x="576" y="106" fill="#E6E8F2"><tspan fill="#A78BFA">$</tspan> ls ~/work</text>
-      <text class="l4" x="576" y="121" fill="#7C86A8" xml:space="preserve">design-systems  dashboards  realtime</text>
+      <text class="l4" x="576" y="121" fill="#7C86A8" xml:space="preserve">web  mobile  apis  dashboards</text>
 
       <text class="l5" x="576" y="136" fill="#E6E8F2"><tspan fill="#A78BFA">$</tspan> ship --states</text>
       <text class="l6" x="576" y="151" fill="#7C86A8"><tspan fill="#60A5FA">✓</tspan> loading <tspan fill="#60A5FA">✓</tspan> empty <tspan fill="#60A5FA">✓</tspan> error <tspan fill="#60A5FA">✓</tspan> done</text>
