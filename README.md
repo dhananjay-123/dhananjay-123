@@ -47,6 +47,8 @@ Full-stack developer — web and mobile. I build the interface, the API and the 
     <img alt="Framer Motion" height="38" src="https://cdn.simpleicons.org/framer">&nbsp;&nbsp;
     <img alt="Radix UI" height="38" src="https://cdn.simpleicons.org/radixui/E6E8F2">&nbsp;&nbsp;
     <img alt="Zustand" height="30" src="https://img.shields.io/badge/Zustand-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
+    <img alt="Flutter" height="38" src="https://cdn.simpleicons.org/flutter">&nbsp;&nbsp;
+    <img alt="React Native" height="30" src="https://img.shields.io/badge/React%20Native-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
     <img alt="Vercel" height="38" src="https://cdn.simpleicons.org/vercel/E6E8F2">&nbsp;&nbsp;
     <img alt="GitHub Actions" height="38" src="https://cdn.simpleicons.org/githubactions">
   </td>
@@ -55,11 +57,9 @@ Full-stack developer — web and mobile. I build the interface, the API and the 
   <td valign="top"><b>· EXPLORED</b><br><sub>one project each</sub></td>
   <td width="830" valign="middle">
     <img alt="Three.js" height="38" src="https://cdn.simpleicons.org/threedotjs/E6E8F2">&nbsp;&nbsp;
-    <img alt="Flutter" height="38" src="https://cdn.simpleicons.org/flutter">&nbsp;&nbsp;
     <img alt="Dart" height="38" src="https://cdn.simpleicons.org/dart">&nbsp;&nbsp;
     <img alt="Supabase" height="38" src="https://cdn.simpleicons.org/supabase">&nbsp;&nbsp;
     <img alt="Expo" height="38" src="https://cdn.simpleicons.org/expo/E6E8F2">&nbsp;&nbsp;
-    <img alt="React Native" height="30" src="https://img.shields.io/badge/React%20Native-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
     <img alt="Docker" height="38" src="https://cdn.simpleicons.org/docker">&nbsp;&nbsp;
     <img alt="Vitest" height="38" src="https://cdn.simpleicons.org/vitest">&nbsp;&nbsp;
     <img alt="TanStack Query" height="38" src="https://cdn.simpleicons.org/reactquery">&nbsp;&nbsp;
