@@ -1,12 +1,15 @@
 <div align="center">
-  <img src="assets/hero.svg" alt="Dhananjay Agrawal — interface engineer. TypeScript, React, Next.js, Postgres." width="100%">
+  <img src="assets/hero.svg?v=2" alt="Dhananjay Agrawal — interface engineer. TypeScript, React, Next.js, Postgres." width="100%">
 </div>
 
 <div align="center">
-  <a href="https://dhananjaypvt.me"><img src="https://img.shields.io/badge/PORTFOLIO-dhananjaypvt.me-E6E8F2?style=flat-square&labelColor=0A0B11&color=161A2B&logo=googlechrome&logoColor=A78BFA" alt="Portfolio: dhananjaypvt.me"></a>
-  <a href="https://github.com/dhananjay-123"><img src="https://img.shields.io/badge/GITHUB-dhananjay--123-E6E8F2?style=flat-square&labelColor=0A0B11&color=161A2B&logo=github&logoColor=A78BFA" alt="GitHub: dhananjay-123"></a>
-  <a href="https://linkedin.com/in/dhananjay-agrawal-b5843b211"><img src="https://img.shields.io/badge/LINKEDIN-dhananjay--agrawal-E6E8F2?style=flat-square&labelColor=0A0B11&color=161A2B&logo=linkedin&logoColor=A78BFA" alt="LinkedIn: dhananjay-agrawal"></a>
-  <a href="mailto:dhananjayworkmain@gmail.com"><img src="https://img.shields.io/badge/EMAIL-dhananjayworkmain-E6E8F2?style=flat-square&labelColor=0A0B11&color=161A2B&logo=gmail&logoColor=A78BFA" alt="Email: dhananjayworkmain@gmail.com"></a>
+  <a href="https://dhananjaypvt.me" title="Portfolio — dhananjaypvt.me"><img alt="Portfolio: dhananjaypvt.me" height="40" src="https://cdn.simpleicons.org/googlechrome/A78BFA"></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/dhananjay-123" title="GitHub — dhananjay-123"><img alt="GitHub: dhananjay-123" height="40" src="https://cdn.simpleicons.org/github/A78BFA"></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://linkedin.com/in/dhananjay-agrawal-b5843b211" title="LinkedIn — dhananjay-agrawal"><img alt="LinkedIn: dhananjay-agrawal" height="40" src="assets/icon-linkedin.svg"></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="mailto:dhananjayworkmain@gmail.com" title="Email — dhananjayworkmain@gmail.com"><img alt="Email: dhananjayworkmain@gmail.com" height="40" src="https://cdn.simpleicons.org/gmail/A78BFA"></a>
 </div>
 
 <br>
@@ -18,7 +21,7 @@ Frontend-focused full-stack engineer. I build interfaces with real systems behin
 > Prefer the primitive you understand over the library you inherit.
 > Ship every state, not just the one where the data arrives.
 
-<img src="assets/divider.svg" alt="" width="100%">
+<img src="assets/divider.svg?v=2" alt="" width="100%">
 
 <img alt="CAPABILITY" height="30" src="https://img.shields.io/badge/%24-CAPABILITY-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
 
@@ -65,7 +68,7 @@ Frontend-focused full-stack engineer. I build interfaces with real systems behin
 </tr>
 </table>
 
-<img src="assets/divider.svg" alt="" width="100%">
+<img src="assets/divider.svg?v=2" alt="" width="100%">
 
 <img alt="BUILT, NOT IMPORTED" height="30" src="https://img.shields.io/badge/%24-BUILT%2C%20NOT%20IMPORTED-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
 
@@ -80,7 +83,7 @@ Things I wrote myself because the library version didn't fit.
 <tr><td><code>slot allocation</code></td><td>Booking that can't sell the same seat twice, even when requests arrive at once.</td></tr>
 </table>
 
-<img src="assets/divider.svg" alt="" width="100%">
+<img src="assets/divider.svg?v=2" alt="" width="100%">
 
 <img alt="IN PRACTICE" height="30" src="https://img.shields.io/badge/%24-IN%20PRACTICE-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
 
@@ -105,12 +108,12 @@ Things I wrote myself because the library version didn't fit.
 </tr>
 </table>
 
-<img src="assets/divider.svg" alt="" width="100%">
+<img src="assets/divider.svg?v=2" alt="" width="100%">
 
 <img alt="ACTIVITY" height="30" src="https://img.shields.io/badge/%24-ACTIVITY-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
 
 <div align="center">
-  <img src="assets/contributions.svg" alt="GitHub contribution heatmap for the last 12 months" width="100%">
+  <img src="assets/contributions.svg?v=2" alt="GitHub contribution heatmap for the last 12 months" width="100%">
 </div>
 
 <div align="center">
@@ -118,7 +121,7 @@ Things I wrote myself because the library version didn't fit.
   Rendered from GitHub's public contributions endpoint by <a href="scripts/contributions.mjs">a script in this repo</a> and refreshed daily by <a href=".github/workflows/contributions.yml">an action</a> — no third-party widget to break when someone else's free tier runs out.</sub>
 </div>
 
-<img src="assets/divider.svg" alt="" width="100%">
+<img src="assets/divider.svg?v=2" alt="" width="100%">
 
 <img alt="GET IN TOUCH" height="30" src="https://img.shields.io/badge/%24-GET%20IN%20TOUCH-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
 
@@ -138,5 +141,5 @@ Things I wrote myself because the library version didn't fit.
 </table>
 
 <div align="center">
-  <img src="assets/footer.svg" alt="Open to open-source collaboration — dhananjaypvt.me · github.com/dhananjay-123" width="100%">
+  <img src="assets/footer.svg?v=2" alt="Open to open-source collaboration — dhananjaypvt.me · github.com/dhananjay-123" width="100%">
 </div>
