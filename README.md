@@ -56,7 +56,7 @@ Full-stack developer — web and mobile. I build the interface, the API and the 
   </td>
 </tr>
 <tr>
-  <td valign="top"><b>· EXPLORED</b><br><sub>one project each</sub></td>
+  <td valign="top"><b>· EXPLORED</b></td>
   <td width="830" valign="middle">
     <img alt="Three.js" height="38" src="https://cdn.simpleicons.org/threedotjs/E6E8F2">&nbsp;&nbsp;
     <img alt="Supabase" height="38" src="https://cdn.simpleicons.org/supabase">&nbsp;&nbsp;
