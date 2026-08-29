@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="220" viewBox="0 0 880 220" fill="none" role="img" aria-labelledby="heroTitle heroDesc">
   <title id="heroTitle">Dhananjay Agrawal — full-stack developer</title>
-  <desc id="heroDesc">A dark panel. On the left, the name Dhananjay Agrawal above the line TypeScript, React, Next.js, Postgres. On the right, a terminal window running whoami, ls of the work directory, and a check of every interface state.</desc>
+  <desc id="heroDesc">A dark panel. On the left, the name Dhananjay Agrawal above the lines TypeScript, React, Next.js, Postgres and React Native, Flutter. On the right, a terminal window running whoami, ls of the work directory, and a check of every interface state.</desc>
 
   <style>
     /* One 14s session, looping. Each line carries its own timing inside its own
@@ -62,7 +62,8 @@
   <line x1="48" y1="148" x2="300" y2="148" stroke="#1E2334"/>
   <line x1="48" y1="148" x2="94" y2="148" stroke="#A78BFA" opacity="0.8"/>
 
-  <text x="48" y="177" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.6" fill="#7C86A8">TYPESCRIPT · REACT · NEXT.JS · POSTGRES</text>
+  <text x="48" y="170" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.6" fill="#7C86A8">TYPESCRIPT · REACT · NEXT.JS · POSTGRES</text>
+  <text x="48" y="190" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.6" fill="#7C86A8">REACT NATIVE · FLUTTER</text>
 
   <!-- terminal window -->
   <rect x="560.5" y="36.5" width="271" height="147" rx="6" fill="#0D0F19" stroke="#1E2334"/>

@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/hero.svg?v=3" alt="Dhananjay Agrawal — full-stack developer. TypeScript, React, Next.js, Postgres." width="100%">
+  <img src="assets/hero.svg?v=4" alt="Dhananjay Agrawal — full-stack developer. TypeScript, React, Next.js, Postgres, React Native, Flutter." width="100%">
 </div>
 
 <div align="center">
@@ -59,6 +59,7 @@ Full-stack developer — web and mobile. I build the interface, the API and the 
     <img alt="Dart" height="38" src="https://cdn.simpleicons.org/dart">&nbsp;&nbsp;
     <img alt="Supabase" height="38" src="https://cdn.simpleicons.org/supabase">&nbsp;&nbsp;
     <img alt="Expo" height="38" src="https://cdn.simpleicons.org/expo/E6E8F2">&nbsp;&nbsp;
+    <img alt="React Native" height="30" src="https://img.shields.io/badge/React%20Native-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
     <img alt="Docker" height="38" src="https://cdn.simpleicons.org/docker">&nbsp;&nbsp;
     <img alt="Vitest" height="38" src="https://cdn.simpleicons.org/vitest">&nbsp;&nbsp;
     <img alt="TanStack Query" height="38" src="https://cdn.simpleicons.org/reactquery">&nbsp;&nbsp;
