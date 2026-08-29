@@ -1,37 +1,72 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="124" viewBox="0 0 880 124" fill="none" role="img" aria-labelledby="footTitle footDesc">
   <title id="footTitle">Open to open-source collaboration</title>
-  <desc id="footDesc">A dark status panel reading OPEN TO OPEN-SOURCE COLLABORATION, above the links dhananjaypvt.me and github.com/dhananjay-123.</desc>
+  <desc id="footDesc">A dark terminal panel. A status command is run, and it reports OPEN TO OPEN-SOURCE COLLABORATION, above the links dhananjaypvt.me and github.com/dhananjay-123.</desc>
+
+  <style>
+    /* Same 12s session shape as the rest of the profile: type, report, hold,
+       clear, run again. Hidden states live only in the keyframes. */
+    .f1 { animation: f1 12s steps(31) infinite }
+    .f2 { animation: f2 12s steps(35) infinite }
+    @keyframes f1 { 0%, 3.3% { clip-path: inset(0 100% 0 0) } 11.7%, 90% { clip-path: inset(0 0 0 0) } 93.3%, 100% { clip-path: inset(0 100% 0 0) } }
+    @keyframes f2 { 0%, 13.3% { clip-path: inset(0 100% 0 0) } 17.5%, 90% { clip-path: inset(0 0 0 0) } 93.3%, 100% { clip-path: inset(0 100% 0 0) } }
+
+    .gate { animation: gate 12s steps(1) infinite }
+    @keyframes gate { 0%, 18.5% { opacity: 0 } 20%, 90% { opacity: 1 } 93.3%, 100% { opacity: 0 } }
+    .blink { animation: blink 1.06s steps(1) infinite }
+    @keyframes blink { 0%, 50% { opacity: 1 } 50.01%, 100% { opacity: 0 } }
+    .mark { animation: mark 2.8s ease-in-out infinite }
+    @keyframes mark { 0%, 100% { opacity: 1 } 50% { opacity: 0.3 } }
+
+    .fpulse { animation: fpulse 9s linear infinite }
+    @keyframes fpulse { from { transform: translateX(-130px) } to { transform: translateX(784px) } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .f1, .f2, .gate, .blink, .mark, .fpulse { animation: none }
+      .fpulse { opacity: 0 }
+    }
+  </style>
 
   <defs>
     <pattern id="fgrid" width="22" height="22" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#14171C"/>
+      <circle cx="1" cy="1" r="1" fill="#141827"/>
     </pattern>
+    <clipPath id="frule"><rect x="48" y="80" width="784" height="16"/></clipPath>
+    <linearGradient id="fpk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#A78BFA" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#A78BFA" stop-opacity="1"/>
+      <stop offset="0.75" stop-color="#DDD6FE" stop-opacity="1"/>
+      <stop offset="1" stop-color="#DDD6FE" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
-  <rect width="880" height="124" rx="10" fill="#0B0C0E"/>
+  <rect width="880" height="124" rx="10" fill="#0A0B11"/>
   <rect width="880" height="124" rx="10" fill="url(#fgrid)"/>
-  <rect x="0.5" y="0.5" width="879" height="123" rx="10" stroke="#1C1F26"/>
+  <rect x="0.5" y="0.5" width="879" height="123" rx="10" stroke="#1E2334"/>
 
-  <g stroke="#F0A63C" stroke-width="1.25" opacity="0.55">
+  <g stroke="#A78BFA" stroke-width="1.25" opacity="0.55">
     <path d="M18 34 L18 18 L34 18"/>
     <path d="M862 34 L862 18 L846 18"/>
     <path d="M18 90 L18 106 L34 106"/>
     <path d="M862 90 L862 106 L846 106"/>
   </g>
 
-  <circle cx="256" cy="47" r="12" fill="none" stroke="#F0A63C" stroke-width="1">
-    <animate attributeName="r" values="4;13" dur="2.8s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.55;0" dur="2.8s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="256" cy="47" r="4" fill="#F0A63C">
-    <animate attributeName="opacity" values="1;0.35;1" dur="2.8s" repeatCount="indefinite"/>
-  </circle>
-  <text x="274" y="52" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="2.4" fill="#E8E6E3">OPEN TO OPEN-SOURCE COLLABORATION</text>
+  <text class="f1" x="48" y="44" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="0.6" fill="#E6E8F2"><tspan fill="#A78BFA">$</tspan> curl -s dhananjaypvt.me/status</text>
 
-  <line x1="48" y1="76" x2="832" y2="76" stroke="#1C1F26"/>
-  <line x1="48" y1="76" x2="832" y2="76" stroke="#F0A63C" stroke-dasharray="56 728">
-    <animate attributeName="stroke-dashoffset" values="0;-784" dur="8s" repeatCount="indefinite"/>
-  </line>
+  <g class="f2">
+    <circle class="mark" cx="52" cy="66" r="4" fill="#A78BFA"/>
+    <text x="66" y="71" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="2.4" fill="#E6E8F2">OPEN TO OPEN-SOURCE COLLABORATION</text>
+  </g>
+  <g class="gate">
+    <rect class="blink" x="430" y="60" width="7" height="12" fill="#DDD6FE"/>
+  </g>
 
-  <text x="440" y="101" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="1.2" fill="#767D89">dhananjaypvt.me · github.com/dhananjay-123</text>
+  <line x1="48" y1="88" x2="832" y2="88" stroke="#1E2334"/>
+  <g clip-path="url(#frule)">
+    <g class="fpulse">
+      <path d="M48 88 L92 88 L100 82 L108 94 L116 84 L124 91.5 L132 86.5 L140 89.5 L148 88 L178 88"
+            stroke="url(#fpk)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <text x="440" y="110" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="1.2" fill="#7C86A8">dhananjaypvt.me · github.com/dhananjay-123</text>
 </svg>
