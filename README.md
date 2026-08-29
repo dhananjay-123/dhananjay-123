@@ -7,7 +7,7 @@
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/dhananjay-123" title="GitHub — dhananjay-123"><img alt="GitHub: dhananjay-123" height="40" src="https://cdn.simpleicons.org/github/A78BFA"></a>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://linkedin.com/in/dhananjay-agrawal-b5843b211" title="LinkedIn — dhananjay-agrawal"><img alt="LinkedIn: dhananjay-agrawal" height="40" src="assets/icon-linkedin.svg"></a>
+  <a href="https://linkedin.com/in/dhananjay-agrawal-b5843b211" title="LinkedIn — dhananjay-agrawal"><img alt="LinkedIn: dhananjay-agrawal" height="40" src="assets/icon-linkedin.svg?v=2"></a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="mailto:dhananjayworkmain@gmail.com" title="Email — dhananjayworkmain@gmail.com"><img alt="Email: dhananjayworkmain@gmail.com" height="40" src="https://cdn.simpleicons.org/gmail/A78BFA"></a>
 </div>
