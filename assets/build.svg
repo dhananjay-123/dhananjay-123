@@ -1,15 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="392" viewBox="0 0 880 392" fill="none" role="img" aria-labelledby="buildTitle buildDesc">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" fill="none" role="img" aria-labelledby="buildTitle buildDesc">
   <title id="buildTitle">How I build</title>
-  <desc id="buildDesc">Three isometric slabs stacked in depth, each wired across to what it covers. INTERFACE — frontend: design systems and tokens, contrast checked against WCAG AA, keyboard focus handled in modals and drawers, reduced-motion respected, loading, empty and error states on every screen. SYSTEMS — backend and infrastructure: live updates over Socket.IO, offline-first with service workers, multi-tenant with per-role permissions, attendance sync from 3 biometric devices that is safe to retry, marking rules configured in the database rather than hard-coded. PRACTICE — day to day: conventional commits, CI runs typecheck, lint, tests and build, 225 or more DSA problems solved on LeetCode.</desc>
+  <desc id="buildDesc">Three isometric slabs turning slowly in a stack, each wired across to what it covers. INTERFACE — frontend: design systems and tokens, contrast checked against WCAG AA, keyboard focus handled in modals and drawers, reduced-motion respected, loading, empty and error states on every screen. SYSTEMS — backend and infrastructure: live updates over Socket.IO, offline-first with service workers, multi-tenant with per-role permissions, attendance sync from 3 biometric devices that is safe to retry, marking rules configured in the database rather than hard-coded. PRACTICE — day to day: conventional commits, CI runs typecheck, lint, tests and build, 225 or more DSA problems solved on LeetCode.</desc>
 
   <style>
-    /* The three slabs drift on one 7s clock, offset by a third each, so the
-       stack breathes without ever reading as a queue of separate loops. */
-    .s1, .s2, .s3 { animation: float 7s ease-in-out infinite }
-    .s2 { animation-delay: -2.33s }
-    .s3 { animation-delay: -4.66s }
-    @keyframes float { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-5px) } }
-    @media (prefers-reduced-motion: reduce) { .s1, .s2, .s3 { animation: none } }
+    /* SMIL drives the turn, and a media query can't switch SMIL off the way it
+       can a CSS animation. So the still pose is a second copy and the query
+       decides which of the two is drawn. */
+    .still { display: none }
+    @media (prefers-reduced-motion: reduce) {
+      .motion { display: none }
+      .still { display: inline }
+    }
   </style>
 
   <defs>
@@ -27,15 +28,15 @@
     </linearGradient>
   </defs>
 
-  <rect width="880" height="392" rx="10" fill="#0A0B11"/>
-  <rect width="880" height="392" rx="10" fill="url(#bgrid)"/>
-  <rect x="0.5" y="0.5" width="879" height="391" rx="10" stroke="#1E2334"/>
+  <rect width="880" height="440" rx="10" fill="#0A0B11"/>
+  <rect width="880" height="440" rx="10" fill="url(#bgrid)"/>
+  <rect x="0.5" y="0.5" width="879" height="439" rx="10" stroke="#1E2334"/>
 
   <g stroke="#A78BFA" stroke-width="1.25" opacity="0.55">
     <path d="M18 34 L18 18 L34 18"/>
     <path d="M862 34 L862 18 L846 18"/>
-    <path d="M18 358 L18 374 L34 374"/>
-    <path d="M862 358 L862 374 L846 374"/>
+    <path d="M18 406 L18 422 L34 422"/>
+    <path d="M862 406 L862 422 L846 422"/>
   </g>
 
   <rect x="40" y="37" width="7" height="7" fill="#A78BFA"/>
@@ -44,69 +45,152 @@
   <line x1="40" y1="62" x2="840" y2="62" stroke="#1E2334"/>
 
   <!-- spine: drawn first so the slabs occlude it and only the gaps read -->
-  <line x1="170" y1="150" x2="170" y2="290" stroke="#2A3150" stroke-dasharray="3 5"/>
+  <line x1="170" y1="178" x2="170" y2="269" stroke="#2A3150" stroke-dasharray="3 5">
+    <animate attributeName="stroke-dashoffset" values="0;-8" dur="1.1s" repeatCount="indefinite"/>
+  </line>
 
-  <!-- connectors -->
   <g stroke="#2A3150" stroke-dasharray="2 4">
-    <line x1="272" y1="119" x2="350" y2="119"/>
+    <line x1="272" y1="120" x2="350" y2="120"/>
     <line x1="272" y1="221" x2="350" y2="221"/>
     <line x1="272" y1="315" x2="350" y2="315"/>
   </g>
-  <circle cx="356" cy="119" r="2.5" fill="#A78BFA"/>
+  <circle cy="120" r="2" fill="#A78BFA" opacity="0">
+    <animate attributeName="cx" values="274;348" dur="2.6s" begin="0.00s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2.6s" begin="0.00s" repeatCount="indefinite"/>
+  </circle>
+  <circle cy="221" r="2" fill="#60A5FA" opacity="0">
+    <animate attributeName="cx" values="274;348" dur="2.6s" begin="0.55s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2.6s" begin="0.55s" repeatCount="indefinite"/>
+  </circle>
+  <circle cy="315" r="2" fill="#7C86A8" opacity="0">
+    <animate attributeName="cx" values="274;348" dur="2.6s" begin="1.10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2.6s" begin="1.10s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="356" cy="120" r="2.5" fill="#A78BFA"/>
   <circle cx="356" cy="221" r="2.5" fill="#60A5FA"/>
   <circle cx="356" cy="315" r="2.5" fill="#7C86A8"/>
 
-  <!-- slab 1 — interface -->
-  <g class="s1">
-    <path d="M78 119 L170 165 L170 177 L78 131 Z" fill="#6E52BC"/>
-    <path d="M262 119 L170 165 L170 177 L262 131 Z" fill="#5B41A2"/>
-    <path d="M170 73 L262 119 L170 165 L78 119 Z" fill="url(#t1)"/>
-    <path d="M170 78 L251 119 L170 160 L89 119 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.18"/>
-    <g transform="matrix(0.8944 0.4472 -0.8944 0.4472 170 119)">
-      <text x="-44" y="4.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.2" fill="#140A26">INTERFACE</text>
+  <g class="motion">
+    <g>
+      <animateTransform attributeName="transform" type="translate" dur="7s" repeatCount="indefinite" values="0 0;0 -0.19;0 -0.73;0 -1.54;0 -2.5;0 -3.46;0 -4.27;0 -4.81;0 -5;0 -4.81;0 -4.27;0 -3.46;0 -2.5;0 -1.54;0 -0.73;0 -0.19;0 0"/>
+      <path d="M261.1 113.6 L182.8 165.55 L182.8 177.55 L261.1 125.6 Z" fill="#6047a3">
+        <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M261.1 113.6 L182.8 165.55 L182.8 177.55 L261.1 125.6 Z;M261.71 116.34 L177.31 165.85 L177.31 177.85 L261.71 128.34 Z;M261.98 119.04 L171.93 165.99 L171.93 177.99 L261.98 131.04 Z;M261.94 121.6 L166.81 165.97 L166.81 177.97 L261.94 133.6 Z;M261.66 123.95 L162.09 165.83 L162.09 177.83 L261.66 135.95 Z;M261.2 126.05 L157.9 165.6 L157.9 177.6 L261.2 138.05 Z;M260.66 127.83 L154.34 165.33 L154.34 177.33 L260.66 139.83 Z;M260.12 129.25 L151.5 165.06 L151.5 177.06 L260.12 141.25 Z;M259.67 130.29 L149.43 164.83 L149.43 176.83 L259.67 142.29 Z;M259.37 130.92 L148.17 164.68 L148.17 176.68 L259.37 142.92 Z;M259.27 131.13 L147.74 164.63 L147.74 176.63 L259.27 143.13 Z;M259.37 130.92 L148.17 164.68 L148.17 176.68 L259.37 142.92 Z;M259.67 130.29 L149.43 164.83 L149.43 176.83 L259.67 142.29 Z;M260.12 129.25 L151.5 165.06 L151.5 177.06 L260.12 141.25 Z;M260.66 127.83 L154.34 165.33 L154.34 177.33 L260.66 139.83 Z;M261.2 126.05 L157.9 165.6 L157.9 177.6 L261.2 138.05 Z;M261.66 123.95 L162.09 165.83 L162.09 177.83 L261.66 135.95 Z;M261.94 121.6 L166.81 165.97 L166.81 177.97 L261.94 133.6 Z;M261.98 119.04 L171.93 165.99 L171.93 177.99 L261.98 131.04 Z;M261.71 116.34 L177.31 165.85 L177.31 177.85 L261.71 128.34 Z;M261.1 113.6 L182.8 165.55 L182.8 177.55 L261.1 125.6 Z;M260.17 110.88 L188.25 165.09 L188.25 177.09 L260.17 122.88 Z;M258.95 108.25 L193.5 164.47 L193.5 176.47 L258.95 120.25 Z;M257.5 105.79 L198.41 163.75 L198.41 175.75 L257.5 117.79 Z;M255.93 103.57 L202.87 162.96 L202.87 174.96 L255.93 115.57 Z;M254.33 101.62 L206.77 162.17 L206.77 174.17 L254.33 113.62 Z;M252.83 99.98 L210.04 161.41 L210.04 173.41 L252.83 111.98 Z;M251.53 98.69 L212.63 160.76 L212.63 172.76 L251.53 110.69 Z;M250.52 97.75 L214.49 160.26 L214.49 172.26 L250.52 109.75 Z;M249.89 97.19 L215.62 159.94 L215.62 171.94 L249.89 109.19 Z;M249.67 97 L216 159.84 L216 171.84 L249.67 109 Z;M249.89 97.19 L215.62 159.94 L215.62 171.94 L249.89 109.19 Z;M250.52 97.75 L214.49 160.26 L214.49 172.26 L250.52 109.75 Z;M251.53 98.69 L212.63 160.76 L212.63 172.76 L251.53 110.69 Z;M252.83 99.98 L210.04 161.41 L210.04 173.41 L252.83 111.98 Z;M254.33 101.62 L206.77 162.17 L206.77 174.17 L254.33 113.62 Z;M255.93 103.57 L202.87 162.96 L202.87 174.96 L255.93 115.57 Z;M257.5 105.79 L198.41 163.75 L198.41 175.75 L257.5 117.79 Z;M258.95 108.25 L193.5 164.47 L193.5 176.47 L258.95 120.25 Z;M260.17 110.88 L188.25 165.09 L188.25 177.09 L260.17 122.88 Z;M261.1 113.6 L182.8 165.55 L182.8 177.55 L261.1 125.6 Z"/>
+        <animate attributeName="fill" dur="10s" repeatCount="indefinite" values="#6047a3;#6148a5;#6249a7;#644aa8;#654baa;#664cab;#664cad;#674dae;#684dae;#684eaf;#684eaf;#684eaf;#684dae;#674dae;#664cad;#664cab;#654baa;#644aa8;#6249a7;#6148a5;#6047a3;#5f46a2;#5e45a0;#5d449e;#5c439d;#5b429c;#5a429b;#5a419a;#59419a;#594199;#594199;#594199;#59419a;#5a419a;#5a429b;#5b429c;#5c439d;#5d449e;#5e45a0;#5f46a2;#6047a3"/>
+      </path>
+      <path d="M182.8 165.55 L78.9 126.4 L78.9 138.4 L182.8 177.55 Z" fill="#7c5fcc">
+        <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M182.8 165.55 L78.9 126.4 L78.9 138.4 L182.8 177.55 Z;M177.31 165.85 L78.29 123.66 L78.29 135.66 L177.31 177.85 Z;M171.93 165.99 L78.02 120.96 L78.02 132.96 L171.93 177.99 Z;M166.81 165.97 L78.06 118.4 L78.06 130.4 L166.81 177.97 Z;M162.09 165.83 L78.34 116.05 L78.34 128.05 L162.09 177.83 Z;M157.9 165.6 L78.8 113.95 L78.8 125.95 L157.9 177.6 Z;M154.34 165.33 L79.34 112.17 L79.34 124.17 L154.34 177.33 Z;M151.5 165.06 L79.88 110.75 L79.88 122.75 L151.5 177.06 Z;M149.43 164.83 L80.33 109.71 L80.33 121.71 L149.43 176.83 Z;M148.17 164.68 L80.63 109.08 L80.63 121.08 L148.17 176.68 Z;M147.74 164.63 L80.73 108.87 L80.73 120.87 L147.74 176.63 Z;M148.17 164.68 L80.63 109.08 L80.63 121.08 L148.17 176.68 Z;M149.43 164.83 L80.33 109.71 L80.33 121.71 L149.43 176.83 Z;M151.5 165.06 L79.88 110.75 L79.88 122.75 L151.5 177.06 Z;M154.34 165.33 L79.34 112.17 L79.34 124.17 L154.34 177.33 Z;M157.9 165.6 L78.8 113.95 L78.8 125.95 L157.9 177.6 Z;M162.09 165.83 L78.34 116.05 L78.34 128.05 L162.09 177.83 Z;M166.81 165.97 L78.06 118.4 L78.06 130.4 L166.81 177.97 Z;M171.93 165.99 L78.02 120.96 L78.02 132.96 L171.93 177.99 Z;M177.31 165.85 L78.29 123.66 L78.29 135.66 L177.31 177.85 Z;M182.8 165.55 L78.9 126.4 L78.9 138.4 L182.8 177.55 Z;M188.25 165.09 L79.83 129.12 L79.83 141.12 L188.25 177.09 Z;M193.5 164.47 L81.05 131.75 L81.05 143.75 L193.5 176.47 Z;M198.41 163.75 L82.5 134.21 L82.5 146.21 L198.41 175.75 Z;M202.87 162.96 L84.07 136.43 L84.07 148.43 L202.87 174.96 Z;M206.77 162.17 L85.67 138.38 L85.67 150.38 L206.77 174.17 Z;M210.04 161.41 L87.17 140.02 L87.17 152.02 L210.04 173.41 Z;M212.63 160.76 L88.47 141.31 L88.47 153.31 L212.63 172.76 Z;M214.49 160.26 L89.48 142.25 L89.48 154.25 L214.49 172.26 Z;M215.62 159.94 L90.11 142.81 L90.11 154.81 L215.62 171.94 Z;M216 159.84 L90.33 143 L90.33 155 L216 171.84 Z;M215.62 159.94 L90.11 142.81 L90.11 154.81 L215.62 171.94 Z;M214.49 160.26 L89.48 142.25 L89.48 154.25 L214.49 172.26 Z;M212.63 160.76 L88.47 141.31 L88.47 153.31 L212.63 172.76 Z;M210.04 161.41 L87.17 140.02 L87.17 152.02 L210.04 173.41 Z;M206.77 162.17 L85.67 138.38 L85.67 150.38 L206.77 174.17 Z;M202.87 162.96 L84.07 136.43 L84.07 148.43 L202.87 174.96 Z;M198.41 163.75 L82.5 134.21 L82.5 146.21 L198.41 175.75 Z;M193.5 164.47 L81.05 131.75 L81.05 143.75 L193.5 176.47 Z;M188.25 165.09 L79.83 129.12 L79.83 141.12 L188.25 177.09 Z;M182.8 165.55 L78.9 126.4 L78.9 138.4 L182.8 177.55 Z"/>
+        <animate attributeName="fill" dur="10s" repeatCount="indefinite" values="#7c5fcc;#7d60cd;#7d60ce;#7e60ce;#7e61ce;#7e61cf;#7e61cf;#7e61cf;#7e61cf;#7e61cf;#7e61cf;#7e61cf;#7e61cf;#7e61cf;#7e61cf;#7e61cf;#7e61ce;#7e60ce;#7d60ce;#7d60cd;#7c5fcc;#7c5fcc;#7b5ecb;#7b5eca;#7a5dc9;#795dc8;#795cc7;#785cc7;#785cc6;#785bc6;#785bc6;#785bc6;#785cc6;#785cc7;#795cc7;#795dc8;#7a5dc9;#7b5eca;#7b5ecb;#7c5fcc;#7c5fcc"/>
+      </path>
+      <g transform="translate(170 120)">
+        <g transform="matrix(0.894427 0.447214 -0.894427 0.447214 0 0)">
+          <g transform="rotate(-8)">
+            <animateTransform attributeName="transform" type="rotate" dur="10s" repeatCount="indefinite" values="-8;-4.56;-1.2;1.99;4.93;7.56;9.8;11.6;12.92;13.73;14;13.73;12.92;11.6;9.8;7.56;4.93;1.99;-1.2;-4.56;-8;-11.44;-14.8;-17.99;-20.93;-23.56;-25.8;-27.6;-28.92;-29.73;-30;-29.73;-28.92;-27.6;-25.8;-23.56;-20.93;-17.99;-14.8;-11.44;-8"/>
+            <path d="M-51.43 -51.43 L51.43 -51.43 L51.43 51.43 L-51.43 51.43 Z" fill="url(#t1)"/>
+            <path d="M-46.43 -46.43 L46.43 -46.43 L46.43 46.43 L-46.43 46.43 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.18"/>
+            <text x="-43.92" y="4.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.2" fill="#140A26">INTERFACE</text>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" dur="7s" repeatCount="indefinite" values="0 -0.48;0 -1.19;0 -2.11;0 -3.08;0 -3.97;0 -4.63;0 -4.97;0 -4.93;0 -4.52;0 -3.81;0 -2.89;0 -1.92;0 -1.03;0 -0.37;0 -0.03;0 -0.07;0 -0.48"/>
+      <path d="M261.66 224.95 L162.09 266.83 L162.09 278.83 L261.66 236.95 Z" fill="#3b6fa6">
+        <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M261.66 224.95 L162.09 266.83 L162.09 278.83 L261.66 236.95 Z;M261.2 227.05 L157.9 266.6 L157.9 278.6 L261.2 239.05 Z;M260.66 228.83 L154.34 266.33 L154.34 278.33 L260.66 240.83 Z;M260.12 230.25 L151.5 266.06 L151.5 278.06 L260.12 242.25 Z;M259.67 231.29 L149.43 265.83 L149.43 277.83 L259.67 243.29 Z;M259.37 231.92 L148.17 265.68 L148.17 277.68 L259.37 243.92 Z;M259.27 232.13 L147.74 265.63 L147.74 277.63 L259.27 244.13 Z;M259.37 231.92 L148.17 265.68 L148.17 277.68 L259.37 243.92 Z;M259.67 231.29 L149.43 265.83 L149.43 277.83 L259.67 243.29 Z;M260.12 230.25 L151.5 266.06 L151.5 278.06 L260.12 242.25 Z;M260.66 228.83 L154.34 266.33 L154.34 278.33 L260.66 240.83 Z;M261.2 227.05 L157.9 266.6 L157.9 278.6 L261.2 239.05 Z;M261.66 224.95 L162.09 266.83 L162.09 278.83 L261.66 236.95 Z;M261.94 222.6 L166.81 266.97 L166.81 278.97 L261.94 234.6 Z;M261.98 220.04 L171.93 266.99 L171.93 278.99 L261.98 232.04 Z;M261.71 217.34 L177.31 266.85 L177.31 278.85 L261.71 229.34 Z;M261.1 214.6 L182.8 266.55 L182.8 278.55 L261.1 226.6 Z;M260.17 211.88 L188.25 266.09 L188.25 278.09 L260.17 223.88 Z;M258.95 209.25 L193.5 265.47 L193.5 277.47 L258.95 221.25 Z;M257.5 206.79 L198.41 264.75 L198.41 276.75 L257.5 218.79 Z;M255.93 204.57 L202.87 263.96 L202.87 275.96 L255.93 216.57 Z;M254.33 202.62 L206.77 263.17 L206.77 275.17 L254.33 214.62 Z;M252.83 200.98 L210.04 262.41 L210.04 274.41 L252.83 212.98 Z;M251.53 199.69 L212.63 261.76 L212.63 273.76 L251.53 211.69 Z;M250.52 198.75 L214.49 261.26 L214.49 273.26 L250.52 210.75 Z;M249.89 198.19 L215.62 260.94 L215.62 272.94 L249.89 210.19 Z;M249.67 198 L216 260.84 L216 272.84 L249.67 210 Z;M249.89 198.19 L215.62 260.94 L215.62 272.94 L249.89 210.19 Z;M250.52 198.75 L214.49 261.26 L214.49 273.26 L250.52 210.75 Z;M251.53 199.69 L212.63 261.76 L212.63 273.76 L251.53 211.69 Z;M252.83 200.98 L210.04 262.41 L210.04 274.41 L252.83 212.98 Z;M254.33 202.62 L206.77 263.17 L206.77 275.17 L254.33 214.62 Z;M255.93 204.57 L202.87 263.96 L202.87 275.96 L255.93 216.57 Z;M257.5 206.79 L198.41 264.75 L198.41 276.75 L257.5 218.79 Z;M258.95 209.25 L193.5 265.47 L193.5 277.47 L258.95 221.25 Z;M260.17 211.88 L188.25 266.09 L188.25 278.09 L260.17 223.88 Z;M261.1 214.6 L182.8 266.55 L182.8 278.55 L261.1 226.6 Z;M261.71 217.34 L177.31 266.85 L177.31 278.85 L261.71 229.34 Z;M261.98 220.04 L171.93 266.99 L171.93 278.99 L261.98 232.04 Z;M261.94 222.6 L166.81 266.97 L166.81 278.97 L261.94 234.6 Z;M261.66 224.95 L162.09 266.83 L162.09 278.83 L261.66 236.95 Z"/>
+        <animate attributeName="fill" dur="10s" repeatCount="indefinite" values="#3b6fa6;#3b70a8;#3c71a9;#3c72aa;#3d72ab;#3d73ab;#3d73ac;#3d73ab;#3d72ab;#3c72aa;#3c71a9;#3b70a8;#3b6fa6;#3a6ea5;#396ca3;#386ba1;#376a9f;#36689d;#36679b;#35669a;#346598;#346497;#336396;#336295;#336295;#326295;#326294;#326295;#336295;#336295;#336396;#346497;#346598;#35669a;#36679b;#36689d;#376a9f;#386ba1;#396ca3;#3a6ea5;#3b6fa6"/>
+      </path>
+      <path d="M162.09 266.83 L78.34 217.05 L78.34 229.05 L162.09 278.83 Z" fill="#4c8ccd">
+        <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M162.09 266.83 L78.34 217.05 L78.34 229.05 L162.09 278.83 Z;M157.9 266.6 L78.8 214.95 L78.8 226.95 L157.9 278.6 Z;M154.34 266.33 L79.34 213.17 L79.34 225.17 L154.34 278.33 Z;M151.5 266.06 L79.88 211.75 L79.88 223.75 L151.5 278.06 Z;M149.43 265.83 L80.33 210.71 L80.33 222.71 L149.43 277.83 Z;M148.17 265.68 L80.63 210.08 L80.63 222.08 L148.17 277.68 Z;M147.74 265.63 L80.73 209.87 L80.73 221.87 L147.74 277.63 Z;M148.17 265.68 L80.63 210.08 L80.63 222.08 L148.17 277.68 Z;M149.43 265.83 L80.33 210.71 L80.33 222.71 L149.43 277.83 Z;M151.5 266.06 L79.88 211.75 L79.88 223.75 L151.5 278.06 Z;M154.34 266.33 L79.34 213.17 L79.34 225.17 L154.34 278.33 Z;M157.9 266.6 L78.8 214.95 L78.8 226.95 L157.9 278.6 Z;M162.09 266.83 L78.34 217.05 L78.34 229.05 L162.09 278.83 Z;M166.81 266.97 L78.06 219.4 L78.06 231.4 L166.81 278.97 Z;M171.93 266.99 L78.02 221.96 L78.02 233.96 L171.93 278.99 Z;M177.31 266.85 L78.29 224.66 L78.29 236.66 L177.31 278.85 Z;M182.8 266.55 L78.9 227.4 L78.9 239.4 L182.8 278.55 Z;M188.25 266.09 L79.83 230.12 L79.83 242.12 L188.25 278.09 Z;M193.5 265.47 L81.05 232.75 L81.05 244.75 L193.5 277.47 Z;M198.41 264.75 L82.5 235.21 L82.5 247.21 L198.41 276.75 Z;M202.87 263.96 L84.07 237.43 L84.07 249.43 L202.87 275.96 Z;M206.77 263.17 L85.67 239.38 L85.67 251.38 L206.77 275.17 Z;M210.04 262.41 L87.17 241.02 L87.17 253.02 L210.04 274.41 Z;M212.63 261.76 L88.47 242.31 L88.47 254.31 L212.63 273.76 Z;M214.49 261.26 L89.48 243.25 L89.48 255.25 L214.49 273.26 Z;M215.62 260.94 L90.11 243.81 L90.11 255.81 L215.62 272.94 Z;M216 260.84 L90.33 244 L90.33 256 L216 272.84 Z;M215.62 260.94 L90.11 243.81 L90.11 255.81 L215.62 272.94 Z;M214.49 261.26 L89.48 243.25 L89.48 255.25 L214.49 273.26 Z;M212.63 261.76 L88.47 242.31 L88.47 254.31 L212.63 273.76 Z;M210.04 262.41 L87.17 241.02 L87.17 253.02 L210.04 274.41 Z;M206.77 263.17 L85.67 239.38 L85.67 251.38 L206.77 275.17 Z;M202.87 263.96 L84.07 237.43 L84.07 249.43 L202.87 275.96 Z;M198.41 264.75 L82.5 235.21 L82.5 247.21 L198.41 276.75 Z;M193.5 265.47 L81.05 232.75 L81.05 244.75 L193.5 277.47 Z;M188.25 266.09 L79.83 230.12 L79.83 242.12 L188.25 278.09 Z;M182.8 266.55 L78.9 227.4 L78.9 239.4 L182.8 278.55 Z;M177.31 266.85 L78.29 224.66 L78.29 236.66 L177.31 278.85 Z;M171.93 266.99 L78.02 221.96 L78.02 233.96 L171.93 278.99 Z;M166.81 266.97 L78.06 219.4 L78.06 231.4 L166.81 278.97 Z;M162.09 266.83 L78.34 217.05 L78.34 229.05 L162.09 278.83 Z"/>
+        <animate attributeName="fill" dur="10s" repeatCount="indefinite" values="#4c8ccd;#4c8ccd;#4d8cce;#4d8cce;#4d8cce;#4d8cce;#4d8cce;#4d8cce;#4d8cce;#4d8cce;#4d8cce;#4c8ccd;#4c8ccd;#4c8ccd;#4c8bcc;#4c8bcc;#4b8acb;#4b8aca;#4b89c9;#4a88c8;#4a88c7;#4987c6;#4986c6;#4986c5;#4885c4;#4885c4;#4885c4;#4885c4;#4885c4;#4986c5;#4986c6;#4987c6;#4a88c7;#4a88c8;#4b89c9;#4b8aca;#4b8acb;#4c8bcc;#4c8bcc;#4c8ccd;#4c8ccd"/>
+      </path>
+      <g transform="translate(170 221)">
+        <g transform="matrix(0.894427 0.447214 -0.894427 0.447214 0 0)">
+          <g transform="rotate(4.93)">
+            <animateTransform attributeName="transform" type="rotate" dur="10s" repeatCount="indefinite" values="4.93;7.56;9.8;11.6;12.92;13.73;14;13.73;12.92;11.6;9.8;7.56;4.93;1.99;-1.2;-4.56;-8;-11.44;-14.8;-17.99;-20.93;-23.56;-25.8;-27.6;-28.92;-29.73;-30;-29.73;-28.92;-27.6;-25.8;-23.56;-20.93;-17.99;-14.8;-11.44;-8;-4.56;-1.2;1.99;4.93"/>
+            <path d="M-51.43 -51.43 L51.43 -51.43 L51.43 51.43 L-51.43 51.43 Z" fill="url(#t2)"/>
+            <path d="M-46.43 -46.43 L46.43 -46.43 L46.43 46.43 L-46.43 46.43 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.18"/>
+            <text x="-34.16" y="4.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.2" fill="#06111F">SYSTEMS</text>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" dur="7s" repeatCount="indefinite" values="0 -1.73;0 -2.7;0 -3.63;0 -4.4;0 -4.88;0 -4.99;0 -4.73;0 -4.12;0 -3.27;0 -2.3;0 -1.37;0 -0.6;0 -0.12;0 -0.01;0 -0.27;0 -0.88;0 -1.73"/>
+      <path d="M259.67 325.29 L149.43 359.83 L149.43 371.83 L259.67 337.29 Z" fill="#636b87">
+        <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M259.67 325.29 L149.43 359.83 L149.43 371.83 L259.67 337.29 Z;M259.37 325.92 L148.17 359.68 L148.17 371.68 L259.37 337.92 Z;M259.27 326.13 L147.74 359.63 L147.74 371.63 L259.27 338.13 Z;M259.37 325.92 L148.17 359.68 L148.17 371.68 L259.37 337.92 Z;M259.67 325.29 L149.43 359.83 L149.43 371.83 L259.67 337.29 Z;M260.12 324.25 L151.5 360.06 L151.5 372.06 L260.12 336.25 Z;M260.66 322.83 L154.34 360.33 L154.34 372.33 L260.66 334.83 Z;M261.2 321.05 L157.9 360.6 L157.9 372.6 L261.2 333.05 Z;M261.66 318.95 L162.09 360.83 L162.09 372.83 L261.66 330.95 Z;M261.94 316.6 L166.81 360.97 L166.81 372.97 L261.94 328.6 Z;M261.98 314.04 L171.93 360.99 L171.93 372.99 L261.98 326.04 Z;M261.71 311.34 L177.31 360.85 L177.31 372.85 L261.71 323.34 Z;M261.1 308.6 L182.8 360.55 L182.8 372.55 L261.1 320.6 Z;M260.17 305.88 L188.25 360.09 L188.25 372.09 L260.17 317.88 Z;M258.95 303.25 L193.5 359.47 L193.5 371.47 L258.95 315.25 Z;M257.5 300.79 L198.41 358.75 L198.41 370.75 L257.5 312.79 Z;M255.93 298.57 L202.87 357.96 L202.87 369.96 L255.93 310.57 Z;M254.33 296.62 L206.77 357.17 L206.77 369.17 L254.33 308.62 Z;M252.83 294.98 L210.04 356.41 L210.04 368.41 L252.83 306.98 Z;M251.53 293.69 L212.63 355.76 L212.63 367.76 L251.53 305.69 Z;M250.52 292.75 L214.49 355.26 L214.49 367.26 L250.52 304.75 Z;M249.89 292.19 L215.62 354.94 L215.62 366.94 L249.89 304.19 Z;M249.67 292 L216 354.84 L216 366.84 L249.67 304 Z;M249.89 292.19 L215.62 354.94 L215.62 366.94 L249.89 304.19 Z;M250.52 292.75 L214.49 355.26 L214.49 367.26 L250.52 304.75 Z;M251.53 293.69 L212.63 355.76 L212.63 367.76 L251.53 305.69 Z;M252.83 294.98 L210.04 356.41 L210.04 368.41 L252.83 306.98 Z;M254.33 296.62 L206.77 357.17 L206.77 369.17 L254.33 308.62 Z;M255.93 298.57 L202.87 357.96 L202.87 369.96 L255.93 310.57 Z;M257.5 300.79 L198.41 358.75 L198.41 370.75 L257.5 312.79 Z;M258.95 303.25 L193.5 359.47 L193.5 371.47 L258.95 315.25 Z;M260.17 305.88 L188.25 360.09 L188.25 372.09 L260.17 317.88 Z;M261.1 308.6 L182.8 360.55 L182.8 372.55 L261.1 320.6 Z;M261.71 311.34 L177.31 360.85 L177.31 372.85 L261.71 323.34 Z;M261.98 314.04 L171.93 360.99 L171.93 372.99 L261.98 326.04 Z;M261.94 316.6 L166.81 360.97 L166.81 372.97 L261.94 328.6 Z;M261.66 318.95 L162.09 360.83 L162.09 372.83 L261.66 330.95 Z;M261.2 321.05 L157.9 360.6 L157.9 372.6 L261.2 333.05 Z;M260.66 322.83 L154.34 360.33 L154.34 372.33 L260.66 334.83 Z;M260.12 324.25 L151.5 360.06 L151.5 372.06 L260.12 336.25 Z;M259.67 325.29 L149.43 359.83 L149.43 371.83 L259.67 337.29 Z"/>
+        <animate attributeName="fill" dur="10s" repeatCount="indefinite" values="#636b87;#636c87;#636c87;#636c87;#636b87;#626b86;#626a85;#616984;#606883;#5f6782;#5d6580;#5c647f;#5b637d;#59617c;#58607b;#575f7a;#565e78;#555d78;#555c77;#545c76;#545b76;#535b75;#535b75;#535b75;#545b76;#545c76;#555c77;#555d78;#565e78;#575f7a;#58607b;#59617c;#5b637d;#5c647f;#5d6580;#5f6782;#606883;#616984;#626a85;#626b86;#636b87"/>
+      </path>
+      <path d="M149.43 359.83 L80.33 304.71 L80.33 316.71 L149.43 371.83 Z" fill="#7b85a1">
+        <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M149.43 359.83 L80.33 304.71 L80.33 316.71 L149.43 371.83 Z;M148.17 359.68 L80.63 304.08 L80.63 316.08 L148.17 371.68 Z;M147.74 359.63 L80.73 303.87 L80.73 315.87 L147.74 371.63 Z;M148.17 359.68 L80.63 304.08 L80.63 316.08 L148.17 371.68 Z;M149.43 359.83 L80.33 304.71 L80.33 316.71 L149.43 371.83 Z;M151.5 360.06 L79.88 305.75 L79.88 317.75 L151.5 372.06 Z;M154.34 360.33 L79.34 307.17 L79.34 319.17 L154.34 372.33 Z;M157.9 360.6 L78.8 308.95 L78.8 320.95 L157.9 372.6 Z;M162.09 360.83 L78.34 311.05 L78.34 323.05 L162.09 372.83 Z;M166.81 360.97 L78.06 313.4 L78.06 325.4 L166.81 372.97 Z;M171.93 360.99 L78.02 315.96 L78.02 327.96 L171.93 372.99 Z;M177.31 360.85 L78.29 318.66 L78.29 330.66 L177.31 372.85 Z;M182.8 360.55 L78.9 321.4 L78.9 333.4 L182.8 372.55 Z;M188.25 360.09 L79.83 324.12 L79.83 336.12 L188.25 372.09 Z;M193.5 359.47 L81.05 326.75 L81.05 338.75 L193.5 371.47 Z;M198.41 358.75 L82.5 329.21 L82.5 341.21 L198.41 370.75 Z;M202.87 357.96 L84.07 331.43 L84.07 343.43 L202.87 369.96 Z;M206.77 357.17 L85.67 333.38 L85.67 345.38 L206.77 369.17 Z;M210.04 356.41 L87.17 335.02 L87.17 347.02 L210.04 368.41 Z;M212.63 355.76 L88.47 336.31 L88.47 348.31 L212.63 367.76 Z;M214.49 355.26 L89.48 337.25 L89.48 349.25 L214.49 367.26 Z;M215.62 354.94 L90.11 337.81 L90.11 349.81 L215.62 366.94 Z;M216 354.84 L90.33 338 L90.33 350 L216 366.84 Z;M215.62 354.94 L90.11 337.81 L90.11 349.81 L215.62 366.94 Z;M214.49 355.26 L89.48 337.25 L89.48 349.25 L214.49 367.26 Z;M212.63 355.76 L88.47 336.31 L88.47 348.31 L212.63 367.76 Z;M210.04 356.41 L87.17 335.02 L87.17 347.02 L210.04 368.41 Z;M206.77 357.17 L85.67 333.38 L85.67 345.38 L206.77 369.17 Z;M202.87 357.96 L84.07 331.43 L84.07 343.43 L202.87 369.96 Z;M198.41 358.75 L82.5 329.21 L82.5 341.21 L198.41 370.75 Z;M193.5 359.47 L81.05 326.75 L81.05 338.75 L193.5 371.47 Z;M188.25 360.09 L79.83 324.12 L79.83 336.12 L188.25 372.09 Z;M182.8 360.55 L78.9 321.4 L78.9 333.4 L182.8 372.55 Z;M177.31 360.85 L78.29 318.66 L78.29 330.66 L177.31 372.85 Z;M171.93 360.99 L78.02 315.96 L78.02 327.96 L171.93 372.99 Z;M166.81 360.97 L78.06 313.4 L78.06 325.4 L166.81 372.97 Z;M162.09 360.83 L78.34 311.05 L78.34 323.05 L162.09 372.83 Z;M157.9 360.6 L78.8 308.95 L78.8 320.95 L157.9 372.6 Z;M154.34 360.33 L79.34 307.17 L79.34 319.17 L154.34 372.33 Z;M151.5 360.06 L79.88 305.75 L79.88 317.75 L151.5 372.06 Z;M149.43 359.83 L80.33 304.71 L80.33 316.71 L149.43 371.83 Z"/>
+        <animate attributeName="fill" dur="10s" repeatCount="indefinite" values="#7b85a1;#7b85a1;#7b85a1;#7b85a1;#7b85a1;#7b85a1;#7b85a1;#7b84a1;#7b84a1;#7b84a0;#7a84a0;#7a83a0;#79839f;#79829e;#78819e;#77819d;#77809c;#767f9b;#767f9b;#757e9a;#757e9a;#747e9a;#747d9a;#747e9a;#757e9a;#757e9a;#767f9b;#767f9b;#77809c;#77819d;#78819e;#79829e;#79839f;#7a83a0;#7a84a0;#7b84a0;#7b84a1;#7b84a1;#7b85a1;#7b85a1;#7b85a1"/>
+      </path>
+      <g transform="translate(170 315)">
+        <g transform="matrix(0.894427 0.447214 -0.894427 0.447214 0 0)">
+          <g transform="rotate(12.92)">
+            <animateTransform attributeName="transform" type="rotate" dur="10s" repeatCount="indefinite" values="12.92;13.73;14;13.73;12.92;11.6;9.8;7.56;4.93;1.99;-1.2;-4.56;-8;-11.44;-14.8;-17.99;-20.93;-23.56;-25.8;-27.6;-28.92;-29.73;-30;-29.73;-28.92;-27.6;-25.8;-23.56;-20.93;-17.99;-14.8;-11.44;-8;-4.56;-1.2;1.99;4.93;7.56;9.8;11.6;12.92"/>
+            <path d="M-51.43 -51.43 L51.43 -51.43 L51.43 51.43 L-51.43 51.43 Z" fill="url(#t3)"/>
+            <path d="M-46.43 -46.43 L46.43 -46.43 L46.43 46.43 L-46.43 46.43 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.18"/>
+            <text x="-39.04" y="4.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.2" fill="#0D1017">PRACTICE</text>
+          </g>
+        </g>
+      </g>
     </g>
   </g>
-
-  <!-- slab 2 — systems -->
-  <g class="s2">
-    <path d="M78 221 L170 267 L170 279 L78 233 Z" fill="#386CB0"/>
-    <path d="M262 221 L170 267 L170 279 L262 233 Z" fill="#2D5A96"/>
-    <path d="M170 175 L262 221 L170 267 L78 221 Z" fill="url(#t2)"/>
-    <path d="M170 180 L251 221 L170 262 L89 221 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.18"/>
-    <g transform="matrix(0.8944 0.4472 -0.8944 0.4472 170 221)">
-      <text x="-38" y="4.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.2" fill="#06111F">SYSTEMS</text>
+  <g class="still">
+    <g>
+      <path d="M262 120 L170 166 L170 178 L262 132 Z" fill="#6349a7"/>
+      <path d="M170 166 L78 120 L78 132 L170 178 Z" fill="#7d60ce"/>
+      <g transform="translate(170 120)">
+        <g transform="matrix(0.894427 0.447214 -0.894427 0.447214 0 0)">
+          <g transform="rotate(0)">
+            <path d="M-51.43 -51.43 L51.43 -51.43 L51.43 51.43 L-51.43 51.43 Z" fill="url(#t1)"/>
+            <path d="M-46.43 -46.43 L46.43 -46.43 L46.43 46.43 L-46.43 46.43 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.18"/>
+            <text x="-43.92" y="4.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.2" fill="#140A26">INTERFACE</text>
+          </g>
+        </g>
+      </g>
     </g>
-  </g>
-
-  <!-- slab 3 — practice -->
-  <g class="s3">
-    <path d="M78 315 L170 361 L170 373 L78 327 Z" fill="#525A76"/>
-    <path d="M262 315 L170 361 L170 373 L262 327 Z" fill="#434A62"/>
-    <path d="M170 269 L262 315 L170 361 L78 315 Z" fill="url(#t3)"/>
-    <path d="M170 274 L251 315 L170 356 L89 315 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.18"/>
-    <g transform="matrix(0.8944 0.4472 -0.8944 0.4472 170 315)">
-      <text x="-38" y="4.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.2" fill="#0D1017">PRACTICE</text>
+    <g>
+      <path d="M262 221 L170 267 L170 279 L262 233 Z" fill="#396da3"/>
+      <path d="M170 267 L78 221 L78 233 L170 279 Z" fill="#4c8bcd"/>
+      <g transform="translate(170 221)">
+        <g transform="matrix(0.894427 0.447214 -0.894427 0.447214 0 0)">
+          <g transform="rotate(0)">
+            <path d="M-51.43 -51.43 L51.43 -51.43 L51.43 51.43 L-51.43 51.43 Z" fill="url(#t2)"/>
+            <path d="M-46.43 -46.43 L46.43 -46.43 L46.43 46.43 L-46.43 46.43 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.18"/>
+            <text x="-34.16" y="4.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.2" fill="#06111F">SYSTEMS</text>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g>
+      <path d="M262 315 L170 361 L170 373 L262 327 Z" fill="#5e6681"/>
+      <path d="M170 361 L78 315 L78 327 L170 373 Z" fill="#7a84a0"/>
+      <g transform="translate(170 315)">
+        <g transform="matrix(0.894427 0.447214 -0.894427 0.447214 0 0)">
+          <g transform="rotate(0)">
+            <path d="M-51.43 -51.43 L51.43 -51.43 L51.43 51.43 L-51.43 51.43 Z" fill="url(#t3)"/>
+            <path d="M-46.43 -46.43 L46.43 -46.43 L46.43 46.43 L-46.43 46.43 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.18"/>
+            <text x="-39.04" y="4.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.2" fill="#0D1017">PRACTICE</text>
+          </g>
+        </g>
+      </g>
     </g>
   </g>
 
   <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
-    <g font-size="10" letter-spacing="2.2">
-      <text x="372" y="96" fill="#A78BFA">FRONTEND</text>
-      <text x="372" y="198" fill="#60A5FA">BACKEND &amp; INFRA</text>
-      <text x="372" y="292" fill="#7C86A8">DAY TO DAY</text>
-    </g>
-    <g font-size="10.5" letter-spacing="0.15" fill="#7C86A8">
-      <text x="372" y="118">design systems &amp; tokens <tspan fill="#3A4160">·</tspan> contrast checked against WCAG AA</text>
-      <text x="372" y="134">keyboard focus handled in modals and drawers <tspan fill="#3A4160">·</tspan> reduced-motion respected</text>
-      <text x="372" y="150">loading, empty and error states on every screen</text>
+      <text x="372" y="97" font-size="10" letter-spacing="2.2" fill="#A78BFA">FRONTEND</text>
+      <text x="372" y="119" font-size="10.5" letter-spacing="0.15" fill="#7C86A8">design systems &amp; tokens <tspan fill="#3A4160">·</tspan> contrast checked against WCAG AA</text>
+      <text x="372" y="135" font-size="10.5" letter-spacing="0.15" fill="#7C86A8">keyboard focus handled in modals and drawers <tspan fill="#3A4160">·</tspan> reduced-motion respected</text>
+      <text x="372" y="151" font-size="10.5" letter-spacing="0.15" fill="#7C86A8">loading, empty and error states on every screen</text>
 
-      <text x="372" y="220">live updates over Socket.IO <tspan fill="#3A4160">·</tspan> offline-first with service workers</text>
-      <text x="372" y="236">multi-tenant with per-role permissions</text>
-      <text x="372" y="252">attendance sync from 3 biometric devices, safe to retry</text>
-      <text x="372" y="268">marking rules configured in the database, not hard-coded</text>
+      <text x="372" y="190" font-size="10" letter-spacing="2.2" fill="#60A5FA">BACKEND &amp; INFRA</text>
+      <text x="372" y="212" font-size="10.5" letter-spacing="0.15" fill="#7C86A8">live updates over Socket.IO <tspan fill="#3A4160">·</tspan> offline-first with service workers</text>
+      <text x="372" y="228" font-size="10.5" letter-spacing="0.15" fill="#7C86A8">multi-tenant with per-role permissions</text>
+      <text x="372" y="244" font-size="10.5" letter-spacing="0.15" fill="#7C86A8">attendance sync from 3 biometric devices, safe to retry</text>
+      <text x="372" y="260" font-size="10.5" letter-spacing="0.15" fill="#7C86A8">marking rules configured in the database, not hard-coded</text>
 
-      <text x="372" y="314">conventional commits <tspan fill="#3A4160">·</tspan> CI runs typecheck, lint, tests and build</text>
-      <text x="372" y="330">225+ DSA problems solved on LeetCode</text>
-    </g>
+      <text x="372" y="300" font-size="10" letter-spacing="2.2" fill="#7C86A8">DAY TO DAY</text>
+      <text x="372" y="322" font-size="10.5" letter-spacing="0.15" fill="#7C86A8">conventional commits <tspan fill="#3A4160">·</tspan> CI runs typecheck, lint, tests and build</text>
+      <text x="372" y="338" font-size="10.5" letter-spacing="0.15" fill="#7C86A8">225+ DSA problems solved on LeetCode</text>
   </g>
 </svg>
