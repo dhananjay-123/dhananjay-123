@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="54" viewBox="0 0 48 54" role="img" aria-label="LinkedIn">
+  <title>LinkedIn</title>
+  <!-- One extruded tile, drawn locally so the four links load from a single
+       origin in a single round trip instead of popping in one CDN at a time.
+       Back face first, front face over it, bevel stroke on top: the 6px band
+       left showing along the bottom is the extrusion. -->
+  <defs>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C9BCFE"/>
+      <stop offset="0.55" stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="bevel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="cast" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7C3AED" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="24" cy="49" rx="18" ry="4.5" fill="url(#cast)"/>
+  <rect x="4" y="8" width="40" height="40" rx="11" fill="#5B21B6"/>
+  <rect x="4" y="2" width="40" height="40" rx="11" fill="url(#face)"/>
+  <rect x="4.5" y="2.5" width="39" height="39" rx="10.5" fill="none" stroke="url(#bevel)"/>
+  <g fill="#140A26" transform="translate(13 11) scale(0.9167)">
+    <!-- Simple Icons dropped its LinkedIn mark, so the wordmark is drawn here
+         on the same 24x24 grid the other three glyphs use. -->
+    <circle cx="4.9" cy="4.6" r="2.2"/>
+    <rect x="2.7" y="8.4" width="4.4" height="12.2"/>
+    <rect x="9.4" y="8.4" width="4.2" height="12.2"/>
+    <path d="M13.2 20.6 V14.6 a4 4 0 0 1 8 0 V20.6 Z"/>
+  </g>
+</svg>

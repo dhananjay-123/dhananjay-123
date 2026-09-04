@@ -3,13 +3,13 @@
 </div>
 
 <div align="center">
-  <a href="https://dhananjaypvt.me" title="Portfolio — dhananjaypvt.me"><img alt="Portfolio: dhananjaypvt.me" height="40" src="https://cdn.simpleicons.org/googlechrome/A78BFA"></a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/dhananjay-123" title="GitHub — dhananjay-123"><img alt="GitHub: dhananjay-123" height="40" src="https://cdn.simpleicons.org/github/A78BFA"></a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://linkedin.com/in/dhananjay-agrawal-b5843b211" title="LinkedIn — dhananjay-agrawal"><img alt="LinkedIn: dhananjay-agrawal" height="40" src="assets/icon-linkedin.svg?v=2"></a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="mailto:dhananjayworkmain@gmail.com" title="Email — dhananjayworkmain@gmail.com"><img alt="Email: dhananjayworkmain@gmail.com" height="40" src="https://cdn.simpleicons.org/gmail/A78BFA"></a>
+  <a href="https://dhananjaypvt.me" title="Portfolio — dhananjaypvt.me"><img alt="Portfolio: dhananjaypvt.me" width="40" height="45" src="assets/social-portfolio.svg"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/dhananjay-123" title="GitHub — dhananjay-123"><img alt="GitHub: dhananjay-123" width="40" height="45" src="assets/social-github.svg"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://linkedin.com/in/dhananjay-agrawal-b5843b211" title="LinkedIn — dhananjay-agrawal"><img alt="LinkedIn: dhananjay-agrawal" width="40" height="45" src="assets/social-linkedin.svg"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="mailto:dhananjayworkmain@gmail.com" title="Email — dhananjayworkmain@gmail.com"><img alt="Email: dhananjayworkmain@gmail.com" width="40" height="45" src="assets/social-email.svg"></a>
 </div>
 
 <br>
@@ -23,80 +23,63 @@ Full-stack developer — web and mobile. I build the interface, the API and the 
 
 <img src="assets/divider.svg?v=2" alt="" width="100%">
 
-<img alt="CAPABILITY" height="30" src="https://img.shields.io/badge/%24-CAPABILITY-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
+<img alt="CAPABILITY" width="146" height="30" src="https://img.shields.io/badge/%24-CAPABILITY-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
 
 <table width="100%">
 <tr>
   <td width="160" valign="top"><b>● CORE</b><br><sub>in every project</sub></td>
   <td width="830" valign="middle">
-    <img alt="TypeScript" height="38" src="https://cdn.simpleicons.org/typescript">&nbsp;&nbsp;
-    <img alt="React" height="38" src="https://cdn.simpleicons.org/react">&nbsp;&nbsp;
-    <img alt="Next.js · App Router" height="38" src="https://cdn.simpleicons.org/nextdotjs/E6E8F2">&nbsp;&nbsp;
-    <img alt="Tailwind CSS" height="38" src="https://cdn.simpleicons.org/tailwindcss">
+    <img alt="TypeScript" width="38" height="38" src="https://cdn.simpleicons.org/typescript">&nbsp;&nbsp;
+    <img alt="React" width="38" height="38" src="https://cdn.simpleicons.org/react">&nbsp;&nbsp;
+    <img alt="Next.js · App Router" width="38" height="38" src="https://cdn.simpleicons.org/nextdotjs/E6E8F2">&nbsp;&nbsp;
+    <img alt="Tailwind CSS" width="38" height="38" src="https://cdn.simpleicons.org/tailwindcss">
   </td>
 </tr>
 <tr>
   <td valign="top"><b>○ REGULAR</b><br><sub>across several</sub></td>
   <td width="830" valign="middle">
-    <img alt="PostgreSQL" height="38" src="https://cdn.simpleicons.org/postgresql">&nbsp;&nbsp;
-    <img alt="Prisma" height="38" src="https://cdn.simpleicons.org/prisma/E6E8F2">&nbsp;&nbsp;
-    <img alt="SQL" height="30" src="https://img.shields.io/badge/SQL-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
-    <img alt="Node.js" height="38" src="https://cdn.simpleicons.org/nodedotjs">&nbsp;&nbsp;
-    <img alt="Express" height="38" src="https://cdn.simpleicons.org/express/E6E8F2">&nbsp;&nbsp;
-    <img alt="Socket.IO" height="38" src="https://cdn.simpleicons.org/socketdotio/E6E8F2">&nbsp;&nbsp;
-    <img alt="Framer Motion" height="38" src="https://cdn.simpleicons.org/framer">&nbsp;&nbsp;
-    <img alt="Radix UI" height="38" src="https://cdn.simpleicons.org/radixui/E6E8F2">&nbsp;&nbsp;
-    <img alt="Zustand" height="30" src="https://img.shields.io/badge/Zustand-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
-    <img alt="Flutter" height="38" src="https://cdn.simpleicons.org/flutter">&nbsp;&nbsp;
-    <img alt="Dart" height="38" src="https://cdn.simpleicons.org/dart">&nbsp;&nbsp;
-    <img alt="React Native" height="30" src="https://img.shields.io/badge/React%20Native-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
-    <img alt="Expo" height="38" src="https://cdn.simpleicons.org/expo/E6E8F2">&nbsp;&nbsp;
-    <img alt="Vercel" height="38" src="https://cdn.simpleicons.org/vercel/E6E8F2">&nbsp;&nbsp;
-    <img alt="GitHub Actions" height="38" src="https://cdn.simpleicons.org/githubactions">
+    <img alt="PostgreSQL" width="38" height="38" src="https://cdn.simpleicons.org/postgresql">&nbsp;&nbsp;
+    <img alt="Prisma" width="38" height="38" src="https://cdn.simpleicons.org/prisma/E6E8F2">&nbsp;&nbsp;
+    <img alt="SQL" width="52" height="30" src="https://img.shields.io/badge/SQL-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
+    <img alt="Node.js" width="38" height="38" src="https://cdn.simpleicons.org/nodedotjs">&nbsp;&nbsp;
+    <img alt="Express" width="38" height="38" src="https://cdn.simpleicons.org/express/E6E8F2">&nbsp;&nbsp;
+    <img alt="Socket.IO" width="38" height="38" src="https://cdn.simpleicons.org/socketdotio/E6E8F2">&nbsp;&nbsp;
+    <img alt="Framer Motion" width="38" height="38" src="https://cdn.simpleicons.org/framer">&nbsp;&nbsp;
+    <img alt="Radix UI" width="38" height="38" src="https://cdn.simpleicons.org/radixui/E6E8F2">&nbsp;&nbsp;
+    <img alt="Zustand" width="92" height="30" src="https://img.shields.io/badge/Zustand-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
+    <img alt="Flutter" width="38" height="38" src="https://cdn.simpleicons.org/flutter">&nbsp;&nbsp;
+    <img alt="Dart" width="38" height="38" src="https://cdn.simpleicons.org/dart">&nbsp;&nbsp;
+    <img alt="React Native" width="130" height="30" src="https://img.shields.io/badge/React%20Native-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
+    <img alt="Expo" width="38" height="38" src="https://cdn.simpleicons.org/expo/E6E8F2">&nbsp;&nbsp;
+    <img alt="Vercel" width="38" height="38" src="https://cdn.simpleicons.org/vercel/E6E8F2">&nbsp;&nbsp;
+    <img alt="GitHub Actions" width="38" height="38" src="https://cdn.simpleicons.org/githubactions">
   </td>
 </tr>
 <tr>
   <td valign="top"><b>· ALSO USE</b></td>
   <td width="830" valign="middle">
-    <img alt="Three.js" height="38" src="https://cdn.simpleicons.org/threedotjs/E6E8F2">&nbsp;&nbsp;
-    <img alt="Supabase" height="38" src="https://cdn.simpleicons.org/supabase">&nbsp;&nbsp;
-    <img alt="Docker" height="38" src="https://cdn.simpleicons.org/docker">&nbsp;&nbsp;
-    <img alt="Vitest" height="38" src="https://cdn.simpleicons.org/vitest">&nbsp;&nbsp;
-    <img alt="TanStack Query" height="38" src="https://cdn.simpleicons.org/reactquery">&nbsp;&nbsp;
-    <img alt="Recharts" height="30" src="https://img.shields.io/badge/Recharts-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
-    <img alt="Lenis" height="30" src="https://img.shields.io/badge/Lenis-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">
+    <img alt="Three.js" width="38" height="38" src="https://cdn.simpleicons.org/threedotjs/E6E8F2">&nbsp;&nbsp;
+    <img alt="Supabase" width="38" height="38" src="https://cdn.simpleicons.org/supabase">&nbsp;&nbsp;
+    <img alt="Docker" width="38" height="38" src="https://cdn.simpleicons.org/docker">&nbsp;&nbsp;
+    <img alt="Vitest" width="38" height="38" src="https://cdn.simpleicons.org/vitest">&nbsp;&nbsp;
+    <img alt="TanStack Query" width="38" height="38" src="https://cdn.simpleicons.org/reactquery">&nbsp;&nbsp;
+    <img alt="Recharts" width="100" height="30" src="https://img.shields.io/badge/Recharts-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
+    <img alt="Lenis" width="69" height="30" src="https://img.shields.io/badge/Lenis-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">
   </td>
 </tr>
 </table>
 
 <img src="assets/divider.svg?v=2" alt="" width="100%">
 
-<img alt="IN PRACTICE" height="30" src="https://img.shields.io/badge/%24-IN%20PRACTICE-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
+<img alt="HOW I BUILD" width="155" height="30" src="https://img.shields.io/badge/%24-HOW%20I%20BUILD-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
 
-<table width="100%">
-<tr>
-  <td width="160" valign="top"><b>◆ INTERFACE</b><br><sub>frontend</sub></td>
-  <td width="830" valign="top">
-    <sub><code>design systems &amp; tokens</code> · <code>contrast checked against WCAG AA</code> · <code>keyboard focus handled in modals and drawers</code> · <code>respects reduced-motion settings</code> · <code>loading, empty and error states on every screen</code> · <code>dashboards, comparison views, heatmaps</code></sub>
-  </td>
-</tr>
-<tr>
-  <td valign="top"><b>◆ SYSTEMS</b><br><sub>backend &amp; infra</sub></td>
-  <td valign="top">
-    <sub><code>live updates over Socket.IO</code> · <code>offline-first with service workers</code> · <code>multi-tenant with per-role permissions</code> · <code>attendance sync from 3 biometric devices, safe to retry</code> · <code>marking rules configured in the database, not hard-coded</code></sub>
-  </td>
-</tr>
-<tr>
-  <td valign="top"><b>◆ PRACTICE</b><br><sub>day to day</sub></td>
-  <td valign="top">
-    <sub><code>conventional commits</code> · <code>CI runs typecheck, lint, tests and build on every push</code> · <code>225+ DSA problems solved on LeetCode</code></sub>
-  </td>
-</tr>
-</table>
+<div align="center">
+  <img src="assets/build.svg" alt="How I build — three isometric layers. INTERFACE (frontend): design systems and tokens, contrast checked against WCAG AA, keyboard focus handled in modals and drawers, reduced-motion respected, loading, empty and error states on every screen. SYSTEMS (backend and infra): live updates over Socket.IO, offline-first with service workers, multi-tenant with per-role permissions, attendance sync from 3 biometric devices that is safe to retry, marking rules configured in the database rather than hard-coded. PRACTICE (day to day): conventional commits, CI runs typecheck, lint, tests and build, 225+ DSA problems solved on LeetCode." width="100%">
+</div>
 
 <img src="assets/divider.svg?v=2" alt="" width="100%">
 
-<img alt="ACTIVITY" height="30" src="https://img.shields.io/badge/%24-ACTIVITY-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
+<img alt="ACTIVITY" width="128" height="30" src="https://img.shields.io/badge/%24-ACTIVITY-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
 
 <div align="center">
   <img src="assets/contributions.svg?v=2" alt="GitHub contribution heatmap for the last 12 months" width="100%">
@@ -109,7 +92,7 @@ Full-stack developer — web and mobile. I build the interface, the API and the 
 
 <img src="assets/divider.svg?v=2" alt="" width="100%">
 
-<img alt="GET IN TOUCH" height="30" src="https://img.shields.io/badge/%24-GET%20IN%20TOUCH-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
+<img alt="GET IN TOUCH" width="162" height="30" src="https://img.shields.io/badge/%24-GET%20IN%20TOUCH-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
 
 <table width="100%">
 <tr>

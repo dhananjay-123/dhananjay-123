@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="392" viewBox="0 0 880 392" fill="none" role="img" aria-labelledby="buildTitle buildDesc">
+  <title id="buildTitle">How I build</title>
+  <desc id="buildDesc">Three isometric slabs stacked in depth, each wired across to what it covers. INTERFACE — frontend: design systems and tokens, contrast checked against WCAG AA, keyboard focus handled in modals and drawers, reduced-motion respected, loading, empty and error states on every screen. SYSTEMS — backend and infrastructure: live updates over Socket.IO, offline-first with service workers, multi-tenant with per-role permissions, attendance sync from 3 biometric devices that is safe to retry, marking rules configured in the database rather than hard-coded. PRACTICE — day to day: conventional commits, CI runs typecheck, lint, tests and build, 225 or more DSA problems solved on LeetCode.</desc>
+
+  <style>
+    /* The three slabs drift on one 7s clock, offset by a third each, so the
+       stack breathes without ever reading as a queue of separate loops. */
+    .s1, .s2, .s3 { animation: float 7s ease-in-out infinite }
+    .s2 { animation-delay: -2.33s }
+    .s3 { animation-delay: -4.66s }
+    @keyframes float { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-5px) } }
+    @media (prefers-reduced-motion: reduce) { .s1, .s2, .s3 { animation: none } }
+  </style>
+
+  <defs>
+    <pattern id="bgrid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#141827"/>
+    </pattern>
+    <linearGradient id="t1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C9BCFE"/><stop offset="1" stop-color="#9575F5"/>
+    </linearGradient>
+    <linearGradient id="t2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8CC0FF"/><stop offset="1" stop-color="#4E92E8"/>
+    </linearGradient>
+    <linearGradient id="t3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#98A1BE"/><stop offset="1" stop-color="#6B7597"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="880" height="392" rx="10" fill="#0A0B11"/>
+  <rect width="880" height="392" rx="10" fill="url(#bgrid)"/>
+  <rect x="0.5" y="0.5" width="879" height="391" rx="10" stroke="#1E2334"/>
+
+  <g stroke="#A78BFA" stroke-width="1.25" opacity="0.55">
+    <path d="M18 34 L18 18 L34 18"/>
+    <path d="M862 34 L862 18 L846 18"/>
+    <path d="M18 358 L18 374 L34 374"/>
+    <path d="M862 358 L862 374 L846 374"/>
+  </g>
+
+  <rect x="40" y="37" width="7" height="7" fill="#A78BFA"/>
+  <text x="60" y="44" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.6" fill="#A78BFA">THE WHOLE STACK</text>
+  <text x="840" y="44" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" letter-spacing="1.4" fill="#4A5270">THREE LAYERS · ONE PERSON</text>
+  <line x1="40" y1="62" x2="840" y2="62" stroke="#1E2334"/>
+
+  <!-- spine: drawn first so the slabs occlude it and only the gaps read -->
+  <line x1="170" y1="150" x2="170" y2="290" stroke="#2A3150" stroke-dasharray="3 5"/>
+
+  <!-- connectors -->
+  <g stroke="#2A3150" stroke-dasharray="2 4">
+    <line x1="272" y1="119" x2="350" y2="119"/>
+    <line x1="272" y1="221" x2="350" y2="221"/>
+    <line x1="272" y1="315" x2="350" y2="315"/>
+  </g>
+  <circle cx="356" cy="119" r="2.5" fill="#A78BFA"/>
+  <circle cx="356" cy="221" r="2.5" fill="#60A5FA"/>
+  <circle cx="356" cy="315" r="2.5" fill="#7C86A8"/>
+
+  <!-- slab 1 — interface -->
+  <g class="s1">
+    <path d="M78 119 L170 165 L170 177 L78 131 Z" fill="#6E52BC"/>
+    <path d="M262 119 L170 165 L170 177 L262 131 Z" fill="#5B41A2"/>
+    <path d="M170 73 L262 119 L170 165 L78 119 Z" fill="url(#t1)"/>
+    <path d="M170 78 L251 119 L170 160 L89 119 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.18"/>
+    <g transform="matrix(0.8944 0.4472 -0.8944 0.4472 170 119)">
+      <text x="-44" y="4.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.2" fill="#140A26">INTERFACE</text>
+    </g>
+  </g>
+
+  <!-- slab 2 — systems -->
+  <g class="s2">
+    <path d="M78 221 L170 267 L170 279 L78 233 Z" fill="#386CB0"/>
+    <path d="M262 221 L170 267 L170 279 L262 233 Z" fill="#2D5A96"/>
+    <path d="M170 175 L262 221 L170 267 L78 221 Z" fill="url(#t2)"/>
+    <path d="M170 180 L251 221 L170 262 L89 221 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.18"/>
+    <g transform="matrix(0.8944 0.4472 -0.8944 0.4472 170 221)">
+      <text x="-38" y="4.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.2" fill="#06111F">SYSTEMS</text>
+    </g>
+  </g>
+
+  <!-- slab 3 — practice -->
+  <g class="s3">
+    <path d="M78 315 L170 361 L170 373 L78 327 Z" fill="#525A76"/>
+    <path d="M262 315 L170 361 L170 373 L262 327 Z" fill="#434A62"/>
+    <path d="M170 269 L262 315 L170 361 L78 315 Z" fill="url(#t3)"/>
+    <path d="M170 274 L251 315 L170 356 L89 315 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.18"/>
+    <g transform="matrix(0.8944 0.4472 -0.8944 0.4472 170 315)">
+      <text x="-38" y="4.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.2" fill="#0D1017">PRACTICE</text>
+    </g>
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <g font-size="10" letter-spacing="2.2">
+      <text x="372" y="96" fill="#A78BFA">FRONTEND</text>
+      <text x="372" y="198" fill="#60A5FA">BACKEND &amp; INFRA</text>
+      <text x="372" y="292" fill="#7C86A8">DAY TO DAY</text>
+    </g>
+    <g font-size="10.5" letter-spacing="0.15" fill="#7C86A8">
+      <text x="372" y="118">design systems &amp; tokens <tspan fill="#3A4160">·</tspan> contrast checked against WCAG AA</text>
+      <text x="372" y="134">keyboard focus handled in modals and drawers <tspan fill="#3A4160">·</tspan> reduced-motion respected</text>
+      <text x="372" y="150">loading, empty and error states on every screen</text>
+
+      <text x="372" y="220">live updates over Socket.IO <tspan fill="#3A4160">·</tspan> offline-first with service workers</text>
+      <text x="372" y="236">multi-tenant with per-role permissions</text>
+      <text x="372" y="252">attendance sync from 3 biometric devices, safe to retry</text>
+      <text x="372" y="268">marking rules configured in the database, not hard-coded</text>
+
+      <text x="372" y="314">conventional commits <tspan fill="#3A4160">·</tspan> CI runs typecheck, lint, tests and build</text>
+      <text x="372" y="330">225+ DSA problems solved on LeetCode</text>
+    </g>
+  </g>
+</svg>
