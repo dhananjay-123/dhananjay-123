@@ -1,6 +1,6 @@
 // An original avatar: a superhero whose emblem is a flip-dot.
 //
-// A hovering figure in a dark suit, fists on hips, with a sleek helmet,
+// A hovering figure in a dark suit, fists on hips, with a sleek helmet under a deep cowl, a circlet on its brow,
 // one angular lime visor and a lime cape in the wind. The chest emblem is the
 // site's disc, ink on one half and lime on the other, and it turns over now and
 // then. One disc circles the hero like an electron.
@@ -138,8 +138,9 @@ ${spark(96, 300, 2, 0)}${spark(120, 304, 2.4, -0.7)}${spark(142, 302, 2, -1.3)}$
     <path d="M92 104Q130 92 168 104L164 116Q130 104 96 116Z" fill="#fff" fill-opacity="0.12"/>
   </g>
   <path d="M106 182Q130 190 154 182L153 193Q130 201 107 193Z" fill="${u("glove")}"/>
-  <ellipse cx="88" cy="108" rx="15" ry="12" fill="${u("helm")}"/>
-  <ellipse cx="172" cy="108" rx="15" ry="12" fill="${u("helm")}"/>
+  <ellipse cx="86" cy="108" rx="20" ry="14" fill="${u("helm")}"/>
+  <ellipse cx="174" cy="108" rx="20" ry="14" fill="${u("helm")}"/>
+  <path d="M67 110Q86 124 105 112M155 112Q174 124 193 110" fill="none" stroke="${LIME}" stroke-width="2" stroke-opacity="0.8" stroke-linecap="round"/>
   <path d="M102 98Q130 110 158 98L156 106Q130 120 104 106Z" fill="${u("capeg")}"/>
 
   <circle class="${c("halo")}" cx="130" cy="132" r="22" fill="${LIME}" fill-opacity="0.45" filter="${u("b6")}"/>
@@ -149,10 +150,15 @@ ${spark(96, 300, 2, 0)}${spark(120, 304, 2.4, -0.7)}${spark(142, 302, 2, -1.3)}$
     <circle cx="130" cy="132" r="14" fill="none" stroke="#f1ffbe" stroke-width="1.6"/>
   </g>
 
+  <path d="M94 104C84 62 100 22 130 14C160 22 176 62 166 104Q130 118 94 104Z" fill="${u("capeg")}"/>
+  <path d="M94 104C84 62 100 22 130 14" fill="none" stroke="#f6ffd0" stroke-width="4" stroke-opacity="0.7" filter="${u("b3")}"/>
+  <path d="M102 100C95 64 108 34 130 27C152 34 165 64 158 100Q130 111 102 100Z" fill="#1c2a05"/>
   <rect x="121" y="84" width="18" height="18" rx="6" fill="#1a1533"/>
   <path d="M107 62C107 34 153 34 153 62C153 80 143 96 130 98C117 96 107 80 107 62Z" fill="${u("helm")}"/>
   <path d="M112 50C116 42 124 38 132 38" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-opacity="0.55" filter="${u("b1")}"/>
   <path d="M130 84L122 90Q130 96 138 90Z" fill="#0d0a1a" fill-opacity="0.6"/>
+  <path d="M108 52Q130 42 152 52L151 57Q130 48 109 57Z" fill="${u("glove")}"/>
+  <path d="M126 46L130 36L134 46L130 50Z" fill="#f1ffbe"/>
   <g class="${c("visor")}">
     <path d="M109 58L128 66H132L151 58L149 71L133 77H127L111 71Z" fill="${LIME}" filter="${u("b3")}"/>
   </g>
@@ -169,7 +175,7 @@ ${spark(96, 300, 2, 0)}${spark(120, 304, 2.4, -0.7)}${spark(142, 302, 2, -1.3)}$
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const a = avatar(1);
   await write(
-    "assets/avatar-hero-2.svg",
+    "assets/avatar-hero-3.svg",
     `<svg xmlns="http://www.w3.org/2000/svg" width="${a.w}" height="${a.h}" viewBox="0 0 ${a.w} ${a.h}" role="img" aria-label="Avatar: a hovering superhero in a dark suit with a lime cape and visor, and a flip-dot disc as the chest emblem">
 <title>Avatar</title>
 <style>${a.style}

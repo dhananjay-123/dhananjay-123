@@ -1,6 +1,6 @@
 <img src="assets/hero.svg?v=10" alt="Dhananjay Agrawal" width="100%">
 
-<img src="assets/avatar-hero-2.svg" alt="Avatar" align="left" width="190">
+<img src="assets/avatar-hero-3.svg" alt="Avatar" align="left" width="190">
 
 &nbsp;
 
