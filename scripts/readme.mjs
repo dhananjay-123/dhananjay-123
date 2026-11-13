@@ -1,14 +1,16 @@
 // Writes README.md. Copy is kept short on purpose: one line per thing.
-// Logos are drawn in ash, the one tone that reads on GitHub's light and dark themes.
+// Logos are bone on GitHub's dark theme and ink on its light one, as on the site.
 // Run: node scripts/readme.mjs
 import { writeFileSync } from "node:fs";
 
-const TONE = "958d80";
+/** Bump when an image changes, so GitHub's image cache lets go of the old one. */
+const V = 5;
+const icon = (slug, hex) => `https://cdn.simpleicons.org/${slug}/${hex}`;
 const logo = ([name, slug]) =>
-  `<img alt="${name}" title="${name}" height="26" src="https://cdn.simpleicons.org/${slug}/${TONE}">`;
+  `<picture><source media="(prefers-color-scheme: dark)" srcset="${icon(slug, "ece6da")}"><img alt="${name}" title="${name}" height="24" src="${icon(slug, "0b0a09")}"></picture>`;
 
 const STACK = [
-  ["Interface", [["TypeScript", "typescript"], ["React", "react"], ["Next.js", "nextdotjs"], ["Tailwind CSS", "tailwindcss"], ["Radix UI", "radixui"], ["TanStack Query", "reactquery"]]],
+  ["Interface", [["TypeScript", "typescript"], ["React", "react"], ["Next.js", "nextdotjs"], ["Tailwind CSS", "tailwindcss"], ["Radix UI", "radixui"]]],
   ["Motion and 3D", [["Three.js", "threedotjs"], ["WebGL", "webgl"], ["GSAP", "greensock"], ["Motion", "framer"], ["FFmpeg", "ffmpeg"]]],
   ["Server and data", [["Node.js", "nodedotjs"], ["Express", "express"], ["Socket.IO", "socketdotio"], ["Zod", "zod"], ["PostgreSQL", "postgresql"], ["Prisma", "prisma"], ["Supabase", "supabase"], ["Redis", "redis"]]],
   ["Beyond the browser", [["WhatsApp", "whatsapp"], ["Razorpay", "razorpay"], ["Flutter", "flutter"], ["Expo", "expo"], ["Gemini", "googlegemini"]]],
@@ -25,9 +27,9 @@ const WORK = [
   ["Films", null, "Launch reels and explainers rendered from code with HyperFrames."],
 ];
 
-const heading = (word) => `<img src="assets/h-${word.toLowerCase()}.svg" alt="${word}" height="55">`;
+const heading = (word) => `<img src="assets/h-${word.toLowerCase()}.svg?v=${V}" alt="${word}" height="32">`;
 
-const md = `<img src="assets/hero.svg" alt="Dhananjay Agrawal" width="100%">
+const md = `<img src="assets/hero.svg?v=${V}" alt="Dhananjay Agrawal" width="100%">
 
 **I build web products, simulations and motion.**<br>
 Institution software, virtual labs and films made in code.
@@ -50,15 +52,15 @@ ${WORK.map(([name, href, what]) => `| **${href ? `[${name}](${href})` : name}** 
 
 ${heading("Stack")}
 
-${STACK.map(([group, items]) => `<sub>${group.toUpperCase()}</sub><br>\n${items.map(logo).join("&nbsp;&nbsp;\n")}`).join("\n\n")}
+<table>
+${STACK.map(([group, items]) => `<tr><td><b>${group}</b></td><td>${items.map(logo).join("&nbsp;&nbsp;&nbsp;")}</td></tr>`).join("\n")}
+</table>
 
 <br>
 
 ${heading("Activity")}
 
-<img src="assets/contributions.svg" alt="GitHub contribution calendar" width="100%">
-
-<sub>Drawn by <a href="scripts/contributions.mjs">a script in this repo</a>, refreshed daily.</sub>
+<img src="assets/contributions.svg?v=${V}" alt="GitHub contribution calendar" width="100%">
 
 <br>
 
