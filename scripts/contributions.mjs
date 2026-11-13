@@ -4,13 +4,15 @@
 //
 // Each day is a disc. Quiet days stay dark; busier days light in deeper lime.
 // The board turns over in a wave from the left, holds, and turns back.
+// The avatar stands to the left, and a signal runs from its antenna into the board.
 import { ASH, BONE, INK, LIME, disc, flipKeyframes, flipRule, mix, reducedMotion, textCells, textCols, wall, write } from "./dots.mjs";
+import { avatar } from "./avatar.mjs";
 
 const USER = process.argv[2] ?? "dhananjay-123";
 const OUT = process.argv[3] ?? "assets/contributions.svg";
 
 const W = 880;
-const PITCH = 15;
+const PITCH = 12;
 const R = PITCH * 0.4;
 const PAD = 22;
 const TOP = 66;          // first row of days
@@ -47,8 +49,19 @@ if (!days.length) throw new Error("no contribution cells parsed — GitHub marku
 const weeks = Math.max(...days.map((d) => d.col)) + 1;
 const total = days.reduce((a, d) => a + d.count, 0);
 const gridW = weeks * PITCH;
-const X0 = Math.round((W - gridW) / 2);
+const X0 = W - PAD - gridW;
 const H = TOP + 7 * PITCH + PAD;
+
+// The avatar, small, standing at the bottom left.
+const AV = avatar(3.6, "av");
+const AX = PAD;
+const AY = H - AV.h - 4;
+const tipX = AX + AV.tip[0];
+const tipY = AY + AV.tip[1];
+const endX = X0 - 6;
+const endY = TOP + 3.5 * PITCH;
+// A slack curve from the antenna down into the board's left edge.
+const signal = `M${tipX.toFixed(1)} ${tipY.toFixed(1)} C${(tipX + 40).toFixed(1)} ${(tipY - 18).toFixed(1)} ${(endX - 30).toFixed(1)} ${(endY + 30).toFixed(1)} ${endX} ${endY}`;
 
 // Small dot type: the heading and the month names, set in the same 5x7 font.
 function label(text, x, y, pitch, fill) {
@@ -81,17 +94,24 @@ const lit = days
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="t d">
   <title id="t">GitHub contributions for ${USER}</title>
-  <desc id="d">${total} contributions over ${weeks} weeks, one disc per day, lit brighter on busier days.</desc>
+  <desc id="d">${total} contributions over ${weeks} weeks, one disc per day, lit brighter on busier days, with the avatar beside it.</desc>
   <style>
     ${keyframes.join("\n    ")}
     ${rules.join("\n    ")}
-    ${reducedMotion(".f1, .f2, .f3, .f4")}
+    ${reducedMotion(".f1, .f2, .f3, .f4, .sig")}
+    @keyframes sig { to { stroke-dashoffset: -24 } }
+    .sig { animation: sig 0.9s linear infinite }
+    ${AV.style}
   </style>
   <defs>${wall("w", PITCH, R, X0, TOP)}</defs>
   <rect width="${W}" height="${H}" rx="12" fill="${INK}"/>
   ${label(heading, X0, PAD, 2.6, BONE)}
   ${months.map((m) => label(m.text, X0 + m.col * PITCH + 2, TOP - 16, 1.7, ASH)).join("\n  ")}
   <rect x="${X0}" y="${TOP}" width="${gridW}" height="${7 * PITCH}" fill="url(#w)"/>
+  <path d="${signal}" stroke="${LIME}" stroke-opacity="0.25" stroke-width="1.2" fill="none"/>
+  <path class="sig" d="${signal}" stroke="${LIME}" stroke-width="1.6" stroke-dasharray="3 9" stroke-linecap="round" fill="none"/>
+  <circle cx="${endX}" cy="${endY}" r="2.4" fill="${LIME}"/>
+  <g transform="translate(${AX} ${AY})">${AV.body}</g>
   ${lit}
 </svg>
 `;

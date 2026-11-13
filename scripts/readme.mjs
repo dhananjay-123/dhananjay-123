@@ -1,13 +1,17 @@
 // Writes README.md. Copy is kept short on purpose: one line per thing.
-// Logos are bone on GitHub's dark theme and ink on its light one, as on the site.
+// Logos are in their brand colours. A brand whose own colour is too dark to read
+// on GitHub's dark theme is bone there and ink on the light theme, as on the site.
 // Run: node scripts/readme.mjs
 import { writeFileSync } from "node:fs";
 
 /** Bump when an image changes, so GitHub's image cache lets go of the old one. */
-const V = 5;
-const icon = (slug, hex) => `https://cdn.simpleicons.org/${slug}/${hex}`;
+const V = 6;
+const DARK = new Set(["nextdotjs", "radixui", "threedotjs", "webgl", "ffmpeg", "express", "socketdotio", "prisma", "razorpay", "expo", "vercel", "framer"]);
+const icon = (slug, hex) => `https://cdn.simpleicons.org/${slug}${hex ? `/${hex}` : ""}`;
 const logo = ([name, slug]) =>
-  `<picture><source media="(prefers-color-scheme: dark)" srcset="${icon(slug, "ece6da")}"><img alt="${name}" title="${name}" height="24" src="${icon(slug, "0b0a09")}"></picture>`;
+  DARK.has(slug)
+    ? `<picture><source media="(prefers-color-scheme: dark)" srcset="${icon(slug, "ece6da")}"><img alt="${name}" title="${name}" height="24" src="${icon(slug, "0b0a09")}"></picture>`
+    : `<img alt="${name}" title="${name}" height="24" src="${icon(slug)}">`;
 
 const STACK = [
   ["Interface", [["TypeScript", "typescript"], ["React", "react"], ["Next.js", "nextdotjs"], ["Tailwind CSS", "tailwindcss"], ["Radix UI", "radixui"]]],
@@ -17,26 +21,34 @@ const STACK = [
   ["Shipping", [["Git", "git"], ["GitHub Actions", "githubactions"], ["Vitest", "vitest"], ["Docker", "docker"], ["Vercel", "vercel"], ["Cloudflare", "cloudflare"]]],
 ];
 
+// [name, link, line, disc] — the disc is the project's own colour, from boards.mjs.
 const WORK = [
-  ["PhysicsSimulation", "https://physicssimulation.org", "160 browser labs in physics, chemistry, maths and biology."],
-  ["Coaching Platform", null, "Enquiries, batches, attendance, fees and tests for a coaching institute."],
-  ["Smart Attendance", null, "Biometric attendance with WhatsApp alerts to parents."],
-  ["Arogyani", "https://www.arogyani.in/", "OPD software for clinics with a live token queue."],
-  ["Sher-e-Darbar", "https://www.sheredarbar.com/", "Hindi and English restaurant site with a scroll-driven 3D opening."],
-  ["INKPLAY", "https://inkplay-lemon.vercel.app", "Draw a level on paper, play it as a platformer."],
-  ["Films", null, "Launch reels and explainers rendered from code with HyperFrames."],
+  ["PhysicsSimulation", "https://physicssimulation.org", "160 browser labs in physics, chemistry, maths and biology.", "physics"],
+  ["Coaching Platform", null, "Enquiries, batches, attendance, fees and tests for a coaching institute.", "coaching"],
+  ["Smart Attendance", null, "Biometric attendance with WhatsApp alerts to parents.", "attendance"],
+  ["Arogyani", "https://www.arogyani.in/", "OPD software for clinics with a live token queue.", "arogyani"],
+  ["Sher-e-Darbar", "https://www.sheredarbar.com/", "Hindi and English restaurant site with a scroll-driven 3D opening.", "sheredarbar"],
+  ["INKPLAY", "https://inkplay-lemon.vercel.app", "Draw a level on paper, play it as a platformer.", "inkplay"],
+  ["Films", null, "Launch reels and explainers rendered from code with HyperFrames.", "films"],
 ];
 
 const heading = (word) => `<img src="assets/h-${word.toLowerCase()}.svg?v=${V}" alt="${word}" height="32">`;
 
 const md = `<img src="assets/hero.svg?v=${V}" alt="Dhananjay Agrawal" width="100%">
 
-**I build web products, simulations and motion.**<br>
-Institution software, virtual labs and films made in code.
+<img src="assets/avatar.svg?v=${V}" alt="Avatar" align="left" width="168">
 
-<sub>Integrated B.Tech + M.Tech, IT · ABV-IIITM Gwalior · Gwalior, India</sub>
+&nbsp;
 
-[dhananjaypvt.me](https://dhananjaypvt.me) · [LinkedIn](https://linkedin.com/in/dhananjay-agrawal-b5843b211) · [Email](mailto:dhananjayworkmain@gmail.com)
+**Dhananjay Agrawal**
+
+I build web products, simulations and motion: institution software, virtual labs and films made in code.
+
+Integrated B.Tech + M.Tech in IT at ABV-IIITM Gwalior.
+
+[dhananjaypvt.me](https://dhananjaypvt.me) &nbsp; [LinkedIn](https://linkedin.com/in/dhananjay-agrawal-b5843b211) &nbsp; [dhananjayworkmain@gmail.com](mailto:dhananjayworkmain@gmail.com)
+
+<br clear="left">
 
 <br>
 
@@ -44,7 +56,7 @@ ${heading("Work")}
 
 | Project | |
 | --- | --- |
-${WORK.map(([name, href, what]) => `| **${href ? `[${name}](${href})` : name}** | ${what} |`).join("\n")}
+${WORK.map(([name, href, what, dot]) => `| <img src="assets/dot-${dot}.svg?v=${V}" width="10" alt=""> **${href ? `[${name}](${href})` : name}** | ${what} |`).join("\n")}
 
 <sub>Most of this ships from private repositories.</sub>
 

@@ -42,9 +42,29 @@ await write(
   board({ text: "DHANANJAY AGRAWAL", cols: 110, rows: 15, pitch: 8, lit: LIME, loop: true, title: "Dhananjay Agrawal" }),
 );
 
-for (const word of ["WORK", "STACK", "ACTIVITY", "CONTACT"]) {
+// Each heading lights in one project's colour, the way the site's board takes
+// the colour of whatever is on screen.
+const HEADINGS = [["WORK", "#f08a45"], ["STACK", "#5aa9ff"], ["ACTIVITY", LIME], ["CONTACT", "#ef7fb0"]];
+for (const [word, tone] of HEADINGS) {
   await write(
     `assets/h-${word.toLowerCase()}.svg`,
-    board({ text: word, cols: textCols(word) + 6, rows: 11, pitch: 5, lit: BONE, loop: false, title: word[0] + word.slice(1).toLowerCase(), wave: 0.012 }),
+    board({ text: word, cols: textCols(word) + 6, rows: 11, pitch: 5, lit: tone, loop: false, title: word[0] + word.slice(1).toLowerCase(), wave: 0.012 }),
+  );
+}
+
+// One lit disc per project, in that project's colour, for the work table.
+export const TONES = {
+  physics: "#5aa9ff",
+  coaching: "#f08a45",
+  attendance: "#8b7cf6",
+  arogyani: "#35d6c0",
+  sheredarbar: "#f0a030",
+  inkplay: LIME,
+  films: "#ef7fb0",
+};
+for (const [key, tone] of Object.entries(TONES)) {
+  await write(
+    `assets/dot-${key}.svg`,
+    `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5.5" fill="${tone}"/></svg>\n`,
   );
 }
