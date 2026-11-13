@@ -1,6 +1,6 @@
 // An original avatar: a superhero whose emblem is a flip-dot.
 //
-// A hovering figure in a dark suit, fists on hips, with a sleek finned helmet,
+// A hovering figure in a dark suit, fists on hips, with a sleek helmet,
 // one angular lime visor and a lime cape in the wind. The chest emblem is the
 // site's disc, ink on one half and lime on the other, and it turns over now and
 // then. One disc circles the hero like an electron.
@@ -150,7 +150,6 @@ ${spark(96, 300, 2, 0)}${spark(120, 304, 2.4, -0.7)}${spark(142, 302, 2, -1.3)}$
   </g>
 
   <rect x="121" y="84" width="18" height="18" rx="6" fill="#1a1533"/>
-  <path d="M134 44L150 16L146 48Z" fill="${u("capeg")}"/>
   <path d="M107 62C107 34 153 34 153 62C153 80 143 96 130 98C117 96 107 80 107 62Z" fill="${u("helm")}"/>
   <path d="M112 50C116 42 124 38 132 38" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-opacity="0.55" filter="${u("b1")}"/>
   <path d="M130 84L122 90Q130 96 138 90Z" fill="#0d0a1a" fill-opacity="0.6"/>
@@ -170,7 +169,7 @@ ${spark(96, 300, 2, 0)}${spark(120, 304, 2.4, -0.7)}${spark(142, 302, 2, -1.3)}$
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const a = avatar(1);
   await write(
-    "assets/avatar-hero.svg",
+    "assets/avatar-hero-2.svg",
     `<svg xmlns="http://www.w3.org/2000/svg" width="${a.w}" height="${a.h}" viewBox="0 0 ${a.w} ${a.h}" role="img" aria-label="Avatar: a hovering superhero in a dark suit with a lime cape and visor, and a flip-dot disc as the chest emblem">
 <title>Avatar</title>
 <style>${a.style}

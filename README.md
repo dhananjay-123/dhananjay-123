@@ -1,6 +1,6 @@
 <img src="assets/hero.svg?v=10" alt="Dhananjay Agrawal" width="100%">
 
-<img src="assets/avatar-hero.svg" alt="Avatar" align="left" width="190">
+<img src="assets/avatar-hero-2.svg" alt="Avatar" align="left" width="190">
 
 &nbsp;
 
@@ -46,7 +46,7 @@ Integrated B.Tech + M.Tech in IT at ABV-IIITM Gwalior.
 
 <img src="assets/h-activity.svg?v=10" alt="Activity" height="32">
 
-<img src="assets/contributions.svg?v=10" alt="GitHub contribution calendar" width="100%">
+<img src="assets/activity.svg" alt="GitHub contribution calendar" width="100%">
 
 <br>
 

@@ -11,7 +11,7 @@ import { ASH, BONE, INK, LIME, disc, flipKeyframes, flipRule, mix, reducedMotion
 import { avatar } from "./avatar.mjs";
 
 const USER = process.argv[2] ?? "dhananjay-123";
-const OUT = process.argv[3] ?? "assets/contributions.svg";
+const OUT = process.argv[3] ?? "assets/activity.svg";
 
 const W = 880;
 const PITCH = 12;

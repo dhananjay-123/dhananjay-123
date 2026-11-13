@@ -36,7 +36,7 @@ const heading = (word) => `<img src="assets/h-${word.toLowerCase()}.svg?v=${V}" 
 
 const md = `<img src="assets/hero.svg?v=${V}" alt="Dhananjay Agrawal" width="100%">
 
-<img src="assets/avatar-hero.svg" alt="Avatar" align="left" width="190">
+<img src="assets/avatar-hero-2.svg" alt="Avatar" align="left" width="190">
 
 &nbsp;
 
@@ -72,7 +72,7 @@ ${STACK.map(([group, items]) => `<tr><td width="200"><b>${group}</b></td><td wid
 
 ${heading("Activity")}
 
-<img src="assets/contributions.svg?v=${V}" alt="GitHub contribution calendar" width="100%">
+<img src="assets/activity.svg" alt="GitHub contribution calendar" width="100%">
 
 <br>
 
