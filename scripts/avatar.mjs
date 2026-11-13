@@ -170,7 +170,7 @@ ${spark(96, 300, 2, 0)}${spark(120, 304, 2.4, -0.7)}${spark(142, 302, 2, -1.3)}$
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const a = avatar(1);
   await write(
-    "assets/avatar.svg",
+    "assets/avatar-hero.svg",
     `<svg xmlns="http://www.w3.org/2000/svg" width="${a.w}" height="${a.h}" viewBox="0 0 ${a.w} ${a.h}" role="img" aria-label="Avatar: a hovering superhero in a dark suit with a lime cape and visor, and a flip-dot disc as the chest emblem">
 <title>Avatar</title>
 <style>${a.style}
