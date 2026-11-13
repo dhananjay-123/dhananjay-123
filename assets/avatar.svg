@@ -1,141 +1,137 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="300" viewBox="0 0 260 300" role="img" aria-label="Avatar: Dot, a round two-tone creature, ink on one side and lime on the other, with small discs orbiting it">
-<title>Dot</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="320" viewBox="0 0 260 320" role="img" aria-label="Avatar: a hovering superhero in a dark suit with a lime cape and visor, and a flip-dot disc as the chest emblem">
+<title>Avatar</title>
 <style>
 .av * { transform-box: fill-box }
-.av-float { animation: av-float 3.4s ease-in-out infinite alternate }
-.av-shadow { transform-origin: center; animation: av-shadow 3.4s ease-in-out infinite alternate }
-.av-tuft { transform-origin: 50% 100%; animation: av-tuft 1.7s ease-in-out infinite alternate }
-.av-pupils { animation: av-look 8s ease-in-out infinite }
-.av-eye { transform-origin: center; animation: av-blink 4.6s ease-in-out infinite }
-.av-armL { transform-origin: 100% 0%; animation: av-wave 1.7s ease-in-out infinite alternate }
-.av-armR { transform-origin: 0% 0%; animation: av-wave 1.7s ease-in-out -0.8s infinite alternate-reverse }
-.av-foot { animation: av-foot 1.7s ease-in-out infinite alternate }
-.av-spinA { transform-origin: center; animation: av-spin 6s linear infinite }
-.av-keepA { transform-origin: center; animation: av-spin 6s linear infinite reverse }
-.av-spinB { transform-origin: center; animation: av-spin 9.5s linear infinite reverse }
-.av-keepB { transform-origin: center; animation: av-spin 9.5s linear infinite }
-.av-star { transform-origin: center; animation: av-star 3s ease-in-out infinite }
-@keyframes av-float { from { transform: translateY(4px) } to { transform: translateY(-6px) } }
-@keyframes av-shadow { from { transform: scaleX(1); opacity: 0.5 } to { transform: scaleX(0.8); opacity: 0.28 } }
-@keyframes av-tuft { from { transform: rotate(-9deg) scaleY(0.94) } to { transform: rotate(8deg) scaleY(1.06) } }
-@keyframes av-look { 0%, 28% { transform: none } 34%, 52% { transform: translate(5px, 1px) } 58%, 76% { transform: translate(-5px, 1px) } 82%, 100% { transform: none } }
-@keyframes av-blink { 0%, 91% { transform: scaleY(1) } 94% { transform: scaleY(0.08) } 97%, 100% { transform: scaleY(1) } }
-@keyframes av-wave { from { transform: rotate(-10deg) } to { transform: rotate(12deg) } }
-@keyframes av-foot { from { transform: translateY(0) } to { transform: translateY(3px) } }
+.av-hover { animation: av-hover 3.2s ease-in-out infinite alternate }
+.av-shadow { transform-origin: center; animation: av-shadow 3.2s ease-in-out infinite alternate }
+.av-cape { transform-origin: 85% 0%; animation: av-cape 2.2s ease-in-out infinite alternate }
+.av-fold { animation: av-fold 2.2s ease-in-out infinite alternate }
+.av-visor { animation: av-visor 2.6s ease-in-out infinite alternate }
+.av-emblem { transform-origin: center; animation: av-flip 6s ease-in-out infinite }
+.av-halo { transform-origin: center; animation: av-halo 2.6s ease-in-out infinite alternate }
+.av-spin { transform-origin: center; animation: av-spin 5s linear infinite }
+.av-keep { transform-origin: center; animation: av-spin 5s linear infinite reverse }
+.av-spark { animation: av-spark 2.4s linear infinite }
+@keyframes av-hover { from { transform: translateY(4px) } to { transform: translateY(-6px) } }
+@keyframes av-shadow { from { transform: scaleX(1); opacity: 0.55 } to { transform: scaleX(0.78); opacity: 0.3 } }
+@keyframes av-cape { from { transform: skewX(3deg) scaleX(0.95) } to { transform: skewX(-5deg) scaleX(1.05) } }
+@keyframes av-fold { from { transform: translateX(-3px) } to { transform: translateX(4px) } }
+@keyframes av-visor { from { opacity: 0.55 } to { opacity: 1 } }
+@keyframes av-flip { 0%, 80% { transform: rotate(45deg) scaleY(1) rotate(-45deg) } 86% { transform: rotate(45deg) scaleY(0) rotate(-45deg) } 92%, 100% { transform: rotate(45deg) scaleY(1) rotate(-45deg) } }
+@keyframes av-halo { from { transform: scale(0.85); opacity: 0.45 } to { transform: scale(1.2); opacity: 0.9 } }
 @keyframes av-spin { to { transform: rotate(360deg) } }
-@keyframes av-star { 0%, 100% { transform: scale(0.4); opacity: 0.15 } 50% { transform: scale(1); opacity: 0.9 } }
+@keyframes av-spark { 0% { transform: translateY(0); opacity: 0 } 15% { opacity: 1 } 100% { transform: translateY(-54px); opacity: 0 } }
 @media (prefers-reduced-motion: reduce) { .av * { animation: none !important } }
 </style>
 <g class="av" transform="scale(1)">
 <defs>
-  <radialGradient id="av-lime" cx="0.6" cy="0.62" r="0.75"><stop offset="0" stop-color="#e9ff9c"/><stop offset="0.45" stop-color="#c5f24a"/><stop offset="1" stop-color="#6f9a1c"/></radialGradient>
-  <radialGradient id="av-ink" cx="0.3" cy="0.25" r="0.9"><stop offset="0" stop-color="#4b4470"/><stop offset="0.5" stop-color="#231f3a"/><stop offset="1" stop-color="#0c0a16"/></radialGradient>
-  <radialGradient id="av-shade" cx="0.4" cy="0.35" r="0.72"><stop offset="0.7" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.45"/></radialGradient>
-  <radialGradient id="av-eyeg" cx="0.4" cy="0.35" r="0.8"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfc7b8"/></radialGradient>
-  <radialGradient id="av-aura"><stop offset="0.45" stop-color="#c5f24a" stop-opacity="0.22"/><stop offset="1" stop-color="#c5f24a" stop-opacity="0"/></radialGradient>
-  <linearGradient id="av-tuftg" x1="0" y1="1" x2="0.3" y2="0"><stop offset="0" stop-color="#8fbf3a"/><stop offset="1" stop-color="#f1ffbe"/></linearGradient>
+  <linearGradient id="av-suit" x1="0.15" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#5a4e9c"/><stop offset="0.45" stop-color="#2c2552"/><stop offset="1" stop-color="#120e24"/></linearGradient>
+  <linearGradient id="av-limb" gradientUnits="userSpaceOnUse" x1="60" y1="100" x2="200" y2="300"><stop offset="0" stop-color="#4a3f86"/><stop offset="0.5" stop-color="#262048"/><stop offset="1" stop-color="#100c20"/></linearGradient>
+  <linearGradient id="av-glove" gradientUnits="userSpaceOnUse" x1="60" y1="140" x2="200" y2="200"><stop offset="0" stop-color="#dcff7a"/><stop offset="1" stop-color="#86b526"/></linearGradient>
+  <linearGradient id="av-capeg" x1="0.9" y1="0" x2="0.2" y2="1"><stop offset="0" stop-color="#e2ff8a"/><stop offset="0.4" stop-color="#c5f24a"/><stop offset="1" stop-color="#4f7412"/></linearGradient>
+  <radialGradient id="av-helm" cx="0.36" cy="0.26" r="0.9"><stop offset="0" stop-color="#7468b8"/><stop offset="0.5" stop-color="#2c2552"/><stop offset="1" stop-color="#0d0a1a"/></radialGradient>
+  <linearGradient id="av-boot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcff7a"/><stop offset="1" stop-color="#7aa822"/></linearGradient>
+  <radialGradient id="av-aura"><stop offset="0.3" stop-color="#c5f24a" stop-opacity="0.2"/><stop offset="1" stop-color="#c5f24a" stop-opacity="0"/></radialGradient>
+  <radialGradient id="av-thrust"><stop offset="0" stop-color="#c5f24a" stop-opacity="0.55"/><stop offset="1" stop-color="#c5f24a" stop-opacity="0"/></radialGradient>
+  <filter id="av-b1" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="1.4"/></filter>
   <filter id="av-b3" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="3"/></filter>
   <filter id="av-b6" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="6"/></filter>
-  <clipPath id="av-ball"><circle cx="130" cy="148" r="70"/></clipPath>
-  <clipPath id="av-near"><rect x="-140" y="0" width="280" height="200"/></clipPath>
+  <clipPath id="av-ctorso"><path d="M86 106Q130 90 174 106L154 190Q130 198 106 190Z"/></clipPath>
+  <clipPath id="av-ccape"><path d="M98 98C60 112 30 164 12 240C38 230 52 248 62 268C76 244 96 254 106 276C118 250 136 254 152 268C162 204 166 144 162 98Z"/></clipPath>
+  <clipPath id="av-cemb"><circle cx="130" cy="132" r="14"/></clipPath>
+  <clipPath id="av-near"><rect x="-140" y="0" width="280" height="220"/></clipPath>
 </defs>
 
-<ellipse class="av-shadow" cx="130" cy="280" rx="52" ry="6" fill="#05040a" filter="url(#av-b3)"/>
-<path class="av-star" style="animation-delay:0s" fill="#c5f24a" d="M26 63Q26 70 33 70Q26 70 26 77Q26 70 19 70Q26 70 26 63Z"/><path class="av-star" style="animation-delay:-1.2s" fill="#ef7fb0" d="M236 47Q236 52 241 52Q236 52 236 57Q236 52 231 52Q236 52 236 47Z"/><path class="av-star" style="animation-delay:-2.1s" fill="#ece6da" d="M40 235Q40 240 45 240Q40 240 40 245Q40 240 35 240Q40 240 40 235Z"/><path class="av-star" style="animation-delay:-0.6s" fill="#c5f24a" d="M228 230Q228 236 234 236Q228 236 228 242Q228 236 222 236Q228 236 228 230Z"/>
+<ellipse cx="130" cy="160" rx="124" ry="140" fill="url(#av-aura)"/>
+<ellipse class="av-shadow" cx="130" cy="306" rx="50" ry="6" fill="#05040a" filter="url(#av-b3)"/>
+<ellipse cx="130" cy="304" rx="44" ry="9" fill="url(#av-thrust)"/>
+<rect class="av-spark" style="animation-delay:0s" x="96" y="300" width="2" height="10" rx="1" fill="#e6ff9a"/><rect class="av-spark" style="animation-delay:-0.7s" x="120" y="304" width="2.4" height="12" rx="1.2" fill="#e6ff9a"/><rect class="av-spark" style="animation-delay:-1.3s" x="142" y="302" width="2" height="10" rx="1" fill="#e6ff9a"/><rect class="av-spark" style="animation-delay:-1.9s" x="164" y="300" width="1.8" height="9" rx="0.9" fill="#e6ff9a"/><rect class="av-spark" style="animation-delay:-1.6s" x="108" y="302" width="1.6" height="8" rx="0.8" fill="#e6ff9a"/>
 
-<g class="av-float">
-  <circle cx="130" cy="148" r="112" fill="url(#av-aura)"/>
+<g class="av-hover">
   
-  <g transform="rotate(-24 130 148)">
-    <g transform="translate(130 148) scale(1 0.3)">
-      <circle r="98" fill="none" stroke="#ece6da" stroke-opacity="0.22" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
-      <g class="av-spinA" style="animation-delay:0s">
-        <circle r="98" fill="none"/>
-        <g transform="translate(98 0)">
-          <g class="av-keepA" style="animation-delay:0s">
-            <ellipse rx="13" ry="43.333333333333336" fill="#ef7fb0" fill-opacity="0.35" filter="url(#av-b3)"/>
-            <ellipse rx="7.5" ry="25" fill="#ef7fb0"/>
-            <ellipse cx="-2" cy="-6.666666666666667" rx="2.6" ry="8.666666666666668" fill="#fff" fill-opacity="0.75"/>
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
-  
-  <g transform="rotate(30 130 148)">
-    <g transform="translate(130 148) scale(1 0.3)">
-      <circle r="90" fill="none" stroke="#ece6da" stroke-opacity="0.22" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
-      <g class="av-spinB" style="animation-delay:-3s">
-        <circle r="90" fill="none"/>
-        <g transform="translate(90 0)">
-          <g class="av-keepB" style="animation-delay:-3s">
-            <ellipse rx="13" ry="43.333333333333336" fill="#ece6da" fill-opacity="0.35" filter="url(#av-b3)"/>
-            <ellipse rx="7.5" ry="25" fill="#ece6da"/>
-            <ellipse cx="-2" cy="-6.666666666666667" rx="2.6" ry="8.666666666666668" fill="#fff" fill-opacity="0.75"/>
+  <g transform="rotate(-16 130 150)">
+    <g transform="translate(130 150) scale(1 0.28)">
+      <circle r="96" fill="none" stroke="#ece6da" stroke-opacity="0.18" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
+      <g class="av-spin">
+        <circle r="96" fill="none"/>
+        <g transform="translate(96 0)">
+          <g class="av-keep">
+            <ellipse rx="12" ry="42.857142857142854" fill="#c5f24a" fill-opacity="0.4" filter="url(#av-b3)"/>
+            <ellipse rx="6" ry="21.428571428571427" fill="#f1ffbe"/>
           </g>
         </g>
       </g>
     </g>
   </g>
 
-  <g class="av-foot"><ellipse cx="108" cy="226" rx="15" ry="10" fill="url(#av-lime)"/></g>
-  <g class="av-foot" style="animation-delay:-0.85s"><ellipse cx="154" cy="226" rx="15" ry="10" fill="url(#av-ink)"/></g>
-  <g class="av-armL"><ellipse cx="60" cy="168" rx="13" ry="10" fill="url(#av-lime)"/></g>
-  <g class="av-armR"><ellipse cx="201" cy="160" rx="13" ry="10" fill="url(#av-ink)"/></g>
-
-  <path class="av-tuft" d="M118 86C108 62 128 56 124 34C144 48 150 68 140 88Z" fill="url(#av-tuftg)"/>
-
-  <circle cx="130" cy="148" r="70" fill="url(#av-lime)"/>
-  <g clip-path="url(#av-ball)">
-    <path d="M40 60H214L206 84C170 104 112 150 66 214L40 226Z" fill="url(#av-ink)"/>
-    <path d="M206 84C170 104 112 150 66 214" fill="none" stroke="#f4ffc8" stroke-width="3" stroke-opacity="0.65" filter="url(#av-b3)"/>
-    <path d="M207 86C171 106 113 152 67 216" fill="none" stroke="#f4ffc8" stroke-width="1.2" stroke-opacity="0.7"/>
-    <circle cx="130" cy="148" r="70" fill="url(#av-shade)"/>
-    <ellipse cx="100" cy="106" rx="30" ry="16" transform="rotate(-32 100 106)" fill="#fff" fill-opacity="0.28" filter="url(#av-b6)"/>
-    <ellipse cx="94" cy="100" rx="13" ry="5" transform="rotate(-32 94 100)" fill="#fff" fill-opacity="0.5" filter="url(#av-b3)"/>
-    <path d="M182 196A70 70 0 0 0 199 160" fill="none" stroke="#f6ffd0" stroke-width="5" stroke-opacity="0.7" filter="url(#av-b3)"/>
-  </g>
-
-  <ellipse cx="92" cy="176" rx="11" ry="6" fill="#ef7fb0" fill-opacity="0.45" filter="url(#av-b3)"/>
-  <ellipse cx="170" cy="176" rx="11" ry="6" fill="#ef7fb0" fill-opacity="0.5" filter="url(#av-b3)"/>
-  <g class="av-eye">
-    <ellipse cx="108" cy="150" rx="15" ry="19" fill="url(#av-eyeg)"/>
-    <ellipse cx="152" cy="150" rx="15" ry="19" fill="url(#av-eyeg)"/>
-    <g class="av-pupils">
-      <circle cx="110" cy="153" r="9" fill="#0c0a16"/><circle cx="154" cy="153" r="9" fill="#0c0a16"/>
-      <circle cx="113" cy="149" r="3.2" fill="#fff"/><circle cx="157" cy="149" r="3.2" fill="#fff"/>
-      <circle cx="107" cy="157" r="1.5" fill="#fff" fill-opacity="0.7"/><circle cx="151" cy="157" r="1.5" fill="#fff" fill-opacity="0.7"/>
-    </g>
-  </g>
-  <path d="M122 180Q131 189 141 179" fill="none" stroke="#1a1730" stroke-width="3.2" stroke-linecap="round"/>
-
-  
-  <g transform="rotate(-24 130 148)">
-    <g transform="translate(130 148) scale(1 0.3)" clip-path="url(#av-near)">
-      <circle r="98" fill="none" stroke="#ece6da" stroke-opacity="0.5" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
-      <g class="av-spinA" style="animation-delay:0s">
-        <circle r="98" fill="none"/>
-        <g transform="translate(98 0)">
-          <g class="av-keepA" style="animation-delay:0s">
-            <ellipse rx="13" ry="43.333333333333336" fill="#ef7fb0" fill-opacity="0.35" filter="url(#av-b3)"/>
-            <ellipse rx="7.5" ry="25" fill="#ef7fb0"/>
-            <ellipse cx="-2" cy="-6.666666666666667" rx="2.6" ry="8.666666666666668" fill="#fff" fill-opacity="0.75"/>
-          </g>
-        </g>
+  <g class="av-cape">
+    <path d="M98 98C60 112 30 164 12 240C38 230 52 248 62 268C76 244 96 254 106 276C118 250 136 254 152 268C162 204 166 144 162 98Z" fill="url(#av-capeg)"/>
+    <g clip-path="url(#av-ccape)">
+      <g class="av-fold">
+        <path d="M92 110C70 150 52 200 44 262L60 262C66 204 82 152 104 112Z" fill="#35500a" fill-opacity="0.55" filter="url(#av-b3)"/>
+        <path d="M128 112C116 160 104 214 98 280L112 280C118 214 130 160 140 112Z" fill="#35500a" fill-opacity="0.5" filter="url(#av-b3)"/>
+        <path d="M76 124C56 160 38 200 26 246" fill="none" stroke="#f6ffd0" stroke-width="4" stroke-opacity="0.7" filter="url(#av-b3)"/>
       </g>
+      <path d="M150 100C156 160 156 220 150 276L170 276L170 100Z" fill="#1c2a05" fill-opacity="0.6" filter="url(#av-b6)"/>
     </g>
   </g>
+
+  <path d="M105 188L133 188L130 244L127 292L106 292L103 244Z" fill="url(#av-limb)"/>
+  <path d="M128 188L157 188L166 238L156 286L136 282L138 238Z" fill="url(#av-limb)"/>
+  <path d="M104 264L129 264L127 292L121 311L107 304Z" fill="url(#av-boot)"/>
+  <path d="M137 258L162 262L156 286L147 304L134 295Z" fill="url(#av-boot)"/>
+  <path d="M112 196L110 244" fill="none" stroke="#8d82d6" stroke-width="2.5" stroke-opacity="0.6" stroke-linecap="round" filter="url(#av-b1)"/>
+
   
-  <g transform="rotate(30 130 148)">
-    <g transform="translate(130 148) scale(1 0.3)" clip-path="url(#av-near)">
-      <circle r="90" fill="none" stroke="#ece6da" stroke-opacity="0.5" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
-      <g class="av-spinB" style="animation-delay:-3s">
-        <circle r="90" fill="none"/>
-        <g transform="translate(90 0)">
-          <g class="av-keepB" style="animation-delay:-3s">
-            <ellipse rx="13" ry="43.333333333333336" fill="#ece6da" fill-opacity="0.35" filter="url(#av-b3)"/>
-            <ellipse rx="7.5" ry="25" fill="#ece6da"/>
-            <ellipse cx="-2" cy="-6.666666666666667" rx="2.6" ry="8.666666666666668" fill="#fff" fill-opacity="0.75"/>
+    <path d="M90 110L64 150L106 186" fill="none" stroke="url(#av-limb)" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M85 168L106 186" fill="none" stroke="url(#av-glove)" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="106" cy="186" r="10.5" fill="url(#av-glove)"/>
+  
+    <path d="M170 110L196 150L154 186" fill="none" stroke="url(#av-limb)" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M175 168L154 186" fill="none" stroke="url(#av-glove)" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="154" cy="186" r="10.5" fill="url(#av-glove)"/>
+
+  <path d="M86 106Q130 90 174 106L154 190Q130 198 106 190Z" fill="url(#av-suit)"/>
+  <g clip-path="url(#av-ctorso)">
+    <path d="M130 100V196" stroke="#0d0a1a" stroke-width="2" stroke-opacity="0.5"/>
+    <path d="M100 150Q130 162 160 150M106 170Q130 180 154 170" fill="none" stroke="#0d0a1a" stroke-width="2" stroke-opacity="0.4"/>
+    <path d="M86 106Q98 150 106 190" fill="none" stroke="#a99cff" stroke-width="6" stroke-opacity="0.7" filter="url(#av-b3)"/>
+    <path d="M174 106Q164 150 154 190" fill="none" stroke="#c5f24a" stroke-width="6" stroke-opacity="0.45" filter="url(#av-b3)"/>
+    <path d="M92 104Q130 92 168 104L164 116Q130 104 96 116Z" fill="#fff" fill-opacity="0.12"/>
+  </g>
+  <path d="M106 182Q130 190 154 182L153 193Q130 201 107 193Z" fill="url(#av-glove)"/>
+  <ellipse cx="88" cy="108" rx="15" ry="12" fill="url(#av-helm)"/>
+  <ellipse cx="172" cy="108" rx="15" ry="12" fill="url(#av-helm)"/>
+  <path d="M102 98Q130 110 158 98L156 106Q130 120 104 106Z" fill="url(#av-capeg)"/>
+
+  <circle class="av-halo" cx="130" cy="132" r="22" fill="#c5f24a" fill-opacity="0.45" filter="url(#av-b6)"/>
+  <g class="av-emblem">
+    <circle cx="130" cy="132" r="14" fill="#c5f24a"/>
+    <path clip-path="url(#av-cemb)" d="M112 112H150L112 150Z" fill="#141026"/>
+    <circle cx="130" cy="132" r="14" fill="none" stroke="#f1ffbe" stroke-width="1.6"/>
+  </g>
+
+  <rect x="121" y="84" width="18" height="18" rx="6" fill="#1a1533"/>
+  <path d="M134 44L150 16L146 48Z" fill="url(#av-capeg)"/>
+  <path d="M107 62C107 34 153 34 153 62C153 80 143 96 130 98C117 96 107 80 107 62Z" fill="url(#av-helm)"/>
+  <path d="M112 50C116 42 124 38 132 38" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-opacity="0.55" filter="url(#av-b1)"/>
+  <path d="M130 84L122 90Q130 96 138 90Z" fill="#0d0a1a" fill-opacity="0.6"/>
+  <g class="av-visor">
+    <path d="M109 58L128 66H132L151 58L149 71L133 77H127L111 71Z" fill="#c5f24a" filter="url(#av-b3)"/>
+  </g>
+  <path d="M110 59L128 66.5H132L150 59L148.500 70L133 76H127L111.500 70Z" fill="#eaffa6"/>
+  <path d="M128 66.500H132V76H128Z" fill="#2c2552"/>
+
+  
+  <g transform="rotate(-16 130 150)">
+    <g transform="translate(130 150) scale(1 0.28)" clip-path="url(#av-near)">
+      <circle r="96" fill="none" stroke="#ece6da" stroke-opacity="0.45" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
+      <g class="av-spin">
+        <circle r="96" fill="none"/>
+        <g transform="translate(96 0)">
+          <g class="av-keep">
+            <ellipse rx="12" ry="42.857142857142854" fill="#c5f24a" fill-opacity="0.4" filter="url(#av-b3)"/>
+            <ellipse rx="6" ry="21.428571428571427" fill="#f1ffbe"/>
           </g>
         </g>
       </g>
