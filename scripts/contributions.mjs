@@ -53,9 +53,9 @@ const X0 = W - PAD - gridW;
 const H = TOP + 7 * PITCH + PAD;
 
 // The avatar, small, standing at the bottom left.
-const AV = avatar(3.6, "av");
+const AV = avatar(0.5, "av");
 const AX = PAD;
-const AY = H - AV.h - 4;
+const AY = H - AV.h - 6;
 const tipX = AX + AV.tip[0];
 const tipY = AY + AV.tip[1];
 const endX = X0 - 6;

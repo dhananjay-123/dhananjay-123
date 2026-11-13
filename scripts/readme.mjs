@@ -5,13 +5,13 @@
 import { writeFileSync } from "node:fs";
 
 /** Bump when an image changes, so GitHub's image cache lets go of the old one. */
-const V = 6;
+const V = 7;
 const DARK = new Set(["nextdotjs", "radixui", "threedotjs", "webgl", "ffmpeg", "express", "socketdotio", "prisma", "razorpay", "expo", "vercel", "framer"]);
 const icon = (slug, hex) => `https://cdn.simpleicons.org/${slug}${hex ? `/${hex}` : ""}`;
 const logo = ([name, slug]) =>
   DARK.has(slug)
-    ? `<picture><source media="(prefers-color-scheme: dark)" srcset="${icon(slug, "ece6da")}"><img alt="${name}" title="${name}" height="24" src="${icon(slug, "0b0a09")}"></picture>`
-    : `<img alt="${name}" title="${name}" height="24" src="${icon(slug)}">`;
+    ? `<picture><source media="(prefers-color-scheme: dark)" srcset="${icon(slug, "ece6da")}"><img alt="${name}" title="${name}" width="24" height="24" src="${icon(slug, "0b0a09")}"></picture>`
+    : `<img alt="${name}" title="${name}" width="24" height="24" src="${icon(slug)}">`;
 
 const STACK = [
   ["Interface", [["TypeScript", "typescript"], ["React", "react"], ["Next.js", "nextdotjs"], ["Tailwind CSS", "tailwindcss"], ["Radix UI", "radixui"]]],
@@ -36,7 +36,7 @@ const heading = (word) => `<img src="assets/h-${word.toLowerCase()}.svg?v=${V}" 
 
 const md = `<img src="assets/hero.svg?v=${V}" alt="Dhananjay Agrawal" width="100%">
 
-<img src="assets/avatar.svg?v=${V}" alt="Avatar" align="left" width="168">
+<img src="assets/avatar.svg?v=${V}" alt="Avatar" align="left" width="190">
 
 &nbsp;
 
@@ -65,7 +65,7 @@ ${WORK.map(([name, href, what, dot]) => `| <img src="assets/dot-${dot}.svg?v=${V
 ${heading("Stack")}
 
 <table>
-${STACK.map(([group, items]) => `<tr><td><b>${group}</b></td><td>${items.map(logo).join("&nbsp;&nbsp;&nbsp;")}</td></tr>`).join("\n")}
+${STACK.map(([group, items]) => `<tr><td width="200"><b>${group}</b></td><td width="680">${items.map(logo).join("&nbsp;&nbsp;&nbsp;")}</td></tr>`).join("\n")}
 </table>
 
 <br>
