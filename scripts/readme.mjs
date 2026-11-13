@@ -5,7 +5,7 @@
 import { writeFileSync } from "node:fs";
 
 /** Bump when an image changes, so GitHub's image cache lets go of the old one. */
-const V = 8;
+const V = 9;
 const DARK = new Set(["nextdotjs", "radixui", "threedotjs", "webgl", "ffmpeg", "express", "socketdotio", "prisma", "razorpay", "expo", "vercel", "framer"]);
 const icon = (slug, hex) => `https://cdn.simpleicons.org/${slug}${hex ? `/${hex}` : ""}`;
 const logo = ([name, slug]) =>
