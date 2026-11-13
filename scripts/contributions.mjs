@@ -1,13 +1,13 @@
-// Renders the public GitHub contribution calendar as a flip-dot board.
+// Renders the public GitHub contribution calendar in the avatar's look: iron, green and gold.
 // No third-party service, no token: GitHub's own /users/<login>/contributions
 // fragment is public. Refreshed daily by .github/workflows/contributions.yml.
 //
-// Each day is a disc. Quiet days stay dark; busier days light in deeper lime.
+// Each day is a cut stone. Quiet days stay iron; busier days go green, the busiest gold.
 // The board turns over in a wave from the left, holds, and turns back.
 // A sweep of light crosses it, the busiest days glint, today is ringed, a weekly
-// level meter bounces underneath, and three numbers sit along the bottom.
-// Dot, the avatar, stands to the left and sends a signal into the board.
-import { ASH, BONE, INK, LIME, disc, flipKeyframes, flipRule, mix, reducedMotion, textCells, textCols, wall, write } from "./dots.mjs";
+// skyline of spires stands underneath, and three numbers sit along the bottom.
+// The avatar stands to the left, joined to the board by a gold chain.
+import { BONE, flipKeyframes, flipRule, textCells, textCols, write } from "./dots.mjs";
 import { avatar } from "./avatar.mjs";
 
 const USER = process.argv[2] ?? "dhananjay-123";
@@ -19,7 +19,7 @@ const R = PITCH * 0.4;
 const PAD = 22;
 const TOP = 66;          // first row of days
 const CYCLE = 16;
-const LEVELS = [null, mix("#151311", LIME, 0.35), mix("#151311", LIME, 0.58), mix("#151311", LIME, 0.8), LIME];
+const LEVELS = [null, "#2f5230", "#4c8245", "#8fbb66", "#e9d9a0"];
 const MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
 const html = await fetch(`https://github.com/users/${USER}/contributions`, {
@@ -79,7 +79,7 @@ const today = byDate.at(-1);
 const weekly = Array.from({ length: weeks }, (_, c) => days.filter((d) => d.col === c).reduce((a, d) => a + d.count, 0));
 const peak = Math.max(...weekly, 1);
 
-// ── Dot, standing to the left, sending a signal into the board ─────────────
+// ── the avatar, to the left, chained to the board────────────
 const AV = avatar(0.56, "av");
 const AX = Math.round((X0 - AV.w) / 2) - 4;
 const AY = Math.round((H - AV.h) / 2) + 4;
@@ -114,6 +114,15 @@ const jitter = (key) => {
   return ((h >>> 0) % 1000) / 1000;
 };
 
+// ── the look: iron, deep green and gold, after the avatar ───────────────────
+const NIGHT = "#070907";
+const IRON = "#171b16";
+const GOLD = "#c9b678";
+const GOLD_L = "#e9d9a0";
+const MOSS = "#7d8a74";
+const SKY_H = METER_ROWS * METER_PITCH;
+const BASE = METER_Y + SKY_H;       // the skyline's ground line
+
 const keyframes = [];
 const rules = [];
 for (let lv = 1; lv < LEVELS.length; lv++) {
@@ -123,93 +132,115 @@ for (let lv = 1; lv < LEVELS.length; lv++) {
 
 const cx = (col) => X0 + (col + 0.5) * PITCH;
 const cy = (row) => TOP + (row + 0.5) * PITCH;
+const n1 = (v) => Number(v.toFixed(1));
+/** A day is a cut stone: a diamond, not a disc. */
+const gem = (x, y, r) => `M${n1(x)} ${n1(y - r)}L${n1(x + r)} ${n1(y)}L${n1(x)} ${n1(y + r)}L${n1(x - r)} ${n1(y)}Z`;
+/** The four-point star from the banner and the clasp. */
+const star = (x, y, r) => `M${x} ${y - r}Q${x} ${y} ${x + r} ${y}Q${x} ${y} ${x} ${y + r}Q${x} ${y} ${x - r} ${y}Q${x} ${y} ${x} ${y - r}Z`;
+const G = PITCH * 0.44;
+
 const lit = days
   .filter((d) => d.level > 0)
-  .map((d) => disc(cx(d.col), cy(d.row), R, LEVELS[d.level], `f${d.level}`, 0.3 + d.col * 0.035 + d.row * 0.05))
+  .map((d) => `<path class="f${d.level}" style="animation-delay:${(0.3 + d.col * 0.035 + d.row * 0.05).toFixed(2)}s" d="${gem(cx(d.col), cy(d.row), G)}" fill="${LEVELS[d.level]}"/>`)
   .join("");
 
 // The busiest days glint now and then.
 const glints = days
   .filter((d) => d.level === 4)
-  .map((d) => `<circle class="gl" style="animation-delay:${(-jitter(d.date) * 5).toFixed(2)}s" cx="${cx(d.col)}" cy="${cy(d.row)}" r="${R}" fill="#fff"/>`)
+  .map((d) => `<path class="gl" style="animation-delay:${(-jitter(d.date) * 5).toFixed(2)}s" d="${gem(cx(d.col), cy(d.row), G)}" fill="#fff"/>`)
   .join("");
 
-// The weekly meter: a column of small discs per week, tall for a busy week,
-// bouncing like a level meter. Square-root scale, or one big week flattens the rest.
-const PINK = "#ef7fb0";
-const meter = weekly
+// The skyline: one spire per week, tall for a busy week, like the towers behind
+// the figure. Square-root scale, or one big week flattens the rest.
+const skyline = weekly
   .map((v, col) => {
-    const n = v ? Math.max(1, Math.round(Math.sqrt(v / peak) * METER_ROWS)) : 0;
-    if (!n) return "";
-    const dots = Array.from({ length: n }, (_, i) => {
-      const fill = i === n - 1 && n >= 4 ? PINK : mix("#151311", LIME, 0.9 - i * 0.12);
-      return `<circle cx="${cx(col)}" cy="${METER_Y + (i + 0.5) * METER_PITCH}" r="2.3" fill="${fill}"/>`;
-    }).join("");
+    if (!v) return "";
+    const h = 5 + Math.sqrt(v / peak) * (SKY_H - 6);
+    const x = cx(col);
+    const top = BASE - h;
     const j = jitter(`w${col}`);
-    return `<g class="mt" style="animation-duration:${(1.1 + j * 0.9).toFixed(2)}s;animation-delay:${(-j * 2).toFixed(2)}s">${dots}</g>`;
+    const tall = h > SKY_H * 0.72;
+    const spire = `<path d="M${n1(x - 3.6)} ${BASE}V${n1(top + 5)}L${n1(x)} ${n1(top)}L${n1(x + 3.6)} ${n1(top + 5)}V${BASE}Z" fill="url(#tower)"/>`;
+    const cap = tall ? `<path d="${gem(x, top + 1, 2.2)}" fill="${GOLD_L}"/>` : "";
+    return `<g class="sp" style="animation-duration:${(2.2 + j * 1.6).toFixed(2)}s;animation-delay:${(-j * 3).toFixed(2)}s">${spire}${cap}</g>`;
   })
   .join("");
 
-// Three numbers along the bottom: a small ash label over a larger lit value.
-const stat = (x, name, value, tone) => `${label(name, x, STATS_Y, 1.7, ASH)}${label(value, x, STATS_Y + 16, 2.6, tone)}`;
+// Three numbers along the bottom: a small label over a larger lit value.
+const stat = (x, name, value, tone) =>
+  `<path d="${star(x + 4, STATS_Y + 6, 5)}" fill="${GOLD}"/>${label(name, x + 14, STATS_Y, 1.7, MOSS)}${label(value, x, STATS_Y + 16, 2.6, tone)}`;
 const third = gridW / 3;
 const stats = [
-  stat(X0, "CURRENT STREAK", `${streak} ${streak === 1 ? "DAY" : "DAYS"}`, LIME),
-  stat(X0 + third, "LONGEST STREAK", `${longest} DAYS`, "#5aa9ff"),
-  stat(X0 + 2 * third, "BEST DAY", `${best.count} ON ${MONTHS[Number(best.date.slice(5, 7)) - 1]} ${Number(best.date.slice(8, 10))}`, "#f08a45"),
+  stat(X0, "CURRENT STREAK", `${streak} ${streak === 1 ? "DAY" : "DAYS"}`, GOLD_L),
+  stat(X0 + third, "LONGEST STREAK", `${longest} DAYS`, LEVELS[3]),
+  stat(X0 + 2 * third, "BEST DAY", `${best.count} ON ${MONTHS[Number(best.date.slice(5, 7)) - 1]} ${Number(best.date.slice(8, 10))}`, BONE),
 ].join("\n  ");
 
 // Less to more, top right.
-const legendX = X0 + gridW - (4 * 9 + 5) - textCols("MORE") * 1.7 - 8;
-const legend = `${label("LESS", legendX - textCols("LESS") * 1.7 - 8, PAD + 3, 1.7, ASH)}${[DISC_DARK(), ...LEVELS.slice(1)].map((f, i) => `<circle cx="${legendX + i * 9 + 2.5}" cy="${PAD + 9}" r="3.4" fill="${f}"/>`).join("")}${label("MORE", legendX + 4 * 9 + 5 + 8, PAD + 3, 1.7, ASH)}`;
-function DISC_DARK() {
-  return "#1d1a17";
-}
+const legendX = X0 + gridW - (4 * 10 + 5) - textCols("MORE") * 1.7 - 8;
+const legend = `${label("LESS", legendX - textCols("LESS") * 1.7 - 8, PAD + 3, 1.7, MOSS)}${[IRON, ...LEVELS.slice(1)].map((f, i) => `<path d="${gem(legendX + i * 10 + 2.5, PAD + 9, 4)}" fill="${f}"/>`).join("")}${label("MORE", legendX + 4 * 10 + 5 + 8, PAD + 3, 1.7, MOSS)}`;
+
+const midX = X0 + gridW / 2;
+const midY = TOP + GRID_H / 2;
+const corner = (x, y) => `<path d="${star(x, y, 6)}" fill="${GOLD}"/>`;
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="t d">
   <title id="t">GitHub contributions for ${USER}</title>
-  <desc id="d">${total} contributions over ${weeks} weeks, one disc per day, lit brighter on busier days. Current streak ${streak} days, longest ${longest}, best day ${best.count}. A weekly level meter runs under the calendar and the avatar stands beside it.</desc>
+  <desc id="d">${total} contributions over ${weeks} weeks, one cut stone per day, from iron through green to gold on the busiest days. Current streak ${streak} days, longest ${longest}, best day ${best.count}. A skyline of weekly totals stands under the calendar and the avatar beside it.</desc>
   <style>
     ${keyframes.join("\n    ")}
     ${rules.join("\n    ")}
-    @keyframes sig { to { stroke-dashoffset: -24 } }
-    .sig { animation: sig 0.9s linear infinite }
+    @keyframes chain { to { stroke-dashoffset: -18 } }
+    .ch { animation: chain 1.2s linear infinite }
     @keyframes sweep { from { transform: translateX(0) } to { transform: translateX(${gridW + 60}px) } }
     .sw { animation: sweep 7s linear infinite }
-    @keyframes glint { 0%, 86%, 100% { opacity: 0 } 92% { opacity: 0.85 } }
+    @keyframes glint { 0%, 86%, 100% { opacity: 0 } 92% { opacity: 0.8 } }
     .gl { opacity: 0; animation: glint 5s ease-in-out infinite }
-    @keyframes meter { from { transform: scaleY(0.45) } to { transform: scaleY(1) } }
-    .mt { transform-box: fill-box; transform-origin: 50% 0%; animation: meter 1.4s ease-in-out infinite alternate }
-    @keyframes today { 0% { transform: scale(0.8); opacity: 0.9 } 100% { transform: scale(2.2); opacity: 0 } }
+    @keyframes spire { from { transform: scaleY(0.82) } to { transform: scaleY(1) } }
+    .sp { transform-box: fill-box; transform-origin: 50% 100%; animation: spire 3s ease-in-out infinite alternate }
+    @keyframes today { 0% { transform: scale(0.8); opacity: 0.9 } 100% { transform: scale(2.3); opacity: 0 } }
     .td { transform-box: fill-box; transform-origin: center; animation: today 1.8s ease-out infinite }
-    @keyframes arrive { 0%, 100% { transform: scale(0.7) } 50% { transform: scale(1.5) } }
-    .ar { transform-box: fill-box; transform-origin: center; animation: arrive 0.9s ease-in-out infinite }
+    @keyframes arrive { 0%, 100% { transform: scale(0.7) rotate(0deg) } 50% { transform: scale(1.3) rotate(45deg) } }
+    .ar { transform-box: fill-box; transform-origin: center; animation: arrive 2.4s ease-in-out infinite }
+    @keyframes ring { to { stroke-dashoffset: -1000 } }
+    .rg { animation: ring 14s linear infinite }
     ${AV.style}
     @media (prefers-reduced-motion: reduce) { svg * { animation: none !important } .gl { opacity: 0 } }
   </style>
   <defs>
-    ${wall("w", PITCH, R, X0, TOP)}
-    <linearGradient id="sweep"><stop offset="0" stop-color="${LIME}" stop-opacity="0"/><stop offset="0.8" stop-color="${LIME}" stop-opacity="0.1"/><stop offset="1" stop-color="#f1ffbe" stop-opacity="0.32"/></linearGradient>
+    <pattern id="w" x="${X0}" y="${TOP}" width="${PITCH}" height="${PITCH}" patternUnits="userSpaceOnUse"><path d="${gem(PITCH / 2, PITCH / 2, G)}" fill="${IRON}"/></pattern>
+    <linearGradient id="sweep"><stop offset="0" stop-color="#bfe8a0" stop-opacity="0"/><stop offset="0.8" stop-color="#bfe8a0" stop-opacity="0.1"/><stop offset="1" stop-color="${GOLD_L}" stop-opacity="0.3"/></linearGradient>
+    <linearGradient id="tower" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${LEVELS[3]}"/><stop offset="1" stop-color="${LEVELS[1]}"/></linearGradient>
     <clipPath id="grid"><rect x="${X0}" y="${TOP}" width="${gridW}" height="${GRID_H}"/></clipPath>
-    <radialGradient id="stage" cx="${((AX + AV.w / 2) / W).toFixed(3)}" cy="0.5" r="0.45"><stop offset="0" stop-color="#231f3a" stop-opacity="0.9"/><stop offset="1" stop-color="${INK}" stop-opacity="0"/></radialGradient>
+    <clipPath id="panel"><rect width="${W}" height="${H}" rx="14"/></clipPath>
+    <radialGradient id="glow" gradientUnits="userSpaceOnUse" cx="${midX}" cy="${midY + 20}" r="300"><stop offset="0" stop-color="#2c4a2a" stop-opacity="0.55"/><stop offset="1" stop-color="${NIGHT}" stop-opacity="0"/></radialGradient>
   </defs>
-  <rect width="${W}" height="${H}" rx="14" fill="${INK}"/>
-  <rect width="${W}" height="${H}" rx="14" fill="url(#stage)"/>
-  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="14" fill="none" stroke="${BONE}" stroke-opacity="0.12"/>
-  ${label(heading, X0, PAD, 2.6, BONE)}
+  <rect width="${W}" height="${H}" rx="14" fill="${NIGHT}"/>
+  <g clip-path="url(#panel)">
+    <rect width="${W}" height="${H}" fill="url(#glow)"/>
+    <circle cx="${midX}" cy="${midY + 20}" r="210" fill="none" stroke="${GOLD}" stroke-opacity="0.14" stroke-width="1.5"/>
+    <circle class="rg" cx="${midX}" cy="${midY + 20}" r="210" fill="none" stroke="${GOLD_L}" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="60 940" pathLength="1000"/>
+    <path d="M${midX - 46} 0V${H}M${midX + 46} 0V${H}" stroke="${GOLD}" stroke-opacity="0.07" stroke-width="1"/>
+    <rect x="${midX - 46}" y="0" width="92" height="${H}" fill="#2c4a2a" fill-opacity="0.1"/>
+  </g>
+  <rect x="0.75" y="0.75" width="${W - 1.5}" height="${H - 1.5}" rx="14" fill="none" stroke="${GOLD}" stroke-opacity="0.55" stroke-width="1.5"/>
+  <rect x="6.5" y="6.5" width="${W - 13}" height="${H - 13}" rx="9" fill="none" stroke="${GOLD}" stroke-opacity="0.2"/>
+  ${corner(14, 14)}${corner(W - 14, 14)}${corner(14, H - 14)}${corner(W - 14, H - 14)}
+  ${label(heading, X0, PAD, 2.6, GOLD_L)}
   ${legend}
-  ${months.map((m) => label(m.text, X0 + m.col * PITCH + 2, TOP - 16, 1.7, ASH)).join("\n  ")}
+  ${months.map((m) => label(m.text, X0 + m.col * PITCH + 2, TOP - 16, 1.7, MOSS)).join("\n  ")}
   <rect x="${X0}" y="${TOP}" width="${gridW}" height="${GRID_H}" fill="url(#w)"/>
   ${lit}
   ${glints}
   <g clip-path="url(#grid)"><rect class="sw" x="${X0 - 60}" y="${TOP}" width="60" height="${GRID_H}" fill="url(#sweep)"/></g>
-  <circle class="td" cx="${cx(today.col)}" cy="${cy(today.row)}" r="${R}" fill="none" stroke="${PINK}" stroke-width="1.5"/>
-  <circle cx="${cx(today.col)}" cy="${cy(today.row)}" r="${R + 1.5}" fill="none" stroke="${PINK}" stroke-width="1.2"/>
-  ${meter}
+  <path class="td" d="${gem(cx(today.col), cy(today.row), G)}" fill="none" stroke="${GOLD_L}" stroke-width="1.5"/>
+  <path d="${gem(cx(today.col), cy(today.row), G + 2)}" fill="none" stroke="${GOLD_L}" stroke-width="1.2"/>
+  ${skyline}
+  <path d="M${X0} ${BASE + 0.5}H${X0 + gridW}" stroke="${GOLD}" stroke-opacity="0.5"/>
   ${stats}
-  <path d="${signal}" stroke="${LIME}" stroke-opacity="0.25" stroke-width="1.2" fill="none"/>
-  <path class="sig" d="${signal}" stroke="${LIME}" stroke-width="1.8" stroke-dasharray="3 9" stroke-linecap="round" fill="none"/>
-  <circle class="ar" cx="${endX}" cy="${endY}" r="2.6" fill="${LIME}"/>
+  <path d="${signal}" stroke="#3a3420" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+  <path class="ch" d="${signal}" stroke="${GOLD_L}" stroke-width="2.2" stroke-dasharray="5 4" stroke-linecap="round" fill="none"/>
+  <path class="ar" d="${star(endX, endY, 6)}" fill="${GOLD_L}"/>
   <g transform="translate(${AX} ${AY})">${AV.body}</g>
 </svg>
 `;
