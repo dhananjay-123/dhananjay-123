@@ -1,132 +1,148 @@
-// An original avatar, drawn as a vector illustration.
+// An original avatar, drawn as a soft-shaded vector illustration.
 //
-// A small cloaked figure: a bone helmet with a dark glass visor and two lime
-// eyes, orange headphones, an antenna, a violet cloak, a lime scarf, and one
-// flip-dot disc hovering beside it, turning over the way the site's board does.
+// A hooded wanderer with fox ears stands in front of a pale moon. Its face is
+// lost in the hood except for two lime eyes. A bone scarf trails in the wind, a
+// tail with a lime tip curls behind, and it carries a lantern whose light falls
+// on the cloak. No outlines: form comes from gradients, rim light and blur.
 //
-// It floats, the scarf trails, the cloak sways, the eyes glance and blink, and
-// the disc flips. All CSS, all on fill-box origins, so the figure can be placed
-// at any scale inside another SVG. Reduced motion leaves it standing still.
+// The cloak sways, the scarf and tail drift, the lantern swings and breathes,
+// the eyes blink, and fireflies rise. All CSS on fill-box origins, so the figure
+// can be placed at any scale inside another SVG. Reduced motion holds it still.
 // Run: node scripts/avatar.mjs
 import { pathToFileURL } from "node:url";
 import { write } from "./dots.mjs";
 
-const INK = "#0b0a09";
 const BONE = "#ece6da";
 const LIME = "#c5f24a";
-const ORANGE = "#f08a45";
-const PINK = "#ef7fb0";
-const W = 240;
-const H = 300;
+const W = 260;
+const H = 320;
+
+const HOOD = "M92 152C76 122 82 96 96 84L88 46L114 72Q130 66 146 72L172 46L164 84C178 96 184 122 168 152Z";
+const CLOAK = "M100 142C86 180 62 228 28 262Q50 268 60 288Q84 272 100 292Q124 276 142 294Q160 278 184 290C182 240 174 190 160 142Z";
 
 /**
- * The avatar at `scale`: its CSS, its markup, its size, and where the antenna
- * tip is. `id` prefixes every class and gradient so two SVGs never collide.
+ * The avatar at `scale`: its CSS, its markup, its size, and where the lantern
+ * is. `id` prefixes every class and def so two SVGs never collide.
  */
 export function avatar(scale = 1, id = "av") {
   const c = (name) => `${id}-${name}`;
-  const O = `stroke="${INK}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"`;
+  const u = (name) => `url(#${c(name)})`;
 
   const style = `
 .${id} * { transform-box: fill-box }
-.${c("bob")} { animation: ${c("bob")} 3.6s ease-in-out infinite alternate }
-.${c("shadow")} { transform-origin: center; animation: ${c("shadow")} 3.6s ease-in-out infinite alternate }
-.${c("tail")} { transform-origin: 100% 20%; animation: ${c("tail")} 2.4s ease-in-out infinite alternate }
-.${c("tail2")} { transform-origin: 100% 20%; animation: ${c("tail")} 2.4s ease-in-out -0.5s infinite alternate }
-.${c("sway")} { transform-origin: 50% 0%; animation: ${c("sway")} 3.6s ease-in-out infinite alternate }
-.${c("head")} { transform-origin: 50% 100%; animation: ${c("head")} 7.2s ease-in-out infinite }
-.${c("eyes")} { animation: ${c("look")} 9s ease-in-out infinite }
-.${c("eye")} { transform-origin: center; animation: ${c("blink")} 4.5s ease-in-out infinite }
-.${c("pulse")} { transform-origin: center; animation: ${c("pulse")} 1.8s ease-in-out infinite }
-.${c("orb")} { animation: ${c("orb")} 2.8s ease-in-out infinite alternate }
-.${c("flip")} { transform-origin: center; animation: ${c("flip")} 5s ease-in-out infinite }
-.${c("face")} { animation: ${c("face")} 5s step-end infinite }
-.${c("star")} { transform-origin: center; animation: ${c("star")} 3s ease-in-out infinite }
-@keyframes ${c("bob")} { from { transform: translateY(3px) } to { transform: translateY(-5px) } }
-@keyframes ${c("shadow")} { from { transform: scaleX(1); opacity: 0.34 } to { transform: scaleX(0.84); opacity: 0.2 } }
-@keyframes ${c("tail")} { from { transform: rotate(-7deg) } to { transform: rotate(8deg) } }
-@keyframes ${c("sway")} { from { transform: skewX(-2deg) } to { transform: skewX(2deg) } }
-@keyframes ${c("head")} { 0%, 100% { transform: rotate(-2deg) } 50% { transform: rotate(2.5deg) } }
-@keyframes ${c("look")} { 0%, 30% { transform: none } 36%, 54% { transform: translateX(5px) } 60%, 78% { transform: translateX(-5px) } 84%, 100% { transform: none } }
-@keyframes ${c("blink")} { 0%, 91% { transform: scaleY(1) } 94% { transform: scaleY(0.08) } 97%, 100% { transform: scaleY(1) } }
-@keyframes ${c("pulse")} { 0%, 100% { transform: scale(0.7); opacity: 0.2 } 50% { transform: scale(1.5); opacity: 0.55 } }
-@keyframes ${c("orb")} { from { transform: translateY(5px) } to { transform: translateY(-7px) } }
-@keyframes ${c("flip")} { 0%, 38% { transform: rotate(45deg) scaleY(1) rotate(-45deg) } 44% { transform: rotate(45deg) scaleY(0) rotate(-45deg) } 50%, 88% { transform: rotate(45deg) scaleY(1) rotate(-45deg) } 94% { transform: rotate(45deg) scaleY(0) rotate(-45deg) } 100% { transform: rotate(45deg) scaleY(1) rotate(-45deg) } }
-@keyframes ${c("face")} { 0% { fill: ${LIME} } 44% { fill: #2a2733 } 94% { fill: ${LIME} } }
-@keyframes ${c("star")} { 0%, 100% { transform: scale(0.4); opacity: 0.15 } 50% { transform: scale(1); opacity: 0.9 } }
+.${c("breathe")} { animation: ${c("breathe")} 4s ease-in-out infinite alternate }
+.${c("sway")} { transform-origin: 60% 0%; animation: ${c("sway")} 4s ease-in-out infinite alternate }
+.${c("scarf")} { transform-origin: 100% 40%; animation: ${c("scarf")} 2.6s ease-in-out infinite alternate }
+.${c("tail")} { transform-origin: 0% 100%; animation: ${c("tail")} 3.2s ease-in-out infinite alternate }
+.${c("swing")} { transform-origin: 50% 0%; animation: ${c("swing")} 3s ease-in-out infinite alternate }
+.${c("glow")} { transform-origin: center; animation: ${c("glow")} 2.4s ease-in-out infinite alternate }
+.${c("eye")} { transform-origin: center; animation: ${c("blink")} 5s ease-in-out infinite }
+.${c("fly")} { animation: ${c("fly")} 7s ease-in-out infinite }
+@keyframes ${c("breathe")} { from { transform: translateY(1.5px) } to { transform: translateY(-1.5px) } }
+@keyframes ${c("sway")} { from { transform: skewX(-1.6deg) } to { transform: skewX(2.2deg) } }
+@keyframes ${c("scarf")} { from { transform: rotate(-6deg) scaleX(0.97) } to { transform: rotate(7deg) scaleX(1.03) } }
+@keyframes ${c("tail")} { from { transform: rotate(-5deg) } to { transform: rotate(7deg) } }
+@keyframes ${c("swing")} { from { transform: rotate(-6deg) } to { transform: rotate(6deg) } }
+@keyframes ${c("glow")} { from { transform: scale(0.88); opacity: 0.55 } to { transform: scale(1.12); opacity: 0.95 } }
+@keyframes ${c("blink")} { 0%, 92% { transform: scaleY(1) } 95% { transform: scaleY(0.1) } 98%, 100% { transform: scaleY(1) } }
+@keyframes ${c("fly")} { 0% { transform: translate(0, 10px); opacity: 0 } 20% { opacity: 1 } 80% { opacity: 0.8 } 100% { transform: translate(8px, -46px); opacity: 0 } }
 @media (prefers-reduced-motion: reduce) { .${id} * { animation: none !important } }`;
 
-  const star = (x, y, r, fill, delay) =>
-    `<path class="${c("star")}" style="animation-delay:${delay}s" fill="${fill}" d="M${x} ${y - r}Q${x} ${y} ${x + r} ${y}Q${x} ${y} ${x} ${y + r}Q${x} ${y} ${x - r} ${y}Q${x} ${y} ${x} ${y - r}Z"/>`;
+  const fly = (x, y, r, delay) =>
+    `<circle class="${c("fly")}" style="animation-delay:${delay}s" cx="${x}" cy="${y}" r="${r}" fill="#e6ff9a" filter="${u("b1")}"/>`;
 
   const body = `<g class="${id}" transform="scale(${scale})">
 <defs>
-  <radialGradient id="${c("helmet")}" cx="0.34" cy="0.26" r="0.9"><stop offset="0" stop-color="#fffdf6"/><stop offset="0.5" stop-color="${BONE}"/><stop offset="1" stop-color="#b9ae9b"/></radialGradient>
-  <linearGradient id="${c("cloak")}" x1="0" y1="0" x2="0.25" y2="1"><stop offset="0" stop-color="#a99cff"/><stop offset="0.55" stop-color="#7463e6"/><stop offset="1" stop-color="#4536ad"/></linearGradient>
-  <linearGradient id="${c("scarf")}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcff7a"/><stop offset="1" stop-color="#9ccc2c"/></linearGradient>
-  <linearGradient id="${c("glass")}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d1b22"/><stop offset="1" stop-color="${INK}"/></linearGradient>
-  <pattern id="${c("dots")}" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1" fill="#fff" fill-opacity="0.07"/></pattern>
-  <clipPath id="${c("visor")}"><rect x="68" y="74" width="104" height="54" rx="27"/></clipPath>
-  <filter id="${c("glow")}" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5"/></filter>
+  <radialGradient id="${c("moon")}" cx="0.38" cy="0.32" r="0.8"><stop offset="0" stop-color="#fffdf5"/><stop offset="0.6" stop-color="${BONE}"/><stop offset="1" stop-color="#bfb5a2"/></radialGradient>
+  <radialGradient id="${c("halo")}"><stop offset="0.55" stop-color="${BONE}" stop-opacity="0.35"/><stop offset="1" stop-color="${BONE}" stop-opacity="0"/></radialGradient>
+  <linearGradient id="${c("cloak")}" x1="0.2" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#3b3166"/><stop offset="0.5" stop-color="#231c44"/><stop offset="1" stop-color="#110d22"/></linearGradient>
+  <linearGradient id="${c("hood")}" x1="0.2" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#4a3f80"/><stop offset="0.6" stop-color="#2a2250"/><stop offset="1" stop-color="#171230"/></linearGradient>
+  <radialGradient id="${c("face")}" cx="0.5" cy="0.4" r="0.7"><stop offset="0" stop-color="#0c0a16"/><stop offset="1" stop-color="#030208"/></radialGradient>
+  <linearGradient id="${c("scarfg")}" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset="0.6" stop-color="${BONE}"/><stop offset="1" stop-color="#a99e8b"/></linearGradient>
+  <linearGradient id="${c("tailg")}" x1="0" y1="1" x2="0.9" y2="0"><stop offset="0" stop-color="#1b1536"/><stop offset="0.5" stop-color="#3b3166"/><stop offset="0.78" stop-color="#8fbf3a"/><stop offset="1" stop-color="#e6ff9a"/></linearGradient>
+  <radialGradient id="${c("lamp")}" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#ffffff"/><stop offset="0.45" stop-color="#e6ff9a"/><stop offset="1" stop-color="${LIME}"/></radialGradient>
+  <radialGradient id="${c("light")}"><stop offset="0" stop-color="${LIME}" stop-opacity="0.75"/><stop offset="0.4" stop-color="${LIME}" stop-opacity="0.25"/><stop offset="1" stop-color="${LIME}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="${c("mist")}"><stop offset="0" stop-color="${BONE}" stop-opacity="0.3"/><stop offset="1" stop-color="${BONE}" stop-opacity="0"/></radialGradient>
+  <filter id="${c("b1")}" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="1.2"/></filter>
+  <filter id="${c("b3")}" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3"/></filter>
+  <filter id="${c("b6")}" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="6"/></filter>
+  <clipPath id="${c("ccloak")}"><path d="${CLOAK}"/></clipPath>
+  <clipPath id="${c("chood")}"><path d="${HOOD}"/></clipPath>
+  <clipPath id="${c("cmoon")}"><circle cx="130" cy="118" r="88"/></clipPath>
 </defs>
-<ellipse class="${c("shadow")}" cx="120" cy="288" rx="46" ry="6" fill="#958d80"/>
-${star(28, 96, 7, LIME, 0)}${star(216, 118, 5, PINK, -1.1)}${star(38, 226, 5, BONE, -2)}
-<g class="${c("bob")}">
-  <path class="${c("tail2")}" d="M92 158C66 164 50 186 26 184L32 198C54 200 70 184 94 174Z" fill="#9ccc2c" ${O}/>
-  <path class="${c("tail")}" d="M92 150C62 146 46 166 16 154L22 174C46 182 64 166 94 168Z" fill="url(#${c("scarf")})" ${O}/>
-  <rect x="104" y="244" width="11" height="28" rx="5" fill="#2a2733" ${O}/>
-  <rect x="126" y="244" width="11" height="28" rx="5" fill="#2a2733" ${O}/>
-  <rect x="97" y="266" width="22" height="12" rx="6" fill="${BONE}" ${O}/>
-  <rect x="122" y="266" width="22" height="12" rx="6" fill="${BONE}" ${O}/>
-  <g class="${c("sway")}">
-    <path d="M94 148C72 186 58 222 50 252Q68 264 86 252Q102 266 120 254Q138 266 154 252Q172 264 190 252C182 222 168 186 146 148Z" fill="url(#${c("cloak")})" ${O}/>
-    <path d="M120 166L107 254Q120 262 133 254Z" fill="#241d52"/>
-    <path d="M100 172C92 200 88 226 86 250M140 172C148 200 152 226 154 250M80 196C74 214 70 232 68 256M160 196C166 214 170 232 172 256" fill="none" stroke="#3a2c9c" stroke-width="2" stroke-linecap="round" stroke-opacity="0.65"/>
-    <path d="M98 156C84 182 74 206 66 232" fill="none" stroke="#d2caff" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.55"/>
-  </g>
-  <path d="M82 146Q120 168 158 146L160 160Q120 186 80 160Z" fill="url(#${c("scarf")})" ${O}/>
-  <g class="${c("head")}">
-    <path d="M187 80L203 46" fill="none" stroke="${INK}" stroke-width="7" stroke-linecap="round"/>
-    <path d="M187 80L203 46" fill="none" stroke="${BONE}" stroke-width="3" stroke-linecap="round"/>
-    <circle class="${c("pulse")}" cx="204" cy="42" r="10" fill="${PINK}"/>
-    <circle cx="204" cy="42" r="6" fill="${PINK}" ${O}/>
-    <rect x="54" y="38" width="132" height="116" rx="56" fill="url(#${c("helmet")})" ${O}/>
-    <path d="M52 86C52 14 188 14 188 86" fill="none" stroke="${INK}" stroke-width="13" stroke-linecap="round"/>
-    <path d="M52 86C52 14 188 14 188 86" fill="none" stroke="${ORANGE}" stroke-width="7" stroke-linecap="round"/>
-    <rect x="41" y="80" width="21" height="44" rx="9" fill="${ORANGE}" ${O}/>
-    <rect x="178" y="80" width="21" height="44" rx="9" fill="${ORANGE}" ${O}/>
-    <path d="M47 90V114M193 90V114" stroke="#ffc08f" stroke-width="3" stroke-linecap="round"/>
-    <rect x="68" y="74" width="104" height="54" rx="27" fill="url(#${c("glass")})" ${O}/>
-    <g clip-path="url(#${c("visor")})">
-      <rect x="68" y="74" width="104" height="54" fill="url(#${c("dots")})"/>
-      <g class="${c("eyes")}">
-        <g filter="url(#${c("glow")})" opacity="0.55"><rect x="92" y="89" width="15" height="24" rx="7.5" fill="${LIME}"/><rect x="133" y="89" width="15" height="24" rx="7.5" fill="${LIME}"/></g>
-        <rect class="${c("eye")}" x="92" y="89" width="15" height="24" rx="7.5" fill="${LIME}"/>
-        <rect class="${c("eye")}" x="133" y="89" width="15" height="24" rx="7.5" fill="${LIME}"/>
-        <path d="M114 119Q120 123 126 119" fill="none" stroke="${LIME}" stroke-width="2.5" stroke-linecap="round"/>
-      </g>
-      <path d="M88 70L108 70L84 132L64 132Z" fill="#fff" fill-opacity="0.08"/>
-      <path d="M116 70L124 70L100 132L92 132Z" fill="#fff" fill-opacity="0.05"/>
-    </g>
-    <path d="M74 62C82 50 96 44 110 43" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-opacity="0.7"/>
-  </g>
-  <g class="${c("orb")}">
-    <g class="${c("flip")}">
-      <circle class="${c("face")}" cx="212" cy="196" r="13" fill="${LIME}" ${O}/>
-      <path d="M204 191A10 10 0 0 1 213 186" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.6"/>
-    </g>
-  </g>
+
+<circle cx="130" cy="118" r="128" fill="${u("halo")}"/>
+<circle cx="130" cy="118" r="88" fill="${u("moon")}"/>
+<g clip-path="${u("cmoon")}" fill="#a79d8a" fill-opacity="0.28">
+  <circle cx="84" cy="84" r="13"/><circle cx="186" cy="74" r="8"/><circle cx="196" cy="150" r="16"/><circle cx="70" cy="150" r="7"/><circle cx="146" cy="50" r="5"/>
 </g>
+<ellipse cx="126" cy="296" rx="104" ry="13" fill="${u("mist")}"/>
+<ellipse cx="124" cy="292" rx="60" ry="5" fill="#05040a" fill-opacity="0.55" filter="${u("b3")}"/>
+
+<g class="${c("breathe")}">
+  <g class="${c("tail")}">
+    <path d="M160 280C208 288 250 256 250 206C250 180 222 176 218 200C222 236 198 258 160 254Z" fill="${u("tailg")}"/>
+    <path d="M226 192C236 192 243 202 242 214" fill="none" stroke="#f4ffc8" stroke-width="3" stroke-linecap="round" stroke-opacity="0.7" filter="${u("b1")}"/>
+  </g>
+
+  <g class="${c("scarf")}">
+    <path d="M104 150C72 138 52 158 16 134C28 150 32 160 22 174C54 182 76 162 104 168Z" fill="${u("scarfg")}"/>
+    <path d="M100 158C74 152 56 168 30 164" fill="none" stroke="#8d8372" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/>
+  </g>
+
+  <g class="${c("sway")}">
+    <path d="${CLOAK}" fill="${u("cloak")}"/>
+    <g clip-path="${u("ccloak")}">
+      <path d="M118 160C110 210 96 250 84 296L110 296C116 250 124 208 128 160Z" fill="#07050f" fill-opacity="0.55" filter="${u("b3")}"/>
+      <path d="M146 166C152 210 156 252 156 296L170 296C170 250 164 208 156 164Z" fill="#07050f" fill-opacity="0.45" filter="${u("b3")}"/>
+      <path d="M76 214C66 236 56 254 44 270" fill="none" stroke="#07050f" stroke-width="7" stroke-opacity="0.4" filter="${u("b3")}"/>
+      <path d="M100 142C86 180 62 228 28 262" fill="none" stroke="#b9aaff" stroke-width="5" stroke-opacity="0.75" filter="${u("b3")}"/>
+      <path d="M160 142C174 190 182 240 184 290" fill="none" stroke="${LIME}" stroke-width="9" stroke-opacity="0.6" filter="${u("b6")}"/>
+      <circle cx="196" cy="228" r="60" fill="${u("light")}" fill-opacity="0.5"/>
+    </g>
+  </g>
+
+  <path d="M154 172C170 172 186 180 199 192L193 205C180 198 166 194 152 194Z" fill="#2a2250"/>
+  <path d="M158 174C172 175 185 182 196 190" fill="none" stroke="${LIME}" stroke-width="3" stroke-opacity="0.45" filter="${u("b1")}"/>
+  <circle cx="197" cy="199" r="5.5" fill="${BONE}"/>
+
+  <g class="${c("swing")}">
+    <path d="M197 200V216" stroke="#8d8372" stroke-width="1.6"/>
+    <circle class="${c("glow")}" cx="197" cy="231" r="40" fill="${u("light")}"/>
+    <rect x="189" y="214" width="16" height="5" rx="2" fill="#171230"/>
+    <rect x="186" y="218" width="22" height="27" rx="9" fill="${u("lamp")}"/>
+    <rect x="189" y="244" width="16" height="4" rx="2" fill="#171230"/>
+    <path d="M197 218V245M186 231H208" stroke="#171230" stroke-width="1.2" stroke-opacity="0.55"/>
+  </g>
+
+  <path d="M96 146Q130 164 164 146L166 158Q130 180 94 158Z" fill="${u("scarfg")}"/>
+  <path d="M100 156Q130 172 160 156" fill="none" stroke="#8d8372" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <path d="${HOOD}" fill="${u("hood")}"/>
+  <g clip-path="${u("chood")}">
+    <path d="M94 58L104 78L112 72Z" fill="#0c0a16" fill-opacity="0.7"/>
+    <path d="M166 58L156 78L148 72Z" fill="#0c0a16" fill-opacity="0.7"/>
+    <path d="M92 152C76 122 82 96 96 84L88 46" fill="none" stroke="#c4b8ff" stroke-width="5" stroke-opacity="0.8" filter="${u("b3")}"/>
+    <path d="M168 152C184 122 178 96 164 84" fill="none" stroke="${LIME}" stroke-width="6" stroke-opacity="0.4" filter="${u("b3")}"/>
+    <ellipse cx="130" cy="120" rx="32" ry="29" fill="${u("face")}"/>
+    <ellipse cx="130" cy="120" rx="32" ry="29" fill="none" stroke="#5a4e96" stroke-width="2" stroke-opacity="0.6"/>
+  </g>
+  <g filter="${u("b3")}" opacity="0.8"><ellipse cx="117" cy="118" rx="9" ry="6" fill="${LIME}"/><ellipse cx="143" cy="118" rx="9" ry="6" fill="${LIME}"/></g>
+  <path class="${c("eye")}" d="M108 119Q116 108 126 117Q118 125 108 119Z" fill="#e6ff9a"/>
+  <path class="${c("eye")}" d="M152 119Q144 108 134 117Q142 125 152 119Z" fill="#e6ff9a"/>
+</g>
+
+${fly(46, 236, 2.2, 0)}${fly(226, 150, 1.8, -2.4)}${fly(70, 196, 1.6, -4.1)}${fly(214, 268, 2, -5.5)}${fly(150, 262, 1.5, -1.2)}
 </g>`;
 
-  return { style, body, w: W * scale, h: H * scale, tip: [204 * scale, 42 * scale] };
+  return { style, body, w: W * scale, h: H * scale, tip: [197 * scale, 231 * scale] };
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const a = avatar(1);
   await write(
     "assets/avatar.svg",
-    `<svg xmlns="http://www.w3.org/2000/svg" width="${a.w}" height="${a.h}" viewBox="0 0 ${a.w} ${a.h}" role="img" aria-label="Avatar: a small cloaked figure in a helmet with lime eyes, headphones and a trailing scarf">
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${a.w}" height="${a.h}" viewBox="0 0 ${a.w} ${a.h}" role="img" aria-label="Avatar: a hooded wanderer with fox ears and glowing eyes, holding a lantern in front of the moon">
 <title>Avatar</title>
 <style>${a.style}
 </style>
