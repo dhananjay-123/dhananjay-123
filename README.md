@@ -1,114 +1,83 @@
-<div align="center">
-  <img src="assets/hero.svg?v=4" alt="Dhananjay Agrawal — full-stack developer. TypeScript, React, Next.js, Postgres, React Native, Flutter." width="100%">
-</div>
+<img src="assets/hero.svg" alt="Dhananjay Agrawal" width="100%">
 
-<div align="center">
-  <a href="https://dhananjaypvt.me" title="Portfolio — dhananjaypvt.me"><img alt="Portfolio: dhananjaypvt.me" width="40" height="45" src="assets/social-portfolio.svg"></a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/dhananjay-123" title="GitHub — dhananjay-123"><img alt="GitHub: dhananjay-123" width="40" height="45" src="assets/social-github.svg"></a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://linkedin.com/in/dhananjay-agrawal-b5843b211" title="LinkedIn — dhananjay-agrawal"><img alt="LinkedIn: dhananjay-agrawal" width="40" height="45" src="assets/social-linkedin.svg"></a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="mailto:dhananjayworkmain@gmail.com" title="Email — dhananjayworkmain@gmail.com"><img alt="Email: dhananjayworkmain@gmail.com" width="40" height="45" src="assets/social-email.svg"></a>
-</div>
+**I build web products, simulations and motion.**<br>
+Institution software, virtual labs and films made in code.
+
+<sub>Integrated B.Tech + M.Tech, IT · ABV-IIITM Gwalior · Gwalior, India</sub>
+
+[dhananjaypvt.me](https://dhananjaypvt.me) · [LinkedIn](https://linkedin.com/in/dhananjay-agrawal-b5843b211) · [Email](mailto:dhananjayworkmain@gmail.com)
 
 <br>
 
-Full-stack developer — web and mobile. I build the interface, the API and the database behind it: design systems, dashboards that stay readable as data grows, real-time and offline state. Accessibility and the loading, empty and error states are part of the work for me, not a follow-up ticket.
+<img src="assets/h-work.svg" alt="Work" height="55">
 
-<sub>🎓 Integrated B.Tech + M.Tech, Information Technology &nbsp;·&nbsp; ABV-IIITM Gwalior &nbsp;·&nbsp; Gwalior, India</sub>
+| Project | |
+| --- | --- |
+| **[PhysicsSimulation](https://physicssimulation.org)** | 160 browser labs in physics, chemistry, maths and biology. |
+| **Coaching Platform** | Enquiries, batches, attendance, fees and tests for a coaching institute. |
+| **Smart Attendance** | Biometric attendance with WhatsApp alerts to parents. |
+| **[Arogyani](https://www.arogyani.in/)** | OPD software for clinics with a live token queue. |
+| **[Sher-e-Darbar](https://www.sheredarbar.com/)** | Hindi and English restaurant site with a scroll-driven 3D opening. |
+| **[INKPLAY](https://inkplay-lemon.vercel.app)** | Draw a level on paper, play it as a platformer. |
+| **Films** | Launch reels and explainers rendered from code with HyperFrames. |
 
-> Prefer the primitive you understand over the library you inherit.
-> Ship every state, not just the one where the data arrives.
+<sub>Most of this ships from private repositories.</sub>
 
-<img src="assets/divider.svg?v=2" alt="" width="100%">
+<br>
 
-<img alt="CAPABILITY" width="146" height="30" src="https://img.shields.io/badge/%24-CAPABILITY-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
+<img src="assets/h-stack.svg" alt="Stack" height="55">
 
-<table width="100%">
-<tr>
-  <td width="160" valign="top"><b>● CORE</b><br><sub>in every project</sub></td>
-  <td width="830" valign="middle">
-    <img alt="TypeScript" width="38" height="38" src="https://cdn.simpleicons.org/typescript">&nbsp;&nbsp;
-    <img alt="React" width="38" height="38" src="https://cdn.simpleicons.org/react">&nbsp;&nbsp;
-    <img alt="Next.js · App Router" width="38" height="38" src="https://cdn.simpleicons.org/nextdotjs/E6E8F2">&nbsp;&nbsp;
-    <img alt="Tailwind CSS" width="38" height="38" src="https://cdn.simpleicons.org/tailwindcss">
-  </td>
-</tr>
-<tr>
-  <td valign="top"><b>○ REGULAR</b><br><sub>across several</sub></td>
-  <td width="830" valign="middle">
-    <img alt="PostgreSQL" width="38" height="38" src="https://cdn.simpleicons.org/postgresql">&nbsp;&nbsp;
-    <img alt="Prisma" width="38" height="38" src="https://cdn.simpleicons.org/prisma/E6E8F2">&nbsp;&nbsp;
-    <img alt="SQL" width="52" height="30" src="https://img.shields.io/badge/SQL-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
-    <img alt="Node.js" width="38" height="38" src="https://cdn.simpleicons.org/nodedotjs">&nbsp;&nbsp;
-    <img alt="Express" width="38" height="38" src="https://cdn.simpleicons.org/express/E6E8F2">&nbsp;&nbsp;
-    <img alt="Socket.IO" width="38" height="38" src="https://cdn.simpleicons.org/socketdotio/E6E8F2">&nbsp;&nbsp;
-    <img alt="Framer Motion" width="38" height="38" src="https://cdn.simpleicons.org/framer">&nbsp;&nbsp;
-    <img alt="Radix UI" width="38" height="38" src="https://cdn.simpleicons.org/radixui/E6E8F2">&nbsp;&nbsp;
-    <img alt="Zustand" width="92" height="30" src="https://img.shields.io/badge/Zustand-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
-    <img alt="Flutter" width="38" height="38" src="https://cdn.simpleicons.org/flutter">&nbsp;&nbsp;
-    <img alt="Dart" width="38" height="38" src="https://cdn.simpleicons.org/dart">&nbsp;&nbsp;
-    <img alt="React Native" width="130" height="30" src="https://img.shields.io/badge/React%20Native-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
-    <img alt="Expo" width="38" height="38" src="https://cdn.simpleicons.org/expo/E6E8F2">&nbsp;&nbsp;
-    <img alt="Vercel" width="38" height="38" src="https://cdn.simpleicons.org/vercel/E6E8F2">&nbsp;&nbsp;
-    <img alt="GitHub Actions" width="38" height="38" src="https://cdn.simpleicons.org/githubactions">
-  </td>
-</tr>
-<tr>
-  <td valign="top"><b>· ALSO USE</b></td>
-  <td width="830" valign="middle">
-    <img alt="Three.js" width="38" height="38" src="https://cdn.simpleicons.org/threedotjs/E6E8F2">&nbsp;&nbsp;
-    <img alt="Supabase" width="38" height="38" src="https://cdn.simpleicons.org/supabase">&nbsp;&nbsp;
-    <img alt="Docker" width="38" height="38" src="https://cdn.simpleicons.org/docker">&nbsp;&nbsp;
-    <img alt="Vitest" width="38" height="38" src="https://cdn.simpleicons.org/vitest">&nbsp;&nbsp;
-    <img alt="TanStack Query" width="38" height="38" src="https://cdn.simpleicons.org/reactquery">&nbsp;&nbsp;
-    <img alt="Recharts" width="100" height="30" src="https://img.shields.io/badge/Recharts-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">&nbsp;
-    <img alt="Lenis" width="69" height="30" src="https://img.shields.io/badge/Lenis-161A2B?style=for-the-badge&labelColor=161A2B&color=161A2B">
-  </td>
-</tr>
-</table>
+<sub>INTERFACE</sub><br>
+<img alt="TypeScript" title="TypeScript" height="26" src="https://cdn.simpleicons.org/typescript/958d80">&nbsp;&nbsp;
+<img alt="React" title="React" height="26" src="https://cdn.simpleicons.org/react/958d80">&nbsp;&nbsp;
+<img alt="Next.js" title="Next.js" height="26" src="https://cdn.simpleicons.org/nextdotjs/958d80">&nbsp;&nbsp;
+<img alt="Tailwind CSS" title="Tailwind CSS" height="26" src="https://cdn.simpleicons.org/tailwindcss/958d80">&nbsp;&nbsp;
+<img alt="Radix UI" title="Radix UI" height="26" src="https://cdn.simpleicons.org/radixui/958d80">&nbsp;&nbsp;
+<img alt="TanStack Query" title="TanStack Query" height="26" src="https://cdn.simpleicons.org/reactquery/958d80">
 
-<img src="assets/divider.svg?v=2" alt="" width="100%">
+<sub>MOTION AND 3D</sub><br>
+<img alt="Three.js" title="Three.js" height="26" src="https://cdn.simpleicons.org/threedotjs/958d80">&nbsp;&nbsp;
+<img alt="WebGL" title="WebGL" height="26" src="https://cdn.simpleicons.org/webgl/958d80">&nbsp;&nbsp;
+<img alt="GSAP" title="GSAP" height="26" src="https://cdn.simpleicons.org/greensock/958d80">&nbsp;&nbsp;
+<img alt="Motion" title="Motion" height="26" src="https://cdn.simpleicons.org/framer/958d80">&nbsp;&nbsp;
+<img alt="FFmpeg" title="FFmpeg" height="26" src="https://cdn.simpleicons.org/ffmpeg/958d80">
 
-<img alt="HOW I BUILD" width="155" height="30" src="https://img.shields.io/badge/%24-HOW%20I%20BUILD-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
+<sub>SERVER AND DATA</sub><br>
+<img alt="Node.js" title="Node.js" height="26" src="https://cdn.simpleicons.org/nodedotjs/958d80">&nbsp;&nbsp;
+<img alt="Express" title="Express" height="26" src="https://cdn.simpleicons.org/express/958d80">&nbsp;&nbsp;
+<img alt="Socket.IO" title="Socket.IO" height="26" src="https://cdn.simpleicons.org/socketdotio/958d80">&nbsp;&nbsp;
+<img alt="Zod" title="Zod" height="26" src="https://cdn.simpleicons.org/zod/958d80">&nbsp;&nbsp;
+<img alt="PostgreSQL" title="PostgreSQL" height="26" src="https://cdn.simpleicons.org/postgresql/958d80">&nbsp;&nbsp;
+<img alt="Prisma" title="Prisma" height="26" src="https://cdn.simpleicons.org/prisma/958d80">&nbsp;&nbsp;
+<img alt="Supabase" title="Supabase" height="26" src="https://cdn.simpleicons.org/supabase/958d80">&nbsp;&nbsp;
+<img alt="Redis" title="Redis" height="26" src="https://cdn.simpleicons.org/redis/958d80">
 
-<div align="center">
-  <img src="assets/build.svg" alt="How I build — three isometric layers. INTERFACE (frontend): design systems and tokens, contrast checked against WCAG AA, keyboard focus handled in modals and drawers, reduced-motion respected, loading, empty and error states on every screen. SYSTEMS (backend and infra): live updates over Socket.IO, offline-first with service workers, multi-tenant with per-role permissions, attendance sync from 3 biometric devices that is safe to retry, marking rules configured in the database rather than hard-coded. PRACTICE (day to day): conventional commits, CI runs typecheck, lint, tests and build, 225+ DSA problems solved on LeetCode." width="100%">
-</div>
+<sub>BEYOND THE BROWSER</sub><br>
+<img alt="WhatsApp" title="WhatsApp" height="26" src="https://cdn.simpleicons.org/whatsapp/958d80">&nbsp;&nbsp;
+<img alt="Razorpay" title="Razorpay" height="26" src="https://cdn.simpleicons.org/razorpay/958d80">&nbsp;&nbsp;
+<img alt="Flutter" title="Flutter" height="26" src="https://cdn.simpleicons.org/flutter/958d80">&nbsp;&nbsp;
+<img alt="Expo" title="Expo" height="26" src="https://cdn.simpleicons.org/expo/958d80">&nbsp;&nbsp;
+<img alt="Gemini" title="Gemini" height="26" src="https://cdn.simpleicons.org/googlegemini/958d80">
 
-<img src="assets/divider.svg?v=2" alt="" width="100%">
+<sub>SHIPPING</sub><br>
+<img alt="Git" title="Git" height="26" src="https://cdn.simpleicons.org/git/958d80">&nbsp;&nbsp;
+<img alt="GitHub Actions" title="GitHub Actions" height="26" src="https://cdn.simpleicons.org/githubactions/958d80">&nbsp;&nbsp;
+<img alt="Vitest" title="Vitest" height="26" src="https://cdn.simpleicons.org/vitest/958d80">&nbsp;&nbsp;
+<img alt="Docker" title="Docker" height="26" src="https://cdn.simpleicons.org/docker/958d80">&nbsp;&nbsp;
+<img alt="Vercel" title="Vercel" height="26" src="https://cdn.simpleicons.org/vercel/958d80">&nbsp;&nbsp;
+<img alt="Cloudflare" title="Cloudflare" height="26" src="https://cdn.simpleicons.org/cloudflare/958d80">
 
-<img alt="ACTIVITY" width="128" height="30" src="https://img.shields.io/badge/%24-ACTIVITY-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
+<br>
 
-<div align="center">
-  <img src="assets/contributions.svg?v=2" alt="GitHub contribution heatmap for the last 12 months" width="100%">
-</div>
+<img src="assets/h-activity.svg" alt="Activity" height="55">
 
-<div align="center">
-  <sub>Most of the work above ships in private repositories — the graph is the commit trail, not the catalogue.<br>
-  Rendered from GitHub's public contributions endpoint by <a href="scripts/contributions.mjs">a script in this repo</a> and refreshed daily by <a href=".github/workflows/contributions.yml">an action</a> — no third-party widget to break when someone else's free tier runs out.</sub>
-</div>
+<img src="assets/contributions.svg" alt="GitHub contribution calendar" width="100%">
 
-<img src="assets/divider.svg?v=2" alt="" width="100%">
+<sub>Drawn by <a href="scripts/contributions.mjs">a script in this repo</a>, refreshed daily.</sub>
 
-<img alt="GET IN TOUCH" width="162" height="30" src="https://img.shields.io/badge/%24-GET%20IN%20TOUCH-161A2B?style=for-the-badge&labelColor=A78BFA&color=161A2B">
+<br>
 
-<table width="100%">
-<tr>
-  <td width="170" valign="top"><b>WORK</b></td>
-  <td width="820" valign="top">Open to frontend and full-stack roles — internships or full-time. Send over the problem and I'll tell you honestly whether I'm the right fit.</td>
-</tr>
-<tr>
-  <td valign="top"><b>OPEN SOURCE</b></td>
-  <td valign="top">Happy to pick up issues in React, Next.js, accessibility or design-system projects. Small first PRs are fine by me.</td>
-</tr>
-<tr>
-  <td valign="top"><b>ANYTHING ELSE</b></td>
-  <td valign="top">Questions about something here, or just want to talk shop — <a href="mailto:dhananjayworkmain@gmail.com">email</a> is the quickest way to reach me. More work at <a href="https://dhananjaypvt.me">dhananjaypvt.me</a>.</td>
-</tr>
-</table>
+<img src="assets/h-contact.svg" alt="Contact" height="55">
 
-<div align="center">
-  <img src="assets/footer.svg?v=2" alt="Open to open-source collaboration — dhananjaypvt.me · github.com/dhananjay-123" width="100%">
-</div>
+Open to full-time roles and freelance work.<br>
+**[dhananjayworkmain@gmail.com](mailto:dhananjayworkmain@gmail.com)**
