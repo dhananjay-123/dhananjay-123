@@ -36,7 +36,7 @@ const heading = (word) => `<img src="assets/h-${word.toLowerCase()}.svg?v=${V}" 
 
 const md = `<img src="assets/hero.svg?v=${V}" alt="Dhananjay Agrawal" width="100%">
 
-<img src="assets/avatar-hero-3.svg" alt="Avatar" align="left" width="190">
+<img src="assets/avatar-king.svg" alt="Avatar" align="left" width="210">
 
 &nbsp;
 

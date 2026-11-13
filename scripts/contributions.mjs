@@ -80,7 +80,7 @@ const weekly = Array.from({ length: weeks }, (_, c) => days.filter((d) => d.col 
 const peak = Math.max(...weekly, 1);
 
 // ── Dot, standing to the left, sending a signal into the board ─────────────
-const AV = avatar(0.62, "av");
+const AV = avatar(0.56, "av");
 const AX = Math.round((X0 - AV.w) / 2) - 4;
 const AY = Math.round((H - AV.h) / 2) + 4;
 const tipX = AX + AV.tip[0];
@@ -189,7 +189,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
   </style>
   <defs>
     ${wall("w", PITCH, R, X0, TOP)}
-    <linearGradient id="sweep"><stop offset="0" stop-color="${LIME}" stop-opacity="0"/><stop offset="0.8" stop-color="${LIME}" stop-opacity="0.2"/><stop offset="1" stop-color="#f1ffbe" stop-opacity="0.55"/></linearGradient>
+    <linearGradient id="sweep"><stop offset="0" stop-color="${LIME}" stop-opacity="0"/><stop offset="0.8" stop-color="${LIME}" stop-opacity="0.1"/><stop offset="1" stop-color="#f1ffbe" stop-opacity="0.32"/></linearGradient>
     <clipPath id="grid"><rect x="${X0}" y="${TOP}" width="${gridW}" height="${GRID_H}"/></clipPath>
     <radialGradient id="stage" cx="${((AX + AV.w / 2) / W).toFixed(3)}" cy="0.5" r="0.45"><stop offset="0" stop-color="#231f3a" stop-opacity="0.9"/><stop offset="1" stop-color="${INK}" stop-opacity="0"/></radialGradient>
   </defs>
